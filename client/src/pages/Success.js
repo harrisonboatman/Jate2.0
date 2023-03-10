@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { useMutation } from '@apollo/client';
 import Jumbotron from '../components/Jumbotron';
-import { ADD_ORDER } from '../utils/mutations';
+import { ADD_ORDER, UPDATE_PRODUCT } from '../utils/mutations';
 import { idbPromise } from '../utils/helpers';
 
 function Success() {
   const [addOrder] = useMutation(ADD_ORDER);
+  const [updateProduct] = useMutation(UPDATE_PRODUCT)
 
   useEffect(() => {
     async function saveOrder() {
@@ -27,7 +28,7 @@ function Success() {
     }
 
     saveOrder();
-  }, [addOrder]);
+  }, [addOrder, updateProduct]);
 
   return (
     <div>
