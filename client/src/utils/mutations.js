@@ -58,6 +58,8 @@ mutation updateProduct(
   updateProduct (
     _id: $_id
     quantity: $quantity
-  )
+  ){
+    quantity
+  }
 }
 `
