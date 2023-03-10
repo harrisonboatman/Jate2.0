@@ -28,7 +28,7 @@ function Success() {
     }
 
     saveOrder();
-  }, [addOrder]);
+  }, [addOrder, updateProduct]);
 
   return (
     <div>
