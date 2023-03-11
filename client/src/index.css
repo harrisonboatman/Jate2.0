@@ -2,6 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 0;
+}
+
+.gallery-grid img {
+  
+  margin: 0;
+  width: 25%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* .gallery-grid img {
+  
+  margin: 0;
+  width: 33%;
+  height: auto;
+  object-fit: cover;
+} */
+
+/* Use code above if you want to implement a sticky/true pin using gsap, set grid ml-[280px] if decide to */
+
+
+
+/* reponsive JATE Gallery */
+/* @media screen and (max-width: 800px) {
+  .gallery-column {
+    flex: 50%;
+    max-width: 50%;
+  }
+} */
+
+/* reponsive JATE Gallery */
+/* @media screen and (max-width: 600px) {
+  .gallery-column {
+    flex: 100%;
+    max-width: 100%;
+  }
+} */
+
+
+
+/* 
+
 :root {
   --primary: #232F3E;
   --secondary: #F3A847;
@@ -211,4 +258,4 @@ input:focus {
   .card {
     width: 100%;
   }
-} 
+}   */
