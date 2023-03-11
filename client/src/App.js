@@ -42,7 +42,7 @@ function App() {
   return (
 
 
-    // <Gallery />
+   
 
 
     <ApolloProvider client={client}>
