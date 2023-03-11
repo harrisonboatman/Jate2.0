@@ -23,6 +23,7 @@ function Nav() {
       );
     } else {
       return (
+
         <ul className="flex">
           <li className="mx-1">
             <Link to="/signup">
@@ -46,19 +47,20 @@ function Nav() {
           </li>
         
         </ul>
+
       );
     }
   }
 
   return (
     <header className="flex-row px-1">
-      <h1>
-        <Link to="/">
-          <span role="img" aria-label="taco">🌮</span>
+      <h1 className="mr-5">
+        <Link to="/" className="hover:no-underline">
           JATE
+          <span role="img" aria-label="taco">	🌮</span>
         </Link>
       </h1>
-
+      
       <nav>
         {showNavigation()}
       </nav>
