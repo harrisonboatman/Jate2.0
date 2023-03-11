@@ -35,6 +35,17 @@ function Nav() {
               Login
             </Link>
           </li>
+          <li className="mx-1">
+            <Link to="/menu">
+              Menu
+            </Link>
+          </li>
+          <li className="mx-1">
+            <Link to="/gallery">
+              Gallery
+            </Link>
+          </li>
+        
         </ul>
 
       );
