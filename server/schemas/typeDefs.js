@@ -28,6 +28,7 @@ const typeDefs = gql`
     lastName: String
     email: String
     orders: [Order]
+    userType: String
   }
 
   type Checkout {
