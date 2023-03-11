@@ -5,6 +5,9 @@ const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
   Query: {
+    users: async () => {
+      return await User.find();
+    },
     categories: async () => {
       return await Category.find();
     },
@@ -116,6 +119,14 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
+    updateUserToManager: async (parent, args, context) => {
+      
+        return await User.findByIdAndUpdate(args._id, { $set: {userType: 'manager'}}, {new: true})
+    },
+    updateUserToWhatever: async (parent, args, context) => {
+      
+      return await User.findByIdAndUpdate(args._id, { $set: {userType: args.userType.toLowerCase()}}, {new: true})
+  },
     updateProduct: async (parent, { _id, quantity }) => {
       const decrement = Math.abs(quantity) * -1;
 
