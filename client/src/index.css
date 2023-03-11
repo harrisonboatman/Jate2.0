@@ -68,7 +68,9 @@ html,
 body {
   min-height: 100%;
 }
-
+video::-webkit-media-controls {
+  display: none;
+}
 body {
   margin: 0;
   padding: 0;
