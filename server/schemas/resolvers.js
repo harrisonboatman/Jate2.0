@@ -23,7 +23,7 @@ const resolvers = {
           $regex: name
         };
       }
-
+      
       return await Product.find(params).populate('category');
     },
     product: async (parent, { _id }) => {
