@@ -75,7 +75,7 @@ const Gallery = () => {
 
 
 
-      <div className="gallery-grid">
+      {/* <div className="gallery-grid">
         <img ref={(el) => (imageRefs.current[0] = el)} src={image5} className="mb-2 col-span-2 row-span-2" />
         <img ref={(el) => (imageRefs.current[1] = el)} src={image8} className="mb-4 col-span-2 row-span-1" />
         <img ref={(el) => (imageRefs.current[2] = el)} src={image10} className="mb-0 col-span-1 row-span-1" />
@@ -101,8 +101,57 @@ const Gallery = () => {
         <img ref={(el) => (imageRefs.current[14] = el)} src={image17}className="m-0 col-span-1 row-span-1"  />
         <img ref={(el) => (imageRefs.current[19] = el)} src={image19}className="m-0 col-span-1 row-span-1"  />
        
+      </div> */}
+      <section class="overflow-hidden text-neutral-700">
+  <div class="container scale-110 mx-auto px-5 py-2 lg:px-32 lg:pt-24 lg:pb-24">
+    <div class="-m-1 flex flex-wrap md:-m-2">
+      <div class="flex w-1/2 flex-wrap">
+        <div class="w-1/2 p-1 md:p-2">
+          <img
+            alt="gallery"
+            class="block h-full w-full rounded-lg object-cover ease-in duration-300 hover:scale-105 object-center"
+            src={image1} />
+        </div>
+        <div class="w-1/2 p-1 md:p-2">
+          <img
+            alt="gallery"
+            class="block h-full w-full rounded-lg object-cover object-center ease-in duration-300 hover:scale-105 "
+            src={image2} />
+        </div>
+        <div class="w-full p-1 md:p-2">
+          <img
+            alt="gallery"
+            class="block h-full w-full rounded-lg object-cover ease-in duration-300 hover:scale-105 object-center"
+            src={image3} />
+        </div>
       </div>
+      <div class="flex w-1/2 flex-wrap">
+        <div class="w-full p-1 md:p-2">
+          <img
+            alt="gallery"
+            class="block h-full w-full rounded-lg object-cover ease-in duration-300 hover:scale-105 object-center"
+            src={image4} />
+        </div>
+        <div class="w-1/2 p-1 md:p-2">
+          <img
+            alt="gallery"
+            class="block h-full w-full rounded-lg object-cover ease-in duration-300 hover:scale-105 object-center"
+            src={image5}/>
+        </div>
+        <div class="w-1/2 p-1 md:p-2">
+          <img
+            alt="gallery"
+            class="block h-full w-full rounded-lg object-cover ease-in duration-300 hover:scale-105 object-center"
+            src={image12} />
+        </div>
+        
       </div>
+    </div>
+  </div>
+</section>
+      </div>
+
+      
     );
   };
   
