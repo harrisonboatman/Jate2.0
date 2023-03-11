@@ -16,6 +16,7 @@ function Success() {
       if (products.length) {
         const { data } = await addOrder({ variables: { products } });
         const productData = data.addOrder.products;
+        
 
         productData.forEach((item) => {
           idbPromise('cart', 'delete', item);
@@ -28,8 +29,7 @@ function Success() {
     }
 
     saveOrder();
-  }, [addOrder, updateProduct]);
-
+  }, [addOrder]);
   return (
     <div>
       <Jumbotron>
