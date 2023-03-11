@@ -17,6 +17,10 @@
   object-fit: cover;
 }
 
+video::-webkit-media-controls {
+  display: none;
+}
+
 /* .gallery-grid img {
   
   margin: 0;
@@ -29,7 +33,7 @@
 
 
 
-/* reponsive JATE Gallery */
+ /* reponsive JATE Gallery  */
 /* @media screen and (max-width: 800px) {
   .gallery-column {
     flex: 50%;
