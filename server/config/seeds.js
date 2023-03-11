@@ -5,11 +5,11 @@ db.once('open', async () => {
   await Category.deleteMany();
 
   const categories = await Category.insertMany([
-    { name: 'Food' },
-    { name: 'Household Supplies' },
-    { name: 'Electronics' },
-    { name: 'Books' },
-    { name: 'Toys' }
+    { name: 'Breakfast Tacos' },
+    { name: 'Dinner Tacos' },
+    { name: 'Non Alcoholic Drinks' },
+    { name: 'Alcoholic Drinks' },
+    { name: 'Sides' }
   ]);
 
   console.log('categories seeded');
@@ -18,112 +18,204 @@ db.once('open', async () => {
 
   const products = await Product.insertMany([
     {
-      name: 'Tin of Cookies',
+      name: 'Bacon and Egg',
       description:
-        'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
-      image: 'cookie-tin.jpg',
-      category: categories[0]._id,
+        'Crispy bacon with scrambled eggs, all wrapped in a warm flour tortilla.',
       price: 2.99,
-      quantity: 500
-    },
-    {
-      name: 'Canned Coffee',
-      description:
-        'Praesent sed lacinia mauris. Nulla congue nibh magna, at feugiat nunc scelerisque quis. Donec iaculis rutrum vulputate. Suspendisse lectus sem, vulputate ac lectus sed, placerat consequat dui.',
-      image: 'canned-coffee.jpg',
+      image: 'bacon-egg.png',
       category: categories[0]._id,
-      price: 1.99,
       quantity: 500
     },
     {
-      name: 'Toilet Paper',
-      category: categories[1]._id,
+      name: 'Sausage and Egg',
       description:
-        'Donec volutpat erat erat, sit amet gravida justo sodales in. Phasellus tempus euismod urna. Proin ultrices nisi ut ipsum congue, vitae porttitor libero suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam lacinia a nisi non congue.',
-      image: 'toilet-paper.jpg',
-      price: 7.99,
-      quantity: 20
+        'Juicy sausage with scrambled eggs and melted shredded cheese, all wrapped in a warm flour tortilla.',
+      price: 3.49,
+      image: 'sausage-egg.png',
+      category: categories[0]._id,
+      quantity: 450
     },
     {
-      name: 'Handmade Soap',
-      category: categories[1]._id,
+      name: 'Potato and Egg',
       description:
-        'Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.',
-      image: 'soap.jpg',
+        'Diced potatoes with scrambled eggs and melted shredded cheese, all wrapped in a warm flour tortilla.',
+      price: 3.49,
+      image: 'potato-egg.png',
+      category: categories[0]._id,
+      quantity: 400
+    },
+    {
+      name: 'Chorizo and Egg',
+      description:
+        'Savory Mexican sausage with scrambled eggs and diced potatoes, all wrapped in a warm flour tortilla.',
       price: 3.99,
-      quantity: 50
+      image: 'chorizo.png',
+      category: categories[0]._id,
+      quantity: 350
     },
     {
-      name: 'Set of Wooden Spoons',
+      name: 'Migas',
+      description:
+        'Scrambled eggs with crispy tortilla strips, diced tomatoes, jalapenos, and melted shredded cheese, all wrapped in a warm flour tortilla.',
+      price: 4.49,
+      image: 'migas.png',
+      category: categories[0]._id,
+      quantity: 300
+    },
+    {
+      name: 'Steak and Egg',
+      description:
+        'Juicy steak with scrambled eggs, diced potatoes, and melted shredded cheese, all wrapped in a warm flour tortilla.',
+      price: 5.49,
+      image: 'steak-egg.png',
+      category: categories[0]._id,
+      quantity: 250
+    },
+    {
+      name: 'Al Pastor',
+      description:
+        '3 Marinated pork with diced pineapple, diced onions, and fresh cilantro, all served in a warm corn tortilla.',
+      image: 'pastor.png',
       category: categories[1]._id,
-      description:
-        'Vivamus ut turpis in purus pretium mollis. Donec turpis odio, semper vel interdum ut, vulputate at ex. Duis dignissim nisi vel tortor imperdiet finibus. Aenean aliquam sagittis rutrum.',
-      image: 'wooden-spoons.jpg',
-      price: 14.99,
-      quantity: 100
+      price: 9.49,
+      quantity: 400
     },
     {
-      name: 'Camera',
-      category: categories[2]._id,
+      name: 'Barbacoa',
       description:
-        'Vestibulum risus metus, luctus non tortor quis, tincidunt consectetur ex. Nullam vitae lobortis ligula, ut sagittis massa. Curabitur consectetur, tellus at pulvinar venenatis, erat augue cursus erat, eu ullamcorper eros lectus ultrices ipsum. Integer rutrum, augue vitae auctor venenatis, turpis turpis elementum orci, at sagittis risus mi a leo.',
-      image: 'camera.jpg',
-      price: 399.99,
-      quantity: 30
+        'Slow-cooked beef with diced onions and fresh cilantro, all served in a warm corn tortilla.',
+      image: 'barbacoa.png',
+      category: categories[1]._id,
+      price: 4.49,
+      quantity: 350
     },
     {
-      name: 'Tablet',
-      category: categories[2]._id,
+      name: 'Fish',
       description:
-        'In sodales, ipsum quis ultricies porttitor, tellus urna aliquam arcu, eget venenatis purus ligula ut nisi. Fusce ut felis dolor. Mauris justo ante, aliquet non tempus in, tempus ac lorem. Aliquam lacinia dolor eu sem eleifend ultrices. Etiam mattis metus metus. Sed ligula dui, placerat non turpis vitae, suscipit volutpat elit. Phasellus sagittis, diam elementum suscipit fringilla, libero mauris scelerisque ex, ac interdum diam erat non sapien.',
-      image: 'tablet.jpg',
-      price: 199.99,
-      quantity: 30
+        'Battered and fried white fish with shredded cabbage, diced tomatoes, and tangy white sauce, all served in a warm flour tortilla.',
+      image: 'fish.png',
+      category: categories[1]._id,
+      price: 5.49,
+      quantity: 250
     },
     {
-      name: 'Tales at Bedtime',
-      category: categories[3]._id,
+      name: 'Shrimp',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ornare diam quis eleifend rutrum. Aliquam nulla est, volutpat non enim nec, pharetra gravida augue. Donec vitae dictum neque. Pellentesque arcu lorem, fringilla non ligula ac, tristique bibendum erat. Ut a semper nibh. Quisque a mi et mi tempor ultricies. Maecenas eu ipsum eu enim hendrerit accumsan at euismod urna.',
-      image: 'bedtime-book.jpg',
-      price: 9.99,
-      quantity: 100
+        'Sauteed shrimp with shredded cabbage, diced tomatoes, and tangy white sauce, all served in a warm flour tortilla.',
+      image: 'shrimp.png',
+      category: categories[1]._id,
+      price: 5.99,
+      quantity: 200
     },
     {
-      name: 'Spinning Top',
-      category: categories[4]._id,
-      description: 'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
-      image: 'spinning-top.jpg',
-      price: 1.99,
-      quantity: 1000
-    },
-    {
-      name: 'Set of Plastic Horses',
-      category: categories[4]._id,
+      name: 'Margarita',
       description:
-        'Sed a mauris condimentum, elementum enim in, rhoncus dui. Phasellus lobortis leo odio, sit amet pharetra turpis porta quis.',
-      image: 'plastic-horses.jpg',
-      price: 2.99,
-      quantity: 1000
-    },
-    {
-      name: 'Teddy Bear',
-      category: categories[4]._id,
-      description:
-        'Vestibulum et erat finibus erat suscipit vulputate sed vitae dui. Ut laoreet tellus sit amet justo bibendum ultrices. Donec vitae felis vestibulum, congue augue eu, finibus turpis.',
-      image: 'teddy-bear.jpg',
+        'Tequila, lime juice, and triple sec, served on the rocks with a salt rim.',
+        image: 'marg.jpg',
+        category: categories[3]._id,
       price: 7.99,
       quantity: 100
     },
     {
-      name: 'Alphabet Blocks',
-      category: categories[4]._id,
+      name: 'Mojito',
       description:
-        'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
-      price: 9.99,
-      quantity: 600
-    }
+        'Rum, lime juice, mint leaves, and soda water, served on the rocks.',
+        image: 'mojito.jpg',
+        category: categories[3]._id,
+      price: 8.99,
+      quantity: 80
+    },
+    {
+      name: 'Domestic Beer',
+      description:
+        'Bottled domestic beers: Bud-Lite, Miller-Lite, Shiner Bock, Voodoo Ranger',
+        image: 'beer.jpg',
+        category: categories[3]._id,
+      price: 3.99,
+      quantity: 400
+    },
+    {
+      name: 'Imported Beer',
+      description:
+        'Bottled imported beers: Corona, Dos Equis, Modelo, Pacifico, Presidente',
+        image: 'beers.jpg',
+        category: categories[3]._id,
+      price: 3.99,
+      quantity: 400
+    },
+      {
+        name: "Canned Soda",
+        description: "Assorted carbonated soft drinks.",
+        image: 'coke.jpg',
+        category: categories[2]._id,
+        price: 1.99,
+        quantity: 150
+      },
+      {
+        name: "Coffee",
+        description: "Freshly brewed coffee.",
+        image: 'coffee.jpg',
+        category: categories[2]._id,
+        price: 2.99,
+        quantity: 100
+      },
+      {
+        name: "Horchata",
+        description: "A refreshing Mexican drink made with rice, cinnamon, and vanilla.",
+        image: 'horchata.jpg',
+        category: categories[2]._id,
+        price: 4.99,
+        quantity: 60
+      },
+      {
+        name: "Mexican Coke",
+        description: "Coca-Cola made in Mexico with real cane sugar.",
+        image: 'mexican-coke.jpg',
+        category: categories[2]._id,
+        price: 3.99,
+        quantity: 90
+      },
+      {
+        name: "Chips and Salsa",
+        description: "A basket of warm, crispy tortilla chips, with our fresh homemade salsa ",
+        image: 'salsa.jpg',
+        category: categories[4]._id,
+        price: 3.99,
+        quantity: 200
+      },
+      {
+        name: "Chips and Queso",
+        description: "A creamy blend of melted cheese, jalapeños, and spices served with tortilla chips.",
+        image: 'queso.jpg',
+        category: categories[4]._id,
+        price: 6.99,
+        quantity: 150
+      },
+      {
+        name: "Chips and Guacamole",
+        description: "Freshly made guacamole with ripe avocados, diced tomatoes, onions, and cilantro served with tortilla chips.",
+        image: 'guac.jpg',
+        category: categories[4]._id,
+        price: 5.99,
+        quantity: 120
+      },
+      {
+        name: "Charro Beans",
+        description: "Slow-cooked Charro beans seasoned with garlic, onions, and spices.",
+        image: 'beans.jpg',
+        category: categories[4]._id,
+        price: 2.99,
+        quantity: 100
+      },
+      {
+        name: "Mexican Rice",
+        description: "Slow-cooked mexican rice seasoned with garlic, onions, and spices.",
+        image: 'rice.jpg',
+        category: categories[4]._id,
+        price: 2.99,
+        quantity: 100
+      }
+    
   ]);
 
   console.log('products seeded');
