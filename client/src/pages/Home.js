@@ -21,6 +21,7 @@ import image16 from "../assets/gallery16.png";
 import image17 from "../assets/gallery17.png";
 import image19 from "../assets/gallery19.png";
 import { Parallax } from "react-parallax";
+import video1 from "../assets/jate.mp4";
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
@@ -44,15 +45,11 @@ const Home = () => {
   return (
     <div>
       <div className="relative w-full h-[90vh]">
-        <Parallax
-          className="h-[90vh] relative"
-          bgImage={backgroundImg}
-          strength={400}
-        >
-          <div className="absolute w-full h-[90vh] inset-0 bg-black opacity-60"></div>
-          <h1 className="text-4xl font-bold text-white h-[90vh] flex justify-center items-center text-center leading-[3rem] absolute w-full">
-            This one is for you,<br></br> JATE.
-          </h1>
+        <Parallax className="h-[90vh] relative" strength={400}>
+          <div className="absolute w-full h-[90vh] inset-0 bg-black opacity-10"></div>
+          <video autoPlay muted loop className="absolute w-full h-[90vh] object-fill" controls>
+            <source src={video1} type="video/mp4" />
+          </video>
         </Parallax>
       </div>
 
