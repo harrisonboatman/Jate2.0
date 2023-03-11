@@ -17,7 +17,7 @@ import Nav from './components/Nav';
 import { StoreProvider } from './utils/GlobalState';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
-import Gallery from './pages/Gallery';
+import Menu from './pages/Menu';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -76,8 +76,8 @@ function App() {
                 element={<Detail />} 
               />
               <Route 
-                path="/gallery" 
-                element={<Gallery />} 
+                path="/menu" 
+                element={<Menu />} 
               />
               <Route 
                 path="*" 

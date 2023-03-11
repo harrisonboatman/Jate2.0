@@ -40,11 +40,11 @@ function Nav() {
               Menu
             </Link>
           </li>
-          <li className="mx-1">
+          {/* <li className="mx-1">
             <Link to="/gallery">
               Gallery
             </Link>
-          </li>
+          </li> */}
         
         </ul>
 

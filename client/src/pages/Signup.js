@@ -62,27 +62,27 @@ function Signup(props) {
                 </p>
               </div>
 
-              <div className="mb-4 flex mx-10 mt-2 justify-center">
-                <input
-                  className=" w-[220px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent mr-3"
-                  id="first-name"
-                  name="first-name"
-                  type="text"
-                  placeholder="First Name"
-                  onChange={handleChange}
-                  required
-                ></input>
+                      <div className="mb-4 flex mx-10 mt-2 justify-center">
+                          <input
+                              className=" w-[220px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent mr-3"
+                              id="firstName"
+                              name="firstName"
+                              type="text"
+                              placeholder="First Name"
+                              onChange={handleChange}
+                              required>
+                          </input>
 
-                <input
-                  className=" flex w-[300px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent ml-3"
-                  id="las-name"
-                  name="las-name"
-                  type="text"
-                  placeholder="Last Name"
-                  onChange={handleChange}
-                  required
-                ></input>
-              </div>
+                          <input
+                              className=" flex w-[300px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent ml-3"
+                              id="lastName"
+                              name="lastName"
+                              type="text"
+                              placeholder="Last Name"
+                              onChange={handleChange}
+                              required>
+                          </input>
+                      </div>
 
               <div className="mb-4 flex justify-evenly mx-8 mt-10">
                 <input
@@ -95,30 +95,41 @@ function Signup(props) {
                   required
                 ></input>
               </div>
+                      <div className="mb-4 flex justify-evenly mx-8 mt-10">
+                          <input
+                              className=" w-[350px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent mr-3"
+                              id="email"
+                              name="email"
+                              type="text"
+                              placeholder="Email Address"
+                              onChange={handleChange}
+                              required>
+                          </input>
+                      </div>
 
-              <div className="mb-4 flex justify-evenly mx-8 mt-10">
-                <input
-                  className=" w-[350px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent mr-3"
-                  id="signup-username"
-                  name="signup-username"
-                  type="text"
-                  placeholder="Username"
-                  // onChange={handleChange}
-                  required
-                ></input>
-              </div>
+                      {/* <div className="mb-4 flex justify-evenly mx-8 mt-10">
+                          <input
+                              className=" w-[350px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent mr-3"
+                              id="signup-username"
+                              name="signup-username"
+                              type="text"
+                              placeholder="Username"
+                              onChange={handleChange}
+                              required>
+                          </input>
+                      </div> */}
 
-              <div className="mb-10 flex justify-center mx-8 mt-10">
-                <input
-                  className=" w-[350px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent mr-3"
-                  id="signup-password"
-                  name="signup-password"
-                  type="password"
-                  placeholder="Password"
-                  onChange={handleChange}
-                  required
-                ></input>
-              </div>
+                      <div className="mb-10 flex justify-center mx-8 mt-10">
+                          <input
+                              className=" w-[350px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent mr-3"
+                              id="password"
+                              name="password"
+                              type="password"
+                              placeholder="Password"
+                              onChange={handleChange}
+                              required>
+                          </input>
+                      </div>
 
               <div className="flex items-center justify-center">
                 <button
