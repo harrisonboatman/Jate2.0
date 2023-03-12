@@ -1,5 +1,5 @@
 import React, { createRef, useEffect, useRef } from "react";
-import Typed from 'react-typed';
+import Typed from "react-typed";
 
 import { gsap } from "gsap";
 import backgroundImg from "../assets/gallery-bg.png";
@@ -51,26 +51,30 @@ const Home = () => {
       <div className="relative w-full h-[100vh]">
         <Parallax className="h-[100vh] relative" strength={400}>
           <div className="absolute w-full h-[100vh] inset-0 bg-black opacity-10"></div>
-          <video autoPlay muted loop className="absolute w-full h-[100vh] object-fill" controls>
+          <video
+            autoPlay
+            muted
+            loop
+            className="absolute w-full h-[100vh] object-fill"
+            controls
+          >
             <source src={video3} type="video/mp4" />
           </video>
           <div className="absolute w-full h-[100vh] inset-0 bg-black opacity-20"></div>
           <div className="text-overlay absolute w-full">
-            <h1 className="text-9xl font-serif text-white flex h-[800px] justify-center items-center">
+            <h1 className="text-9xl font-sans text-white flex h-[800px] justify-center items-center">
               <span className="title-text">
-              Welcome to<span>&nbsp;</span>
-              <Typed
-          className=''
-            strings={['JATE', 'Just', 'Another', 'Taco', 'Emporium']}
-            typeSpeed={160}
-            backSpeed={60}
-            loop
-          />
-            
+                Welcome to<span>&nbsp;</span>
+                <Typed
+                  className=""
+                  strings={["J.A.T.E", "Just", "Another", "Taco", "Emporium"]}
+                  typeSpeed={160}
+                  backSpeed={60}
+                  loop
+                />
               </span>
             </h1>
           </div>
-       
         </Parallax>
       </div>
 
