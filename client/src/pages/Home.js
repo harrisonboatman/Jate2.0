@@ -22,6 +22,8 @@ import image17 from "../assets/gallery17.png";
 import image19 from "../assets/gallery19.png";
 import { Parallax } from "react-parallax";
 import video1 from "../assets/jate.mp4";
+import video2 from "../assets/video2.mp4";
+import video3 from "../assets/video3.mp4";
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
@@ -44,10 +46,11 @@ const Home = () => {
 
   return (
     <div>
-      <div className="relative w-full h-[100vh]">
-        <Parallax className="h-[100vh] relative" strength={400}>
-          <video autoPlay muted loop className="absolute w-full h-[100vh] object-fill" controls>
-            <source src={video1} type="video/mp4" />
+      <div className="relative w-full h-[90vh]">
+        <Parallax className="h-[90vh] relative" strength={400}>
+          <div className="absolute w-full h-[90vh] inset-0 bg-black opacity-10"></div>
+          <video autoPlay muted loop className="absolute w-full h-[90vh] object-fill" controls>
+            <source src={video3} type="video/mp4" />
           </video>
           <div className="absolute w-full h-[100vh] inset-0 bg-black opacity-40"></div>
           <div className="text-overlay absolute w-full">

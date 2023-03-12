@@ -17,19 +17,9 @@
   object-fit: cover;
 }
 
-.title-text {
-  padding: 2rem;
-  box-shadow: 0 1px 7px white ;
+video::-webkit-media-controls {
+  display: none;
 }
- @media screen and (max-width: 800px) {
-    .title-text {
-      flex: 50%;
-      max-width: 50%;
-    }
-
- }
-  
- 
 
 /* .gallery-grid img {
   
@@ -43,7 +33,7 @@
 
 
 
-/* reponsive JATE Gallery */
+ /* reponsive JATE Gallery  */
 /* @media screen and (max-width: 800px) {
   .gallery-column {
     flex: 50%;
