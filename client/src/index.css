@@ -17,6 +17,19 @@
   object-fit: cover;
 }
 
+  .title-text {
+    padding: 2rem;
+    box-shadow: 0 1px 7px white ;
+  }
+   @media screen and (max-width: 800px) {
+      .title-text {
+        flex: 50%;
+        max-width: 50%;
+      }
+    }
+  
+   
+
 video::-webkit-media-controls {
   display: none;
 }

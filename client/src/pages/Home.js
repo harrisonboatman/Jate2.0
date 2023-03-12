@@ -46,15 +46,15 @@ const Home = () => {
 
   return (
     <div>
-      <div className="relative w-full h-[90vh]">
-        <Parallax className="h-[90vh] relative" strength={400}>
-          <div className="absolute w-full h-[90vh] inset-0 bg-black opacity-10"></div>
-          <video autoPlay muted loop className="absolute w-full h-[90vh] object-fill" controls>
+      <div className="relative w-full h-[100vh]">
+        <Parallax className="h-[100vh] relative" strength={400}>
+          <div className="absolute w-full h-[100vh] inset-0 bg-black opacity-10"></div>
+          <video autoPlay muted loop className="absolute w-full h-[100vh] object-fill" controls>
             <source src={video3} type="video/mp4" />
           </video>
           <div className="absolute w-full h-[100vh] inset-0 bg-black opacity-40"></div>
           <div className="text-overlay absolute w-full">
-            <h1 className="text-8xl font-serif text-white flex h-[40vh] justify-center items-center">
+            <h1 className="text-8xl font-serif text-white flex h-[600px] justify-center items-center">
               <span className="title-text">
               Welcome to<span>&nbsp;</span>
               <span>J</span>
@@ -64,15 +64,7 @@ const Home = () => {
               </span>
             </h1>
           </div>
-          <div className="absolute w-full">
-            <h1 className="text-4xl text-white flex justify-between items-end w-full h-[95vh] pl-24 pr-24">
-              <div>Just </div>
-              <div>Another </div>
-              <div>Taco </div>
-              <div>Emporium </div>
-
-            </h1>
-          </div>
+       
         </Parallax>
       </div>
 
