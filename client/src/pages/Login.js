@@ -34,7 +34,7 @@ function Login(props) {
     <form onSubmit={handleFormSubmit}>
       <div className="background">
 
-        <div className="flex items-center justify-center h-[80vh] bg-">
+        <div className="flex items-center justify-center h-[100vh] bg-">
           <div className=" grid grid-cols-8 w-[80vw] shadow-2xl">
             <div className="col-span-5 bg-white border h-[70vh] ">
               <h1 className="text-3xl flex justify-center items-center py-20 text-[#5a0c1d]">
@@ -47,45 +47,45 @@ function Login(props) {
               <div className="flex items-center justify-center">
                 <div className="bg-white p-8 border-l-[10px] border-b-[10px] border-[#dfa196] ">
 
-                  
-                    <div className="mb-4">
-                      <label className="block text-gray-700 font-bold mb-1 " for="username">
 
-                      </label>
-                      <input
-                        className=" w-[350px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                        id="email"
-                        name="email"
-                        type="text"
-                        placeholder="Email"
-                        onChange={handleChange}
-                        required>
-                      </input>
-                    </div>
-                    <div className="mb-6">
-                      <label className="block text-gray-700 font-bold mb-1 " for="password">
+                  <div className="mb-4">
+                    <label className="block text-gray-700 font-bold mb-1 " for="username">
 
-                      </label>
-                      <input
-                        className="w-[350px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                        id="password"
-                        name="password"
-                        type="password"
-                        placeholder="Password"
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    <div className="flex items-center justify-center">
-                      <button
-                        className="w-[200px] rounded-3xl bg-[#5a0c1d] hover:bg-[#a21634] text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
-                        type="submit"
-                      >
-                        Sign In
-                      </button>
+                    </label>
+                    <input
+                      className=" w-[350px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                      id="email"
+                      name="email"
+                      type="text"
+                      placeholder="Email"
+                      onChange={handleChange}
+                      required>
+                    </input>
+                  </div>
+                  <div className="mb-6">
+                    <label className="block text-gray-700 font-bold mb-1 " for="password">
 
-                    </div>
-                  
+                    </label>
+                    <input
+                      className="w-[350px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                      id="password"
+                      name="password"
+                      type="password"
+                      placeholder="Password"
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <button
+                      className="w-[200px] rounded-3xl bg-[#5a0c1d] hover:bg-[#a21634] text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
+                      type="submit"
+                    >
+                      Sign In
+                    </button>
+
+                  </div>
+
                 </div>
               </div>
 
