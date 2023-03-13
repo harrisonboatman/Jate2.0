@@ -20,6 +20,7 @@ const typeDefs = gql`
     _id: ID
     purchaseDate: String
     products: [Product]
+    status: String
   }
 
   type User {
@@ -58,6 +59,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     updateUserToManager(_id: ID!, userType: String!): User
     updateUserToWhatever(_id: ID!, userType: String!): User
+    updateOrderToWhatever(_id: ID!, status: String!): Order
   }
 `;
 
