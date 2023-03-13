@@ -62,11 +62,11 @@ const Home = () => {
           </video>
           <div className="absolute w-full h-[100vh] inset-0 bg-black opacity-20"></div>
           <div className="text-overlay absolute w-full">
-            <h1 className="text-9xl font-sans text-white flex h-[800px] justify-center items-center">
-              <span className="title-text">
-                Welcome to<span>&nbsp;</span>
+            <h1 className="text-3xl font-sans text-white flex h-[800px] justify-center items-center md:text-7xl lg:text-9xl">
+              <span className="title-text text-center">
+                Welcome to<span>&nbsp;</span><br></br>
                 <Typed
-                  className=""
+                  className="jate-title"
                   strings={["J.A.T.E", "Just", "Another", "Taco", "Emporium"]}
                   typeSpeed={160}
                   backSpeed={60}
