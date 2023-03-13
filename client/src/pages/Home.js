@@ -1,6 +1,6 @@
 import React, { createRef, useEffect, useRef } from "react";
 import Typed from "react-typed";
-
+import Contact from "./Contact";
 import { gsap } from "gsap";
 import backgroundImg from "../assets/gallery-bg.png";
 import { ScrollTrigger } from "gsap/all";
@@ -62,11 +62,11 @@ const Home = () => {
           </video>
           <div className="absolute w-full h-[100vh] inset-0 bg-black opacity-20"></div>
           <div className="text-overlay absolute w-full">
-            <h1 className="text-9xl font-sans text-white flex h-[800px] justify-center items-center">
-              <span className="title-text">
-                Welcome to<span>&nbsp;</span>
+            <h1 className="text-3xl font-sans text-white flex h-[800px] justify-center items-center md:text-7xl lg:text-9xl">
+              <span className="title-text text-center">
+                Welcome to<span>&nbsp;</span><br></br>
                 <Typed
-                  className=""
+                  className="jate-title"
                   strings={["J.A.T.E", "Just", "Another", "Taco", "Emporium"]}
                   typeSpeed={160}
                   backSpeed={60}
@@ -227,6 +227,7 @@ const Home = () => {
           <hr class="w-full h-px my-12 bg-gray-200 border-1 dark:bg-gray-800 ">
             
           </hr>
+          <Contact />
         </div>
         {/* <div class="container scale-110 mx-auto px-5 py-2 lg:px-32 lg:pt-24 lg:pb-24">
     <div class="-m-1 flex flex-wrap md:-m-2">

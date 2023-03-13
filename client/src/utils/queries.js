@@ -53,6 +53,7 @@ export const QUERY_USER = gql`
     user {
       firstName
       lastName
+      userType
       orders {
         _id
         purchaseDate
@@ -67,4 +68,14 @@ export const QUERY_USER = gql`
       }
     }
   }
+`;
+
+export const USER_TYPE = gql`
+{
+  user{
+    firstName
+    lastName
+    userType
+  }
+}
 `;
