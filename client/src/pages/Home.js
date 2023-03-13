@@ -48,7 +48,7 @@ const Home = () => {
 
   return (
     <div>
-      <div className="relative w-full h-[100vh]">
+      <div className="relative lg:w-full h-[100vh]">
         <Parallax className="h-[100vh] relative" strength={400}>
           <div className="absolute w-full h-[100vh] inset-0 bg-black opacity-10"></div>
           <video
@@ -79,20 +79,21 @@ const Home = () => {
       </div>
 
       <div className="grid grid-cols-3 gap-5 mt-[10rem] h-[90vh] overflow-hidden relative mb-[12rem]">
-        <Parallax className="h-[70vh]" bgImage={image3} strength={600}>
+        <Parallax className="h-[70vh] rounded-lg" bgImage={image3} strength={600}>
           <div style={{ height: "150px" }}></div>
         </Parallax>
 
         <Parallax
-          className="h-[70vh] mt-[5rem]"
+          className="h-[70vh] mt-[5rem] rounded-lg"
           bgImage={image2}
           strength={600}
+          
         >
           <div style={{ height: "150px" }}></div>
         </Parallax>
 
         <Parallax
-          className="h-[70vh] mt-[10rem]"
+          className="h-[70vh] mt-[10rem] rounded-lg"
           bgImage={image4}
           strength={600}
         >
@@ -217,10 +218,15 @@ const Home = () => {
                     src={image10}
                     alt=""
                   />
+                  <br />
+                  <br />
                 </div>
               </div>
             </div>
           </div>
+          <hr class="w-full h-px my-12 bg-gray-200 border-1 dark:bg-gray-800 ">
+            
+          </hr>
         </div>
         {/* <div class="container scale-110 mx-auto px-5 py-2 lg:px-32 lg:pt-24 lg:pb-24">
     <div class="-m-1 flex flex-wrap md:-m-2">
