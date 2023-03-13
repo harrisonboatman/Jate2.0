@@ -43,6 +43,11 @@ video::-webkit-media-controls {
   object-fit: cover;
 }
 
+.jate-title {
+  display: flex;
+  justify-content: center;
+}
+
 
 /* Use code above if you want to implement a sticky/true pin using gsap, set grid ml-[280px] if decide to */
 
