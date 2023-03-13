@@ -19,6 +19,7 @@
     "webpack-cli": "^5.0.1"
   },
   "dependencies": {
-    "graphql": "^16.6.0"
+    "graphql": "^16.6.0",
+    "react-typed": "^1.2.0"
   }
 }
