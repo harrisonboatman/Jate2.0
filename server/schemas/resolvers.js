@@ -100,7 +100,7 @@ const resolvers = {
 
       return { token, user };
     },
-    addProduct: async (parent, args) => {
+    addProduct: async (parent, args, context) => {
       const product = await Product.create(args)
       return product
     },
