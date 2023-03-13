@@ -8,6 +8,15 @@ const resolvers = {
     users: async () => {
       return await User.find();
     },
+    orders: async () => {
+      const user = await User.find().populate({
+        path: "orders.products",
+        populate: "category"
+      });
+
+      return user
+      // return user.orders.id(_id);
+    },
     categories: async () => {
       return await Category.find();
     },
