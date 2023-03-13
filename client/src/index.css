@@ -206,12 +206,19 @@ input:focus {
   box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
 }
 
-/* .container {
+.container {
   width: 85%;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-} */
+}
+
+.container-detail {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .flex-row {
   display: flex;

@@ -84,28 +84,33 @@ function Detail() {
   return (
     <>
       {currentProduct && cart ? (
-        <div className="container my-1">
-          <Link to="/">← Back to Products</Link>
+        <div className="container-detail  mt-20">
+          <Link to="/menu">← Back to Products</Link>
+<div class="min-h-fit p-10 flex items-center scale-75 hover:scale-80 hover:ease-in-out ">
+<div class="container-detail  mx-auto p-9 bg-white max-w-sm rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-300">
+          <h2 class="mt-5 text-4xl font-semibold p-5">{currentProduct.name}</h2>
 
-          <h2>{currentProduct.name}</h2>
+          <p class="mt-5 text-2xl font-semibold p-5">{currentProduct.description}</p>
 
-          <p>{currentProduct.description}</p>
-
-          <p>
-            <strong>Price:</strong>${currentProduct.price}{' '}
-            <button onClick={addToCart}>Add to Cart</button>
-            <button
+          <p class="ml-4 text-lg">
+            <strong>Price: </strong>${currentProduct.price}{' '}
+           </p> 
+           <div class="flex justify-center items-center mb-2">
+           <button class="mx-2 text-white text-md font-semibold bg-green-400 py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition duration-500 transform-gpu hover:scale-110 " onClick={addToCart}>Add to Cart</button>
+            <button class="mx-2 text-white text-md font-semibold bg-red-400 py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition duration-500 transform-gpu hover:scale-110 "
               disabled={!cart.find((p) => p._id === currentProduct._id)}
               onClick={removeFromCart}
             >
               Remove from Cart
             </button>
-          </p>
+            </div>
 
           <img
             src={`/images/${currentProduct.image}`}
             alt={currentProduct.name}
           />
+        </div>
+        </div>
         </div>
       ) : null}
       {loading ? <img src={spinner} alt="loading" /> : null}
