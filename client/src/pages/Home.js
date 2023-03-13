@@ -1,6 +1,6 @@
 import React, { createRef, useEffect, useRef } from "react";
 import Typed from "react-typed";
-
+import Contact from "./Contact";
 import { gsap } from "gsap";
 import backgroundImg from "../assets/gallery-bg.png";
 import { ScrollTrigger } from "gsap/all";
@@ -227,6 +227,7 @@ const Home = () => {
           <hr class="w-full h-px my-12 bg-gray-200 border-1 dark:bg-gray-800 ">
             
           </hr>
+          <Contact />
         </div>
         {/* <div class="container scale-110 mx-auto px-5 py-2 lg:px-32 lg:pt-24 lg:pb-24">
     <div class="-m-1 flex flex-wrap md:-m-2">
