@@ -69,10 +69,10 @@ function OrderManagement(props) {
             {user ? (<p>welcome {user.firstName} who is a {role}</p>) : null}
             {manager ? (<div class="mt-5">
                 <p class="text-center">yous a manager</p>
-                <p class="text-center">You can add a product to the website below!</p>
-                <div class="flex justify-center">
+                <div class="flex justify-center mt-5">
                     <form onSubmit={handleFormSubmit}
                         class="p-10 bg-gray-900 rounded-xl">
+                            <p class="text-center text-green-500 font-extrabold mb-3">You can add a product to the website below!</p>
                         <div class="mb-6">
                             <label for="product-name" class="block mb-2 text-sm font-medium text-green-500">Product Name</label>
                             <input id='name'
