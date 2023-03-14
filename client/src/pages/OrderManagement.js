@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Orders from "../components/Orders"
 import { useQuery } from '@apollo/client';
 import { QUERY_ALL_USERS, QUERY_USER } from '../utils/queries';
 import { useMutation } from "@apollo/client";
@@ -55,6 +54,8 @@ function OrderManagement(props) {
         } catch (e) {
             console.log(e);
         }
+        document.location.reload();
+
     };
 
     const handleChange = (event) => {
@@ -116,7 +117,7 @@ function OrderManagement(props) {
                             </input>
                         </div>
                         <div class="mb-6">
-                            <label for="product-description" class="block mb-2 text-sm font-medium text-green-500">Product Description</label>
+                            <label for="product-description" class="block mb-2 text-sm font-medium text-green-500">Product Price</label>
                             <input id='price'
                                 name='price'
                                 type='text'
