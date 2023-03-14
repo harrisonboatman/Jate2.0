@@ -61,7 +61,7 @@ function Nav() {
     // ="flex-row px-1"
     >
 
-<nav className="bg-transparent px-2 sm:px-4 py-2.5  fixed w-full z-20 top-0 left-0 ">
+<nav className="bg-gray-800 px-2 sm:px-4 fixed w-full z-10 top-0 left-0 ">
   <div className="container flex flex-wrap items-center justify-between mx-auto">
   <a href="https://flowbite.com/" className="flex items-center">
   <Link to="/" className="hover:no-underline text-3xl font-bold text-white">
