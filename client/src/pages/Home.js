@@ -114,12 +114,12 @@ const Home = () => {
       </div>
 <div className="bg-black h-[20vh]"></div>
       <div className="lg:grid grid-cols-3 gap-5 h-[90vh] overflow-hidden relative mb-[15rem] bg-black">
-        <Parallax className="lg:h-[70vh] rounded-lg border-4 border-green-500" bgImage={image3} strength={600}>
+        <Parallax className="lg:h-[70vh] rounded-lg " bgImage={image3} strength={600}>
           <div style={{ height: "150px" }}></div>
         </Parallax>
 
         <Parallax
-          className="lg:h-[70vh] mt-[5rem] rounded-lg border-4 border-green-500"
+          className="lg:h-[70vh] mt-[5rem] rounded-lg "
           bgImage={image2}
           strength={600}
           
@@ -128,7 +128,7 @@ const Home = () => {
         </Parallax>
 
         <Parallax
-          className="lg:h-[70vh] mt-[10rem] rounded-lg border-4 border-green-500"
+          className="lg:h-[70vh] mt-[10rem] rounded-lg"
           bgImage={image4}
           strength={600}
         >
