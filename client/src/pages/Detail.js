@@ -108,31 +108,32 @@ function Detail() {
           <img src={background} className="w-full h-screen" />
           <div className="absolute w-full h-[100vh] inset-0 bg-black opacity-50"></div>
           <div ref={myRef} class="absolute top-0 w-full h-full flex flex-col justify-center text-black text-center">
-            <h1 className='text-8xl text-green-600 h-[20vh] text-center font-serif font-bold'>
+            <h1 className='entre-title lg:text-8xl md:text-6xl sm:text-5xl text-green-600 h-[20vh] text-center font-serif font-bold'>
               Entre´ Display
             </h1>
+            <div className=' products-link absolute text-green-500 ring-white lg:ring-2 md:ring-1 sm:ring-0lg:p-[10px] md:p-[7px] sm:p-[3px] lg:text-lg md:text-base sm:text-sm'>
           <Link to="/menu">← Back to Products</Link>
           <Cart />
-          
+          </div>
           
       <div class=" flex justify-center items-center">
-      <img className=' h-[50vh] w-auto object-cover pl-32'
+      <img className=' lg:h-[50vh] md:h-[40vh] sm:h-[30vh] w-auto object-cover lg:pl-32'
             src={`/images/${currentProduct.image}`}
             alt={currentProduct.name}
           /> 
-          <ul className='items-center w-[50vw] h-[45vh] mx-12 px-20 text-white backdrop-sepia-0 bg-white/30'>
+          <ul className='items-center lg:w-[50vw] md:w-[40vw] h-[45vh] mx-12 px-20 text-white backdrop-sepia-0 bg-white/30'>
 
-          <li class=" py-4 text-6xl font-bold text-green-500">{currentProduct.name}</li>
+          <li class=" lg:py-4 md:p-0 sm:p-0 lg:text-6xl md:text-4xl sm:text-xl font-bold text-green-500">{currentProduct.name}</li>
 
-          <li class="text-2xl py-9">{currentProduct.description}</li>
+          <li class="lg:text-2xl md:text-xl sm:text-base lg:py-9 md:py-4 sm:py-0">{currentProduct.description}</li>
 
-          <li class="text-3xl py-8">
+          <li class="lg:text-3xl md:text-2xl sm:text-lg lg:py-8 md:py-3 sm:py-0">
             <strong>Price: </strong>${currentProduct.price}{' '}
            </li> 
            
            <div class="flex justify-center items-center mb-2">
-           <button class="mx-2 text-black text-lg font-semibold bg-green-400 py-3 px-4 rounded-lg shadow-md hover:shadow-lg transition duration-500 transform-gpu hover:scale-110 " onClick={addToCart}>Add to Cart</button>
-            <button class="mx-2 text-black cursor-pointer text-lg font-semibold bg-red-400 py-3 px-4 rounded-lg shadow-md hover:shadow-lg transition duration-500 transform-gpu hover:scale-110 "
+           <button class="mx-2 text-black lg:text-lg md:text-base font-semibold bg-green-400 lg:py-3 lg:px-4 md:py-2 md:px-3 sm:py-1 sm:px-2 rounded-lg shadow-md hover:shadow-lg transition duration-500 transform-gpu hover:scale-110 " onClick={addToCart}>Add to Cart</button>
+            <button class="mx-2 text-black cursor-pointer lg:text-lg md:text-base font-semibold bg-red-400 lg:py-3 lg:px-4 md:py-2 md:px-3 sm:py-1 sm:px-2 rounded-lg shadow-md hover:shadow-lg transition duration-500 transform-gpu hover:scale-110 "
               disabled={!cart.find((p) => p._id === currentProduct._id)}
               onClick={removeFromCart}
             >
