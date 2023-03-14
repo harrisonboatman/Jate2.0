@@ -16,6 +16,10 @@ const orderSchema = new Schema({
   status: {
     type: String,
     default: 'submitted'
+  }, 
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
   }
 });
 

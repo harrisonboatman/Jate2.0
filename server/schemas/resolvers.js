@@ -9,13 +9,7 @@ const resolvers = {
       return await User.find();
     },
     orders: async () => {
-      const user = await User.find().populate({
-        path: "orders.products",
-        populate: "category"
-      });
-
-      return user
-      // return user.orders.id(_id);
+      return await Order.find().populate("products");
     },
     categories: async () => {
       return await Category.find();
@@ -45,7 +39,7 @@ const resolvers = {
           populate: "category",
         });
 
-        user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
+        // user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
 
         return user;
       }
@@ -112,14 +106,18 @@ const resolvers = {
       const product = await Product.create(args)
       return product
     },
-    addOrder: async (parent, { products }, context) => {
-      console.log(context);
+    addOrder: async (parent, { products, user }, context) => {
+      
       if (context.user) {
-        const order = new Order({ products });
+        user = context.user._id
+        const order = new Order({ products } );
+        order.user = user
+        console.log(order, user)
+        await order.save();
 
-        await User.findByIdAndUpdate(context.user._id, {
-          $push: { orders: order },
-        });
+        // await User.findByIdAndUpdate(context.user._id, {
+        //   $push: { orders: order._id },
+        // },{new: true});
 
         return order;
       }
@@ -167,6 +165,8 @@ const resolvers = {
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
+
+      console.error(email, password);
 
       if (!user) {
         throw new AuthenticationError("Incorrect credentials");
