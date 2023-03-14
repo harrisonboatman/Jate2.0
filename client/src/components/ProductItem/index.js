@@ -47,8 +47,8 @@ function ProductItem(item) {
     //   </div>
     //   <button onClick={addToCart}>Add to cart</button>
 
-      <div class="min-h-fit p-10 md:w-1/4 flex items-center scale-75 hover:scale-80 hover:ease-in-out " >
-        <div class="container mx-auto p-9 bg-white max-w-sm rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-300">
+    <div class="min-h-fit min-w-fit mt-10 px-5  md:w-1/4 flex items-center scale-75 hover:scale-80 hover:ease-in-out " >
+        <div class="container-item mx-auto bg-white max-w-sm rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-300">
         <Link to={`/products/${_id}`}>
           <img
             class="rounded-xl"
@@ -68,9 +68,36 @@ function ProductItem(item) {
             </div>
           </div>
         </div>
-      </div>      
+      </div>    
+  
  
   );
 }
 
 export default ProductItem;
+
+
+// Need to find a way to use Map method in order to get cards in columns
+
+{/* <div class="container mx-auto">
+    <div class="grid grid-cols-3 gap-4">
+      {products.map(product => (
+        <div key={product._id} class="bg-white shadow-md rounded-xl overflow-hidden">
+          <Link to={`/products/${product._id}`}>
+            <img
+              class="w-full h-64 object-cover"
+              src={`/images/${product.image}`} 
+              alt={product.name}
+            />
+          </Link>
+          <div class="p-4">
+            <h1 class="text-lg font-semibold mb-2">{product.name}</h1>
+            <p class="text-gray-600">${product.price}</p>
+            <button onClick={addToCart} class="mt-4 text-white text-md font-semibold bg-green-400 py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition duration-500 transform-gpu hover:scale-110 ">
+              Add to cart
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div> */}

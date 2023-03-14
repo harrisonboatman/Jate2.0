@@ -10,9 +10,10 @@ import { useStoreContext } from '../../utils/GlobalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART, UPDATE_PRODUCTS } from '../../utils/actions';
 import './style.css';
 
+
 // stripePromise returns a promise with the stripe object as soon as the Stripe package loads
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
-
+let cartQuant;
 const Cart = () => {
   const [state, dispatch] = useStoreContext();
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
@@ -48,6 +49,8 @@ const Cart = () => {
     let sum = 0;
     state.cart.forEach((item) => {
       sum += item.price * item.purchaseQuantity;
+      console.log(item.purchaseQuantity)
+      const cartQuant = item.purchaseQuantity
     });
     return sum.toFixed(2);
   }
@@ -70,10 +73,10 @@ const Cart = () => {
 
   if (!state.cartOpen) {
     return (
-      <div className="cart-closed mt-20" onClick={toggleCart}>
+      <div className="cart-closed" onClick={toggleCart}>
         <span role="img" aria-label="trash">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-          <span>{state.cart.length}</span>
+          <span class="cart-no">{state.cart.length}</span>
         </span>
       </div>
     );
@@ -82,26 +85,30 @@ const Cart = () => {
   console.log(state.cart.length);
 
   return (
-    <div className="cart mt-20">
-      <div className="close" onClick={toggleCart}>
+    
+    <div className="cart">
+      <div className="close text-right" onClick={toggleCart}>
         [close]
       </div>
-      <h2>Shopping Cart</h2>
+      <div className='bg-white rounded-2xl w-full'>
+      <h2 className='text-center text-white font-bold my-7 bg-green-700 rounded-lg'>Shopping Cart</h2>
+      </div>
       {state.cart.length ? (
-        <div>
+        <div className='text-center'>
           {state.cart.map((item) => (
             <CartItem key={item._id} item={item} />
           ))}
 
-          <div className="flex-row space-between">
-            <strong>Total: ${calculateTotal()}</strong>
+          <div className="flex justify-center items-center ">
+            <div className='font-bold text-xl'>Total: ${calculateTotal()}
 
             {/* Check to see if the user is logged in. If so render a button to check out */}
             {Auth.loggedIn() ? (
-              <button onClick={submitCheckout}>Checkout</button>
+              <button className='text-white bg-green-400 ring-2 ring-green-500 hover:bg-green-600 p-3 rounded-xl ml-5 duration-300' onClick={submitCheckout}>Checkout</button>
             ) : (
-              <span>(log in to check out)</span>
+              <span className='text-red-600'>(log in to check out)</span>
             )}
+            </div>
           </div>
         </div>
       ) : (
@@ -109,7 +116,7 @@ const Cart = () => {
           <span role="img" aria-label="shocked">
             😱
           </span>
-          You haven't added anything to your cart yet!
+          You haven't added anything<br></br> to your cart yet!
         </h3>
       )}
     </div>

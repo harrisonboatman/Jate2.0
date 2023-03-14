@@ -32,20 +32,20 @@ function Login(props) {
   return (
 
     <form onSubmit={handleFormSubmit}>
-      <div className="background">
+      <div className="background bg-gradient-to-br from-gray-200 to-gray-600">
 
         <div className="flex items-center justify-center h-[100vh] bg-">
           <div className=" grid grid-cols-8 w-[80vw] shadow-2xl">
             <div className="col-span-5 bg-white border h-[70vh] ">
-              <h1 className="text-3xl flex justify-center items-center py-20 text-[#5a0c1d]">
+              <h1 className="text-3xl flex justify-center items-center py-20 text-green-700">
                 Welcome Back friend!
               </h1>
 
-              <h1 className="text-[2.5rem] text-[#5a0c1d] font-extrabold text-center mb-10">Login to Your Account</h1>
+              <h1 className="text-[2.5rem] text-green-700 font-extrabold text-center mb-10">Login to Your Account</h1>
 
 
               <div className="flex items-center justify-center">
-                <div className="bg-white p-8 border-l-[10px] border-b-[10px] border-[#dfa196] ">
+                <div className="bg-white p-8 border-l-[10px] border-b-[10px] border-green-500 ">
 
 
                   <div className="mb-4">
@@ -53,7 +53,7 @@ function Login(props) {
 
                     </label>
                     <input
-                      className=" w-[350px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                      className=" w-[350px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
                       id="email"
                       name="email"
                       type="text"
@@ -67,7 +67,7 @@ function Login(props) {
 
                     </label>
                     <input
-                      className="w-[350px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                      className="w-[350px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
                       id="password"
                       name="password"
                       type="password"
@@ -78,10 +78,10 @@ function Login(props) {
                   </div>
                   <div className="flex items-center justify-center">
                     <button
-                      className="w-[200px] rounded-3xl bg-[#5a0c1d] hover:bg-[#a21634] text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
+                      className="w-[200px] rounded-3xl bg-green-700 hover:bg-green-300 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline duration-150"
                       type="submit"
                     >
-                      Sign In
+                      Login
                     </button>
 
                   </div>
@@ -90,7 +90,7 @@ function Login(props) {
               </div>
 
             </div>
-            <div className="col-span-3 bg-[#5a0c1d]">
+            <div className="col-span-3 bg-green-700">
               <h1 className=" flex justify-center items-center text-6xl font-extrabold text-center text-white mt-[17vh] mb-14">
                 First Time<br></br> Here?
               </h1>
@@ -100,7 +100,7 @@ function Login(props) {
 
               <div className="flex items-center justify-center">
                 <button
-                  className="w-[200px] rounded-3xl text-[#5a0c1d] hover:bg-[#a21634] hover:text-white hover:border-2 hover:border-white bg-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
+                  className="w-[200px] rounded-3xl text-green-600 hover:bg-green-900 hover:text-white hover:border-2 hover:border-white bg-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline duration-150"
                   type="submit"
                 >
                   Sign Up
