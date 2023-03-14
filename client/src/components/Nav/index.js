@@ -1,4 +1,7 @@
 import React, { createRef, useEffect, useRef } from "react";
+import { useQuery } from '@apollo/client';
+import { QUERY_ALL_USERS, QUERY_USER } from '../../utils/queries';
+
 import { gsap } from "gsap";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
@@ -6,6 +9,19 @@ import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
 function Nav() {
+  const {data} = useQuery(QUERY_USER);
+  let user;
+  let role;
+  let manager = false;
+  let admin = false;
+  if(data) {
+    user = data.user;
+    role = data.user.userType;
+  }
+  if(role !== 'customer') {
+    manager = true;
+    admin = true;
+  }
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
@@ -101,6 +117,14 @@ function Nav() {
                     Contact
                   </button>
                 </li>
+                {admin || manager ? (<li>
+                  <button
+                    type="button"
+                    className="text-white hover:bg-green-500 lg:text-xl ring-white hover:ring-4 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
+                  >
+                    <Link to ="/ordermanagement">Order Management</Link>
+                  </button>
+                </li>): null}
               </ul>
             </div>
           </div>
