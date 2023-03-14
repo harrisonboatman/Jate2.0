@@ -50,7 +50,7 @@ function CategoryMenu() {
         <div>
           
         <div className='h-[15vh]'>
-        <button className=" bg-[#43464b] ring-2 ring-white text-white text-2xl rounded-xl p-2 hover:bg-green-500 duration-300"
+        <button className=" bg-[#43464b] ring-2 ring-white text-white lg:text-2xl md:text-lg sm: text-sm rounded-xl lg:p-2 md: p-1 hover:bg-green-500 duration-300"
           key={item._id}
           onClick={() => {
             handleClick(item._id);

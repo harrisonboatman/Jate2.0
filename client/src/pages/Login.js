@@ -35,8 +35,8 @@ function Login(props) {
       <div className="background bg-gradient-to-br from-gray-200 to-gray-600">
 
         <div className="flex items-center justify-center h-[100vh] bg-">
-          <div className=" grid grid-cols-8 w-[80vw] shadow-2xl">
-            <div className="col-span-5 bg-white border h-[70vh] ">
+          <div className=" lg:grid grid-cols-8 w-[80vw] shadow-2xl">
+            <div className="col-span-5 bg-white border lg:h-[70vh] md:[60vh] ">
               <h1 className="text-3xl flex justify-center items-center py-20 text-green-700">
                 Welcome Back friend!
               </h1>
@@ -53,7 +53,7 @@ function Login(props) {
 
                     </label>
                     <input
-                      className=" w-[350px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
+                      className=" lg:w-[350px] md: w-[300px] sm:w-[260px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
                       id="email"
                       name="email"
                       type="text"
@@ -67,7 +67,7 @@ function Login(props) {
 
                     </label>
                     <input
-                      className="w-[350px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
+                      className="lg:w-[350px] md: w-[300px] sm:w-[260px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
                       id="password"
                       name="password"
                       type="password"
@@ -90,8 +90,8 @@ function Login(props) {
               </div>
 
             </div>
-            <div className="col-span-3 bg-green-700">
-              <h1 className=" flex justify-center items-center text-6xl font-extrabold text-center text-white mt-[17vh] mb-14">
+            <div className="login-side lg:col-span-3 bg-green-700 lg:visible">
+              <h1 className=" flex justify-center items-center lg:text-6xl font-extrabold text-center text-white mt-[17vh] mb-14">
                 First Time<br></br> Here?
               </h1>
               <p className="mx-12 flex justify-center items-center text-xl text-center text-white mb-24">
@@ -103,7 +103,8 @@ function Login(props) {
                   className="w-[200px] rounded-3xl text-green-600 hover:bg-green-900 hover:text-white hover:border-2 hover:border-white bg-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline duration-150"
                   type="submit"
                 >
-                  Sign Up
+                  <Link to="/signup">
+                  Sign Up</Link>
                 </button>
 
               </div>

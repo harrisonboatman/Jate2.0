@@ -51,13 +51,14 @@ function Signup(props) {
                   className="w-[200px] rounded-3xl text-green-500 hover:bg-green-700 hover:text-white  bg-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline duration-150"
                   type="submit"
                 >
-                  Sign in
+                  <Link to="/login">
+                  Sign in </Link>
                 </button>
               </div>
             </div>
             <div className="col-span-5 bg-white h-[65vh]">
               <div className=" h-[16vh]">
-                <p className="text-[2.8rem] font-bold flex justify-center items-center h-full text-green-500 font-serif underline">
+                <p className="lg:text-[2.8rem] md:text-[2rem] sm:text-[1.4rem] font-bold flex justify-center items-center h-full text-green-500 text-center font-serif underline">
                   Welcome to our Family
                 </p>
               </div>
