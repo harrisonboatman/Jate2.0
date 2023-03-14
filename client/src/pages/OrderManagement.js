@@ -3,32 +3,50 @@ import Orders from "../components/Orders"
 import { useQuery } from '@apollo/client';
 import { QUERY_ALL_USERS, QUERY_USER } from '../utils/queries';
 import { useMutation } from "@apollo/client";
-import { ADD_PRODUCT } from "../utils/mutations";
+import { ADD_PRODUCT, UPDATE_USER } from "../utils/mutations";
 
 
 function OrderManagement(props) {
     const { data } = useQuery(QUERY_USER);
-    const { thing } = useQuery(QUERY_ALL_USERS)
+    const thing = useQuery(QUERY_ALL_USERS)
     let people;
     let user;
     let role;
     let manager = false;
     let admin = false;
-    const [formState, setFormState] = useState({ name: '', description: '', price: 0, category: '', image: '' });
+    const [formState, setFormState] = useState({ name: '', description: '', price: 0, category: '', image: '', _id: '', userType: '' });
     const [product, { error }] = useMutation(ADD_PRODUCT);
+    const [job] = useMutation(UPDATE_USER)
 
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-        console.log(thing)
         let productPrice = document.querySelector('#price').value
         productPrice = JSON.parse(productPrice);
         console.log(productPrice)
-        
+
 
         try {
             const mutationResponse = await product({
                 variables: { name: formState.name, description: formState.description, price: productPrice, category: formState.category, image: formState.image },
+            });
+            console.log(mutationResponse);
+            console.log('hello')
+
+        } catch (e) {
+            console.log(e);
+        }
+    };
+    const handleJobChange = async (event) => {
+        event.preventDefault();
+        let _id = document.querySelector('#_id').value
+        console.log(_id)
+        let userJob = document.querySelector('#userType').value
+        console.log(userJob)
+
+        try {
+            const mutationResponse = await job({
+                variables: { id: _id, userType: userJob },
             });
             console.log(mutationResponse);
             console.log('hello')
@@ -50,8 +68,8 @@ function OrderManagement(props) {
         role = data.user.userType;
 
     }
-    if(thing) {
-        people = thing.users;
+    if (thing) {
+        people = thing.data;
     }
     if (role === 'manager') {
         manager = true
@@ -118,16 +136,30 @@ function OrderManagement(props) {
 
             </div>) : null}
 
-            {admin ? (<div className = 'mt-[3rem]'><p>wow you are an admin!</p>
+            {admin ? (<div className='mt-[3rem]'><p>wow you are an admin!</p>
 
-            <label for="user-names">Choose a user: </label>
-<select name="user-names" id="user-names">
-
-    <option value="rigatoni">Rigatoni</option>
-  <option value="dave">Dave</option>
-  <option value="pumpernickel">Pumpernickel</option>
-  <option value="reeses">Reeses</option>
-</select>
+                <form onSubmit={handleJobChange}>
+                    <label for="user-names">Choose a user to change job of: </label>
+                    <select name="_id" id="_id">
+                        {people.users.map((person) => (
+                            <option value={person._id}>{person.firstName} {person._id}</option>
+                        ))}
+                        
+                    </select>
+                    <label>Choose which job you would like them to be now:</label>
+                    <select name='userType' id='userType'>
+                        <option value='employee'>Employee</option>
+                        <option value='manager'>Manager</option>
+                        <option value='admin'>Admin</option>
+                        <option value ='customer'>Customer</option>
+                    </select>
+                    <button
+                        className="w-[200px] rounded-3xl bg-[#5a0c1d] hover:bg-[#a21634] text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
+                        type="submit"
+                    >
+                        Change employee job!
+                    </button>
+                </form>
             </div>
             ) : null}
 
