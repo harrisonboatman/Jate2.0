@@ -298,7 +298,7 @@ input:focus {
   }
   .categories-menu{
     margin-left: 10px;
-    margin-top: 16px;
+    margin-top:-5px;
     z-index: 4;
     position: fixed;
     background-color: white;
