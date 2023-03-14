@@ -14,12 +14,14 @@ function Nav() {
   let role;
   let manager = false;
   let admin = false;
+  let customer = true;
   if(data) {
     user = data.user;
     role = data.user.userType;
   }
   if(role !== 'customer') {
     manager = true;
+    customer= false;
     admin = true;
   }
   function showNavigation() {
@@ -117,7 +119,7 @@ function Nav() {
                     Contact
                   </button>
                 </li>
-                {admin || manager ? (<li>
+                {!customer ? (<li>
                   <button
                     type="button"
                     className="text-white hover:bg-green-500 lg:text-xl ring-white hover:ring-4 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
@@ -125,6 +127,7 @@ function Nav() {
                     <Link to ="/ordermanagement">Order Management</Link>
                   </button>
                 </li>): null}
+                
               </ul>
             </div>
           </div>
