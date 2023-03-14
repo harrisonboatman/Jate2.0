@@ -2,6 +2,7 @@
   position: fixed;
   top: 0;
   right: 0;
+  margin-top: 65px;
   min-width: 20%;
   max-width: 30%;
   max-height: 60%;
@@ -10,6 +11,7 @@
   padding: .5rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, .5);
   border-bottom-left-radius: .5rem;
+  z-index: 1;
 }
 
 .cart h2 {
@@ -61,11 +63,13 @@
 
 @media screen and (max-width: 768px) {
   .cart {
-    position: relative;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-top: 65px;
     max-width: 100%;
     max-height: auto;
-    box-shadow: none;
-    background-color: inherit;
+    background-color: lightgray;
   }
 
   .cart-closed {

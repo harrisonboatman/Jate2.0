@@ -82,7 +82,7 @@ const Cart = () => {
   console.log(state.cart.length);
 
   return (
-    <div className="cart mt-20">
+    <div className="cart">
       <div className="close" onClick={toggleCart}>
         [close]
       </div>

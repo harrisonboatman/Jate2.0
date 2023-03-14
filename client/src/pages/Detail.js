@@ -84,8 +84,11 @@ function Detail() {
   return (
     <>
       {currentProduct && cart ? (
-        <div className="container-detail  mt-20">
+        <div className="container-detail mt-20">
+          <div class="flex">
           <Link to="/menu">← Back to Products</Link>
+          <Cart />
+          </div>
 <div class="min-h-fit p-10 flex items-center scale-75 hover:scale-80 hover:ease-in-out ">
 <div class="container-detail  mx-auto p-9 bg-white max-w-sm rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-300">
           <h2 class="mt-5 text-4xl font-semibold p-5">{currentProduct.name}</h2>
@@ -114,7 +117,7 @@ function Detail() {
         </div>
       ) : null}
       {loading ? <img src={spinner} alt="loading" /> : null}
-      <Cart />
+      {/* <Cart /> */}
     </>
   );
 }
