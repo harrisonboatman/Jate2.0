@@ -9,7 +9,12 @@ const resolvers = {
       return await User.find();
     },
     orders: async () => {
-      return await Order.find().populate("products");
+      return await Order.find().
+      populate({
+        path: "products",
+        populate: "category",
+      }).
+      populate("user")
     },
     categories: async () => {
       return await Category.find();
@@ -103,16 +108,15 @@ const resolvers = {
       return { token, user };
     },
     addProduct: async (parent, args, context) => {
-      const product = await Product.create(args)
-      return product
+      const product = await Product.create(args);
+      return product;
     },
     addOrder: async (parent, { products, user }, context) => {
-      
       if (context.user) {
-        user = context.user._id
-        const order = new Order({ products } );
-        order.user = user
-        console.log(order, user)
+        user = context.user._id;
+        const order = new Order({ products });
+        order.user = user;
+        console.log(order, user);
         await order.save();
 
         // await User.findByIdAndUpdate(context.user._id, {
