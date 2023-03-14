@@ -6,7 +6,17 @@ const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
 const resolvers = {
   Query: {
     users: async () => {
-      return await User.find();
+      return await User.find().populate({
+        path: "orders",
+        populate: {
+          path: "products",
+          model: 'Product'
+        } ,
+      });
+      //   {
+      //   path: "orders",
+      //   populate: "products"
+      // }
     },
     orders: async () => {
       return await Order.find().
@@ -16,6 +26,19 @@ const resolvers = {
       }).
       populate("user")
     },
+    ordersByUser: async (parent, { user: userId}) => {
+      console.log(userId);
+        const user = await User.findById(userId)
+        .populate({
+          path: "orders",
+          populate: {
+            path: "products"
+          } ,
+        });
+        return user.orders;
+    
+    },
+
     categories: async () => {
       return await Category.find();
     },
@@ -39,26 +62,26 @@ const resolvers = {
     },
     user: async (parent, args, context) => {
       if (context.user) {
-        const user = await User.findById(context.user._id).populate({
-          path: "orders.products",
-          populate: "category",
-        });
+        const user = await User.findById(context.user._id)
+        .populate({path: "orders",populate: "products"})
+        .populate({path: "orders.products", populate: "category"})
 
         // user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
 
         return user;
       }
 
+      
       throw new AuthenticationError("Not logged in");
     },
     order: async (parent, { _id }, context) => {
-      if (context.user) {
-        const user = await User.findById(context.user._id).populate({
-          path: "orders.products",
+      if (context.user ) {
+        const user = await Order.findById().populate({
+          path: "products",
           populate: "category",
         });
 
-        return user.orders.id(_id);
+        return user;
       }
 
       throw new AuthenticationError("Not logged in");
@@ -119,9 +142,9 @@ const resolvers = {
         console.log(order, user);
         await order.save();
 
-        // await User.findByIdAndUpdate(context.user._id, {
-        //   $push: { orders: order._id },
-        // },{new: true});
+        await User.findByIdAndUpdate(context.user._id, {
+          $push: { orders: order._id },
+        },{new: true});
 
         return order;
       }
