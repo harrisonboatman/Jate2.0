@@ -8,6 +8,7 @@ import {
 import { QUERY_CATEGORIES } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import '../../index.css'
+import background from '../../assets/categories-bg2.png'
 
 function CategoryMenu() {
   const [state, dispatch] = useStoreContext();
@@ -43,9 +44,13 @@ function CategoryMenu() {
   };
 
   return (
-    <div className="categories-menu">
+    <div className="categories-menu mt-[7vh] flex justify-around items-end w-full">
+      
       {categories.map((item) => (
-        <button className="bg-gray-700 text-white m-1"
+        <div>
+          
+        <div className='h-[15vh]'>
+        <button className=" bg-[#43464b] ring-2 ring-white text-white text-2xl rounded-xl p-2 hover:bg-green-500 duration-300"
           key={item._id}
           onClick={() => {
             handleClick(item._id);
@@ -53,6 +58,8 @@ function CategoryMenu() {
         >
           {item.name}
         </button>
+        </div>
+        </div>
       ))}
     </div>
   );

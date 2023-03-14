@@ -37,31 +37,35 @@ const CartItem = ({ item }) => {
   }
 
   return (
-    <div className="flex-row">
-      <div>
+    <div className="flex ">
+      <div className='flex justify-center items-center'>
         <img
+        
           src={`/images/${item.image}`}
           alt=""
         />
       </div>
       <div>
-        <div>{item.name}, ${item.price}</div>
+        <div className='text-xl mt-5'>{item.name}, ${item.price}</div>
         <div>
-          <span>Qty:</span>
-          <input
+          <span className='text-xl'>Qty:</span>
+          <input className='text-xl text-center'
             type="number"
             placeholder="1"
             value={item.purchaseQuantity}
             onChange={onChange}
           />
           <span
+          className='cursor-pointer'
             role="img"
             aria-label="trash"
             onClick={() => removeFromCart(item)}
+            
           >
             🗑️
           </span>
         </div>
+        <div className='bg-green-700 h-[1px] mb-5'></div>
       </div>
     </div>
   );

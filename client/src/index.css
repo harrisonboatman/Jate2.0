@@ -48,6 +48,28 @@ video::-webkit-media-controls {
   justify-content: center;
 }
 
+.categories-menu {
+  background-image: url('../src/assets/categories-bg2.png');
+  background-size: cover;
+  height: 50vh;
+}
+
+.navbar {
+  position: sticky;
+  z-index: 1000;
+}
+
+/* increased img size of trash can emoji for checkout */
+span[role="img"] {
+  font-size: 1.5em;
+  margin-left: 15px;
+}
+
+.about-us-img {
+  box-shadow: 10px 10px 10px black;
+}
+
+
 
 /* Use code above if you want to implement a sticky/true pin using gsap, set grid ml-[280px] if decide to */
 
@@ -211,7 +233,7 @@ span[role="img"] {
   box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
 } */
 
-.container {
+/* .container {
   width: 85%;
   max-width: 1200px;
   margin-left: auto;
@@ -223,14 +245,14 @@ span[role="img"] {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-}
+} */
 
 /* .flex-row {
   display: flex;
   flex-wrap: wrap;
 } */
 
-.categories-menu{
+/* .categories-menu{
   margin-top: 20px;
   z-index: 11;
   position: fixed;
@@ -238,7 +260,7 @@ span[role="img"] {
   width:100vw;
   display:flex;
   flex-wrap: wrap;
-}
+} */
 
 /* .space-between {
   justify-content: space-between;
