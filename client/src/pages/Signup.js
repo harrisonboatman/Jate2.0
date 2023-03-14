@@ -34,9 +34,9 @@ function Signup(props) {
     <form onSubmit={handleFormSubmit}>
       <div className="background bg-gradient-to-br from-gray-600 to-gray-200">
         <div className="flex items-center justify-center h-[100vh]">
-          <div className="grid grid-cols-8 w-[80vw] shadow-2xl">
-            <div className="col-span-3 bg-green-500 h-[65vh]">
-              <h1 className=" flex justify-center items-center text-6xl font-extrabold text-center text-white mt-[12vh] mb-20">
+          <div className="lg:grid grid-cols-8 w-[80vw] shadow-2xl">
+            <div className="login-side lg:col-span-3 bg-green-500 h-[65vh]">
+              <h1 className=" flex justify-center items-center lg:text-6xl md:text-4xl sm:text-4xl font-extrabold text-center text-white mt-[12vh] lg:mb-20 md:mb-10 sm:mb-4">
                 Joining<br></br> Jate?
               </h1>
               <p className="mx-12 flex justify-center items-center text-xl text-center text-white mb-24 md:mb-10">
@@ -56,16 +56,16 @@ function Signup(props) {
                 </button>
               </div>
             </div>
-            <div className="col-span-5 bg-white h-[65vh]">
-              <div className=" h-[16vh]">
-                <p className="lg:text-[2.8rem] md:text-[2rem] sm:text-[1.4rem] font-bold flex justify-center items-center h-full text-green-500 text-center font-serif underline">
+            <div className="col-span-5 bg-white lg:h-[65vh] md:h-[60vh] sm:h-[60vh]">
+              <div className=" lg:h-[16vh] md:h-[16vh] sm:h-35vh]">
+                <p className="lg:text-[2.8rem] md:text-[2.5rem] sm:text-[2.2rem] font-bold flex justify-center items-center h-full text-green-500 text-center font-serif underline">
                   Welcome to our Family
                 </p>
               </div>
 
                       <div className="mb-4 flex mx-10 mt-2 justify-center">
                           <input
-                              className=" w-[220px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent mr-3"
+                              className=" lg:w-[220px] md:w-[180px] sm:w-[160px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent mr-3"
                               id="firstName"
                               name="firstName"
                               type="text"
@@ -75,7 +75,7 @@ function Signup(props) {
                           </input>
 
                           <input
-                              className=" flex w-[300px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent ml-3"
+                              className=" flex lg:w-[300px] md:w-[230px] sm:w-[200px] border-2 border-gray-300 :p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent ml-3"
                               id="lastName"
                               name="lastName"
                               type="text"
@@ -85,20 +85,9 @@ function Signup(props) {
                           </input>
                       </div>
 
-              <div className="mb-4 flex justify-evenly mx-8 mt-10">
-                <input
-                  className=" w-[350px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent mr-3"
-                  id="signup-email"
-                  name="signup-email"
-                  type="text"
-                  placeholder="Email Address"
-                  onChange={handleChange}
-                  required
-                ></input>
-              </div>
                       <div className="mb-4 flex justify-evenly mx-8 mt-10">
                           <input
-                              className=" w-[350px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent mr-3"
+                              className=" lg:w-[350px] md:-[300px] sm:w-[260px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent mr-3"
                               id="email"
                               name="email"
                               type="text"
@@ -120,9 +109,9 @@ function Signup(props) {
                           </input>
                       </div> */}
 
-                      <div className="mb-10 flex justify-center mx-8 mt-10">
+                      <div className="lg:mb-10 md:mb-9 sm:mb-9 flex justify-center mx-8 mt-10">
                           <input
-                              className=" w-[350px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent mr-3"
+                              className=" lg:w-[350px] md:-[300px] sm:w-[260px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent mr-3"
                               id="password"
                               name="password"
                               type="password"
