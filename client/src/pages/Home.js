@@ -28,10 +28,8 @@ import video2 from "../assets/video2.mp4";
 import video3 from "../assets/video3.mp4";
 import aboutUs from "../assets/about-us.png";
 gsap.registerPlugin(ScrollTrigger);
-
 const Home = () => {
   const imageRefs = useRef([]);
-
   useEffect(() => {
     imageRefs.current.forEach((image, index) => {
       gsap.from(image, {
@@ -46,41 +44,33 @@ const Home = () => {
       });
     });
   }, []);
-
   const myRef = useRef(null);
-
     useEffect(() => {
         let fromVar = gsap.from(myRef.current, {
             opacity: 0,
             duration: 4,
             y: 90,
             immediateRender: false,
-            
         });
         return () => {
             fromVar.kill();
         };
     }, []);
-
     const containerRef = useRef(null);
-
   useEffect(() => {
     const el = containerRef.current;
     gsap.fromTo(el,
       { x: 1400 },
       {
-
         x: 0,
         duration: 2,
         scrollTrigger: {
           trigger: el,
           start: "top 85%",
-          
         },
       }
     );
   }, []);
-
   return (
     <div>
       <div className="relative lg:w-full h-[100vh]">
@@ -117,16 +107,13 @@ const Home = () => {
         <Parallax className="lg:h-[70vh] rounded-lg " bgImage={image3} strength={600}>
           <div style={{ height: "150px" }}></div>
         </Parallax>
-
         <Parallax
           className="lg:h-[70vh] mt-[5rem] rounded-lg "
           bgImage={image2}
           strength={600}
-          
         >
           <div style={{ height: "150px" }}></div>
         </Parallax>
-
         <Parallax
           className="lg:h-[70vh] mt-[10rem] rounded-lg"
           bgImage={image4}
@@ -148,38 +135,8 @@ const Home = () => {
   We are an independently owned company<br></br> who enjoy the finer things in life... <span className="font-bold">tacos.</span> <br></br>People come for the food, but end up staying for the good vibes! <br></br><span class="text-green-500">Just a</span> bunch of guys who found turned our passion into a career.<br></br><span class="text-green-500">Just a</span>bout the best tacos you'll ever taste.<br></br><span class="text-green-500">Just a</span>pproved for another location coming soon.<br></br><span class="text-green-500">Just Another Taco Emporium</span><br></br><p className="indent-8 text-2xl font-bold text-green-600"> - JATE</p>
 </h1>
 </div>
-
-        
-      
-
-      {/* <div className="gallery-grid">
-        <img ref={(el) => (imageRefs.current[0] = el)} src={image5} className="mb-2 col-span-2 row-span-2" />
-        <img ref={(el) => (imageRefs.current[1] = el)} src={image8} className="mb-4 col-span-2 row-span-1" />
-        <img ref={(el) => (imageRefs.current[2] = el)} src={image10} className="mb-0 col-span-1 row-span-1" />
-        <img ref={(el) => (imageRefs.current[3] = el)} src={image7}
-        className="mb-8 col-span-1 row-span-1" />
-        <img ref={(el) => (imageRefs.current[4] = el)} src={image11} className="m-0 col-span-2 row-span-2" />
-        <img ref={(el) => (imageRefs.current[5] = el)} src={image6} 
-        className="m-0 col-span-2 row-span-1" />
-        <img ref={(el) => (imageRefs.current[6] = el)} src={image15}
-        className="m-0 col-span-1 row-span-1" />
-        <img ref={(el) => (imageRefs.current[8] = el)} src={image12}
-        className="m-0 col-span-1 row-span-1"  />
-        <img ref={(el) => (imageRefs.current[9] = el)} src={image13}
-        className="m-0 col-span-2 row-span-2" />
-        <img ref={(el) => (imageRefs.current[10] = el)} src={image1}
-        className="m-0 col-span-2 row-span-1" />
-        <img ref={(el) => (imageRefs.current[11] = el)} src={image9}
-        className="m-0 col-span-1 row-span-1" />
-        <img ref={(el) => (imageRefs.current[7] = el)} src={image4}
-        className="m-0 col-span-1 row-span-1"  />
-        <img ref={(el) => (imageRefs.current[12] = el)} src={image16}className="m-0 col-span-1 row-span-1"  />
-        <img ref={(el) => (imageRefs.current[13] = el)} src={image14}className="m-0 col-span-1 row-span-1"  />
-        <img ref={(el) => (imageRefs.current[14] = el)} src={image17}className="m-0 col-span-1 row-span-1"  />
-        <img ref={(el) => (imageRefs.current[19] = el)} src={image19}className="m-0 col-span-1 row-span-1"  />
-       
-      </div> */}
-      <section class="overflow-hidden text-neutral-700">
+1:30
+<section class="overflow-hidden text-neutral-700">
         <div class="max-w-screen-2xl mx-auto px-4 py-16 lg:py-24 relative bg-gray-50">
           <div class="flex flex-col md:flex-row gap-5">
             <div class="flex flex-1 flex-col gap-5">
@@ -228,7 +185,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-
         <div class="max-w-screen-2xl mx-auto px-4 py-16 lg:py-24 relative bg-white">
           <div class="flex flex-col md:flex-row gap-4">
             <div class="flex flex-1 flex-col">
@@ -276,7 +232,6 @@ const Home = () => {
             </div>
           </div>
           <hr class="w-full h-px my-12 bg-gray-200 border-1 dark:bg-gray-800 ">
-            
           </hr>
           <Contact />
         </div>
@@ -321,7 +276,6 @@ const Home = () => {
             class="block h-full w-full rounded-lg object-cover ease-in duration-300 hover:scale-105 object-center"
             src={image12} />
         </div>
-        
       </div>
     </div>
   </div> */}
@@ -329,5 +283,4 @@ const Home = () => {
     </div>
   );
 };
-
 export default Home;
