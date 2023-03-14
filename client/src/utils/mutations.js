@@ -55,17 +55,20 @@ mutation addProduct(
   $name: String! 
   $description: String!
   $price: Float!
+  $image: String
   $category: [ID]!
   ) {
   addProduct(
     name: $name 
     description: $description 
     price: $price 
+    image: $image
     category: $category
     ) {
     name
     description
     price
+    image
     category {
       name
     }
