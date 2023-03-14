@@ -34,7 +34,7 @@ function Login(props) {
     <form onSubmit={handleFormSubmit}>
       <div className="background">
 
-        <div className="flex items-center justify-center h-[80vh] bg-">
+        <div className="flex items-center justify-center h-[100vh] bg-">
           <div className=" grid grid-cols-8 w-[80vw] shadow-2xl">
             <div className="col-span-5 bg-white border h-[70vh] ">
               <h1 className="text-3xl flex justify-center items-center py-20 text-[#5a0c1d]">
