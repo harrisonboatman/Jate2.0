@@ -45,11 +45,12 @@ function CategoryMenu() {
 
   return (
     <div className="categories-menu mt-[7vh] flex justify-around items-end w-full">
+    <div className="flex justify-around items-end w-full flex-wrap">
       
       {categories.map((item) => (
         <div>
           
-        <div className='h-[15vh]'>
+        <div className='my-2'>
         <button className=" bg-[#43464b] ring-2 ring-white text-white lg:text-2xl md:text-lg sm: text-sm rounded-xl lg:p-2 md: p-1 hover:bg-green-500 duration-300"
           key={item._id}
           onClick={() => {
@@ -61,6 +62,7 @@ function CategoryMenu() {
         </div>
         </div>
       ))}
+    </div>
     </div>
   );
 }

@@ -47,15 +47,17 @@ function ProductItem(item) {
     //   </div>
     //   <button onClick={addToCart}>Add to cart</button>
 
-    <div class=" mt-10 px-5 scale-75 flex hover:scale-80 hover:ease-in-out min-w-fit " >
-        <div class="container bg-white max-w-sm rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-300">
+    <div class="mt-10 px-5 scale-75 flex hover:scale-80 hover:ease-in-out min-w-fit">
+        <div class="container bg-white max-w-sm rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-300 p-10">
+          <div class="">
         <Link to={`/products/${_id}`}>
           <img
-            class="rounded-xl"
+            class="rounded-xl object-cover h-[40vh] w-[40vh]"
             src={`/images/${image}`} 
             alt={name}
           />
           </Link>
+          </div>
           <div class="flex justify-between items-center">
             <div>
               <h1 class="mt-5 text-2xl font-semibold">{name}</h1>
