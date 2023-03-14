@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
@@ -13,6 +13,8 @@ import {
 import { QUERY_PRODUCTS } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
 import spinner from '../assets/spinner.gif';
+import background from '../assets/bg-crop.png';
+import gsap from 'gsap';
 
 function Detail() {
   const [state, dispatch] = useStoreContext();
@@ -79,41 +81,67 @@ function Detail() {
     });
 
     idbPromise('cart', 'delete', { ...currentProduct });
+
   };
+
+  const myRef = useRef(null);
+
+    useEffect(() => {
+        let fromVar = gsap.from(myRef.current, {
+            opacity: 0,
+            duration: 2,
+            y: 40,
+            immediateRender: false,
+        });
+        return () => {
+            fromVar.kill();
+        };
+    }, []);
+
+    const webDev = useRef(null);
+
 
   return (
     <>
       {currentProduct && cart ? (
-        <div className="container-detail mt-20">
-          <div class="flex">
+        <div className="container-detail w-full h h-screen">
+          <img src={background} className="w-full h-screen" />
+          <div className="absolute w-full h-[100vh] inset-0 bg-black opacity-50"></div>
+          <div ref={myRef} class="absolute top-0 w-full h-full flex flex-col justify-center text-black text-center">
+            <h1 className='text-8xl text-green-600 h-[20vh] text-center font-serif font-bold'>
+              Entre´ Display
+            </h1>
           <Link to="/menu">← Back to Products</Link>
           <Cart />
-          </div>
-<div class="min-h-fit p-10 flex items-center scale-75 hover:scale-80 hover:ease-in-out ">
-<div class="container-detail  mx-auto p-9 bg-white max-w-sm rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-300">
-          <h2 class="mt-5 text-4xl font-semibold p-5">{currentProduct.name}</h2>
+          
+          
+      <div class=" flex justify-center items-center">
+      <img className=' h-[50vh] w-auto object-cover pl-32'
+            src={`/images/${currentProduct.image}`}
+            alt={currentProduct.name}
+          /> 
+          <ul className='items-center w-[50vw] h-[45vh] mx-12 px-20 text-white backdrop-sepia-0 bg-white/30'>
 
-          <p class="mt-5 text-2xl font-semibold p-5">{currentProduct.description}</p>
+          <li class=" py-4 text-6xl font-bold text-green-500">{currentProduct.name}</li>
 
-          <p class="ml-4 text-lg">
+          <li class="text-2xl py-9">{currentProduct.description}</li>
+
+          <li class="text-3xl py-8">
             <strong>Price: </strong>${currentProduct.price}{' '}
-           </p> 
+           </li> 
+           
            <div class="flex justify-center items-center mb-2">
-           <button class="mx-2 text-white text-md font-semibold bg-green-400 py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition duration-500 transform-gpu hover:scale-110 " onClick={addToCart}>Add to Cart</button>
-            <button class="mx-2 text-white text-md font-semibold bg-red-400 py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition duration-500 transform-gpu hover:scale-110 "
+           <button class="mx-2 text-black text-lg font-semibold bg-green-400 py-3 px-4 rounded-lg shadow-md hover:shadow-lg transition duration-500 transform-gpu hover:scale-110 " onClick={addToCart}>Add to Cart</button>
+            <button class="mx-2 text-black cursor-pointer text-lg font-semibold bg-red-400 py-3 px-4 rounded-lg shadow-md hover:shadow-lg transition duration-500 transform-gpu hover:scale-110 "
               disabled={!cart.find((p) => p._id === currentProduct._id)}
               onClick={removeFromCart}
             >
               Remove from Cart
             </button>
             </div>
-
-          <img
-            src={`/images/${currentProduct.image}`}
-            alt={currentProduct.name}
-          />
-        </div>
-        </div>
+            </ul>
+            </div>
+            </div>
         </div>
       ) : null}
       {loading ? <img src={spinner} alt="loading" /> : null}

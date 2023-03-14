@@ -32,10 +32,10 @@ function Signup(props) {
 
   return (
     <form onSubmit={handleFormSubmit}>
-      <div className="background">
-        <div className="flex items-center justify-center h-[80vh]">
+      <div className="background bg-gradient-to-br from-gray-600 to-gray-200">
+        <div className="flex items-center justify-center h-[100vh]">
           <div className="grid grid-cols-8 w-[80vw] shadow-2xl">
-            <div className="col-span-3 bg-[#5a0c1d] border h-[65vh]">
+            <div className="col-span-3 bg-green-500 h-[65vh]">
               <h1 className=" flex justify-center items-center text-6xl font-extrabold text-center text-white mt-[12vh] mb-20">
                 Joining<br></br> Jate?
               </h1>
@@ -48,7 +48,7 @@ function Signup(props) {
               </p>
               <div className="flex items-center justify-center">
                 <button
-                  className="w-[200px] rounded-3xl text-[#5a0c1d] hover:bg-[#a21634] hover:text-white hover:border-2 hover:border-white bg-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
+                  className="w-[200px] rounded-3xl text-green-500 hover:bg-green-700 hover:text-white  bg-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline duration-150"
                   type="submit"
                 >
                   Sign in
@@ -57,14 +57,14 @@ function Signup(props) {
             </div>
             <div className="col-span-5 bg-white h-[65vh]">
               <div className=" h-[16vh]">
-                <p className="text-[2.8rem] font-bold flex justify-center items-center h-full text-[#5a0c1d] font-serif underline">
+                <p className="text-[2.8rem] font-bold flex justify-center items-center h-full text-green-500 font-serif underline">
                   Welcome to our Family
                 </p>
               </div>
 
                       <div className="mb-4 flex mx-10 mt-2 justify-center">
                           <input
-                              className=" w-[220px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent mr-3"
+                              className=" w-[220px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent mr-3"
                               id="firstName"
                               name="firstName"
                               type="text"
@@ -74,7 +74,7 @@ function Signup(props) {
                           </input>
 
                           <input
-                              className=" flex w-[300px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent ml-3"
+                              className=" flex w-[300px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent ml-3"
                               id="lastName"
                               name="lastName"
                               type="text"
@@ -86,7 +86,7 @@ function Signup(props) {
 
               <div className="mb-4 flex justify-evenly mx-8 mt-10">
                 <input
-                  className=" w-[350px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent mr-3"
+                  className=" w-[350px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent mr-3"
                   id="signup-email"
                   name="signup-email"
                   type="text"
@@ -97,7 +97,7 @@ function Signup(props) {
               </div>
                       <div className="mb-4 flex justify-evenly mx-8 mt-10">
                           <input
-                              className=" w-[350px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent mr-3"
+                              className=" w-[350px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent mr-3"
                               id="email"
                               name="email"
                               type="text"
@@ -109,7 +109,7 @@ function Signup(props) {
 
                       {/* <div className="mb-4 flex justify-evenly mx-8 mt-10">
                           <input
-                              className=" w-[350px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent mr-3"
+                              className=" w-[350px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent mr-3"
                               id="signup-username"
                               name="signup-username"
                               type="text"
@@ -121,7 +121,7 @@ function Signup(props) {
 
                       <div className="mb-10 flex justify-center mx-8 mt-10">
                           <input
-                              className=" w-[350px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent mr-3"
+                              className=" w-[350px] border-2 border-gray-300 p-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent mr-3"
                               id="password"
                               name="password"
                               type="password"
@@ -134,7 +134,7 @@ function Signup(props) {
               <div className="flex items-center justify-center">
                 <button
                   onSubmit={handleFormSubmit}
-                  className="w-[200px] rounded-3xl text-white hover:bg-[#a21634] hover:text-white bg-[#5a0c1d] font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
+                  className="w-[200px] rounded-3xl text-white hover:bg-green-700 hover:text-white bg-green-500 font-bold py-2 px-4 focus:outline-none focus:shadow-outline duration-150"
                   type="submit"
                 >
                   Sign Up

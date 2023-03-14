@@ -10,6 +10,7 @@ import { useStoreContext } from '../../utils/GlobalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART, UPDATE_PRODUCTS } from '../../utils/actions';
 import './style.css';
 
+
 // stripePromise returns a promise with the stripe object as soon as the Stripe package loads
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 let cartQuant;
@@ -84,26 +85,30 @@ const Cart = () => {
   console.log(state.cart.length);
 
   return (
+    
     <div className="cart">
-      <div className="close" onClick={toggleCart}>
+      <div className="close text-right" onClick={toggleCart}>
         [close]
       </div>
-      <h2>Shopping Cart</h2>
+      <div className='bg-white rounded-2xl w-full'>
+      <h2 className='text-center text-white font-bold my-7 bg-green-700 rounded-lg'>Shopping Cart</h2>
+      </div>
       {state.cart.length ? (
-        <div>
+        <div className='text-center'>
           {state.cart.map((item) => (
             <CartItem key={item._id} item={item} />
           ))}
 
-          <div className="flex-row space-between">
-            <strong>Total: ${calculateTotal()}</strong>
+          <div className="flex justify-center items-center ">
+            <div className='font-bold text-xl'>Total: ${calculateTotal()}
 
             {/* Check to see if the user is logged in. If so render a button to check out */}
             {Auth.loggedIn() ? (
-              <button onClick={submitCheckout}>Checkout</button>
+              <button className='text-white bg-green-400 ring-2 ring-green-500 hover:bg-green-600 p-3 rounded-xl ml-5 duration-300' onClick={submitCheckout}>Checkout</button>
             ) : (
-              <span>(log in to check out)</span>
+              <span className='text-red-600'>(log in to check out)</span>
             )}
+            </div>
           </div>
         </div>
       ) : (
@@ -111,7 +116,7 @@ const Cart = () => {
           <span role="img" aria-label="shocked">
             😱
           </span>
-          You haven't added anything to your cart yet!
+          You haven't added anything<br></br> to your cart yet!
         </h3>
       )}
     </div>

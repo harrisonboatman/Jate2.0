@@ -26,6 +26,7 @@ import { Parallax } from "react-parallax";
 import video1 from "../assets/jate.mp4";
 import video2 from "../assets/video2.mp4";
 import video3 from "../assets/video3.mp4";
+import aboutUs from "../assets/about-us.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
@@ -46,6 +47,40 @@ const Home = () => {
     });
   }, []);
 
+  const myRef = useRef(null);
+
+    useEffect(() => {
+        let fromVar = gsap.from(myRef.current, {
+            opacity: 0,
+            duration: 4,
+            y: 90,
+            immediateRender: false,
+            
+        });
+        return () => {
+            fromVar.kill();
+        };
+    }, []);
+
+    const containerRef = useRef(null);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    gsap.fromTo(el,
+      { x: 1400 },
+      {
+
+        x: 0,
+        duration: 2,
+        scrollTrigger: {
+          trigger: el,
+          start: "top 85%",
+          
+        },
+      }
+    );
+  }, []);
+
   return (
     <div>
       <div className="relative lg:w-full h-[100vh]">
@@ -61,12 +96,12 @@ const Home = () => {
             <source src={video3} type="video/mp4" />
           </video>
           <div className="absolute w-full h-[100vh] inset-0 bg-black opacity-20"></div>
-          <div className="text-overlay absolute w-full">
-            <h1 className="text-3xl font-sans text-white flex h-[800px] justify-center items-center md:text-7xl lg:text-9xl">
+          <div ref={myRef} className="text-overlay absolute w-full">
+            <h1 className="text-3xl font-sans text-white flex h-[900px] justify-center items-center md:text-7xl lg:text-9xl">
               <span className="title-text text-center">
                 Welcome to<span>&nbsp;</span><br></br>
                 <Typed
-                  className="jate-title"
+                  className="jate-title text-green-500 font-bold"
                   strings={["J.A.T.E", "Just", "Another", "Taco", "Emporium"]}
                   typeSpeed={160}
                   backSpeed={60}
@@ -77,14 +112,14 @@ const Home = () => {
           </div>
         </Parallax>
       </div>
-
-      <div className="grid grid-cols-3 gap-5 mt-[10rem] h-[90vh] overflow-hidden relative mb-[12rem]">
-        <Parallax className="h-[70vh] rounded-lg" bgImage={image3} strength={600}>
+<div className="bg-black h-[20vh]"></div>
+      <div className="grid grid-cols-3 gap-5 h-[90vh] overflow-hidden relative mb-[15rem] bg-black">
+        <Parallax className="h-[70vh] rounded-lg border-4 border-green-500" bgImage={image3} strength={600}>
           <div style={{ height: "150px" }}></div>
         </Parallax>
 
         <Parallax
-          className="h-[70vh] mt-[5rem] rounded-lg"
+          className="h-[70vh] mt-[5rem] rounded-lg border-4 border-green-500"
           bgImage={image2}
           strength={600}
           
@@ -93,13 +128,29 @@ const Home = () => {
         </Parallax>
 
         <Parallax
-          className="h-[70vh] mt-[10rem] rounded-lg"
+          className="h-[70vh] mt-[10rem] rounded-lg border-4 border-green-500"
           bgImage={image4}
           strength={600}
         >
           <div style={{ height: "150px" }}></div>
         </Parallax>
       </div>
+      <div className="flex justify-center items-center">
+  <div className="relative flex justify-center items-center lg:w-3/4 bg-gray-300 lg:h-[500px] lg:mx-20 rounded-tr-xl rounded-br-xl sm:w-full sm:h-[150px]">
+    <img src={aboutUs} className="about-us-img h-[550px] mt-[-180px] w-[80%] rounded-3xl" /></div>
+</div>
+<div ref={containerRef}>
+<h1 className="lg:text-6xl md:text-4xl sm:xl text-left ml-[11rem] mt-10 font-serif">
+  WHO WE ARE
+</h1>
+
+<h1 className="text-gray-400 text-xl text-right mx-40 leading-loose">
+  We are an independently owned company<br></br> who enjoy the finer things in life... <span className="font-bold">tacos.</span> <br></br>People come for the food, but end up staying for the good vibes! <br></br><span class="text-green-500">Just a</span> bunch of guys who found turned our passion into a career.<br></br><span class="text-green-500">Just a</span>bout the best tacos you'll ever taste.<br></br><span class="text-green-500">Just a</span>pproved for another location coming soon.<br></br><span class="text-green-500">Just Another Taco Emporium</span><br></br><p className="indent-8 text-2xl font-bold text-green-600"> - JATE</p>
+</h1>
+</div>
+
+        
+      
 
       {/* <div className="gallery-grid">
         <img ref={(el) => (imageRefs.current[0] = el)} src={image5} className="mb-2 col-span-2 row-span-2" />
