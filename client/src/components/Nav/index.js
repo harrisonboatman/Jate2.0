@@ -58,35 +58,12 @@ function Nav() {
               >
                 Logout
               </button>
-
-              <button
-                data-collapse-toggle="navbar-sticky"
-                type="button"
-                className="inline-flex items-center p-2 text-sm rounded-lg md:hidden"
-                aria-controls="navbar-sticky"
-                aria-expanded="false"
-              >
-                <span className="sr-only">Open main menu</span>
-                <svg
-                  className="w-6 h-6"
-                  aria-hidden="true"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </button>
             </div>
             <div
-              className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+              className="items-center justify-between  md:flex md:w-auto md:order-1"
               id="navbar-sticky"
             >
-              <ul className="flex flex-col p-4 mt-4 border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 justify-center ">
+              <ul className="flex flex-row lg:p-4 lg:mt-4  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0  sm:m-0 sm:p-0 justify-center">
                 <li>
                   <button
                     type="button"
@@ -167,34 +144,12 @@ function Nav() {
                 >
                   <Link to="/signup">Sign Up</Link>
                 </button>
-                <button
-                  data-collapse-toggle="navbar-sticky"
-                  type="button"
-                  className="inline-flex items-center p-2 text-sm rounded-lg md:hidden"
-                  aria-controls="navbar-sticky"
-                  aria-expanded="false"
-                >
-                  <span className="sr-only">Open main menu</span>
-                  <svg
-                    className="w-6 h-6"
-                    aria-hidden="true"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                </button>
               </div>
               <div
-                className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
-                id="navbar-sticky"
-              >
-                <ul className="flex flex-col p-4 mt-4 border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 justify-center ">
+              className="items-center justify-between  md:flex md:w-auto md:order-1"
+              id="navbar-sticky"
+            >
+              <ul className="flex flex-row lg:p-4 lg:mt-4  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0  sm:m-0 sm:p-0 justify-center ">
                   <li>
                     <button
                       type="button"
