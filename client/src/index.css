@@ -230,6 +230,16 @@ span[role="img"] {
   flex-wrap: wrap;
 } */
 
+.categories-menu{
+  margin-top: 20px;
+  z-index: 11;
+  position: fixed;
+  background-color: white;
+  width:100vw;
+  display:flex;
+  flex-wrap: wrap;
+}
+
 /* .space-between {
   justify-content: space-between;
 } */

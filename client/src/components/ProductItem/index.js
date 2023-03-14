@@ -47,8 +47,8 @@ function ProductItem(item) {
     //   </div>
     //   <button onClick={addToCart}>Add to cart</button>
 
-      <div class="min-h-fit p-10 md:w-1/4 flex items-center scale-75 hover:scale-80 hover:ease-in-out " >
-        <div class="container mx-auto p-9 bg-white max-w-sm rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-300">
+      <div class="min-h-fit min-w-fit pt-10 px-5  md:w-1/4 flex items-center scale-75 hover:scale-80 hover:ease-in-out " >
+        <div class="container-item mx-auto p-9 bg-white max-w-sm rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-300">
         <Link to={`/products/${_id}`}>
           <img
             class="rounded-xl"
