@@ -24,6 +24,7 @@ function OrderManagement(props) {
         let productPrice = document.querySelector('#price').value
         productPrice = JSON.parse(productPrice);
         console.log(productPrice)
+        
 
         try {
             const mutationResponse = await product({
@@ -44,7 +45,6 @@ function OrderManagement(props) {
             [name]: value,
         });
     };
-
     if (data) {
         user = data.user;
         role = data.user.userType;
@@ -102,7 +102,7 @@ function OrderManagement(props) {
                         name='image'
                         type='file'
                         accept="image/*"
-                        placeholder='Cateogry of Product Here'
+                        placeholder='Category of Product Here'
                         onChange={handleChange}>
 
                     </input>
@@ -122,6 +122,7 @@ function OrderManagement(props) {
 
             <label for="user-names">Choose a user: </label>
 <select name="user-names" id="user-names">
+
     <option value="rigatoni">Rigatoni</option>
   <option value="dave">Dave</option>
   <option value="pumpernickel">Pumpernickel</option>
