@@ -71,10 +71,9 @@ const resolvers = {
     },
     order: async (parent, { _id }, context) => {
       if (context.user) {
-        const user = await Order.findById().populate({
-          path: "products",
-          populate: "category",
-        });
+        const user = await Order.findById(_id)
+        .populate({ path: "products", populate: "category" })
+        .populate("user")
 
         return user;
       }
