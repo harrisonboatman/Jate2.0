@@ -79,3 +79,13 @@ export const USER_TYPE = gql`
   }
 }
 `;
+
+export const QUERY_ALL_USERS = gql`
+ {
+  users {
+    firstName
+    lastName
+    userType
+  }
+}
+`

@@ -12,7 +12,7 @@ import './style.css';
 
 // stripePromise returns a promise with the stripe object as soon as the Stripe package loads
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
-
+let cartQuant;
 const Cart = () => {
   const [state, dispatch] = useStoreContext();
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
@@ -48,6 +48,8 @@ const Cart = () => {
     let sum = 0;
     state.cart.forEach((item) => {
       sum += item.price * item.purchaseQuantity;
+      console.log(item.purchaseQuantity)
+      const cartQuant = item.purchaseQuantity
     });
     return sum.toFixed(2);
   }
