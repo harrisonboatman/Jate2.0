@@ -36,6 +36,7 @@ function OrderManagement(props) {
         } catch (e) {
             console.log(e);
         }
+        document.location.reload();
     };
     const handleJobChange = async (event) => {
         event.preventDefault();
