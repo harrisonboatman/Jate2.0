@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useQuery } from '@apollo/client';
 import { QUERY_ALL_USERS, QUERY_USER } from '../utils/queries';
 import { useMutation } from "@apollo/client";
@@ -7,15 +7,17 @@ import { ADD_PRODUCT, UPDATE_USER } from "../utils/mutations";
 
 function OrderManagement(props) {
     const { data } = useQuery(QUERY_USER);
-    const thing = useQuery(QUERY_ALL_USERS)
+    const thing =  useQuery(QUERY_ALL_USERS)
     let people;
     let user;
     let role;
     let manager = false;
     let admin = false;
     const [formState, setFormState] = useState({ name: '', description: '', price: 0, category: '', image: '', _id: '', userType: '' });
-    const [product, { error }] = useMutation(ADD_PRODUCT);
-    const [job] = useMutation(UPDATE_USER)
+    const [product] = useMutation(ADD_PRODUCT);
+    const [job] = useMutation(UPDATE_USER);
+   
+    
 
 
     const handleFormSubmit = async (event) => {
@@ -23,7 +25,8 @@ function OrderManagement(props) {
         let productPrice = document.querySelector('#price').value
         productPrice = JSON.parse(productPrice);
         let imageURL = document.querySelector('#image').value
-        console.log(imageURL)
+        console.log(imageURL);
+        
 
         try {
             const mutationResponse = await product({
@@ -54,7 +57,7 @@ function OrderManagement(props) {
         } catch (e) {
             console.log(e);
         }
-        document.location.reload();
+        // document.location.reload();
 
     };
 
@@ -73,14 +76,16 @@ function OrderManagement(props) {
     }
     if (thing) {
         people = thing.data;
+        console.log(thing.loading)
+    
     }
     if (role === 'manager') {
         manager = true
     } else if (role === 'admin') {
+        
         admin = true
     } else {
-        manager = false;
-        admin = false;
+        return (<p>you are not welcome here</p>)
     }
 
     return (
@@ -156,7 +161,6 @@ function OrderManagement(props) {
                 </div>
 
             </div>) : null}
-
             {admin ? (
                 <div>
                 <div className='mt-[3rem] mx-4 flex  justify-center '>
@@ -168,6 +172,7 @@ function OrderManagement(props) {
                                 {people?.users.map((person) => (
                                     <option value={person._id}>Name: {person.firstName} ID: {person._id}</option>
                                 ))}
+                                
                             </select>
                             <label class='text-green-500'>Choose which job you would like them to be now:</label>
                             <select name='userType' id='userType'>
@@ -187,7 +192,7 @@ function OrderManagement(props) {
                 </div>
                 </div>
             ) : null}
-
+                                
         </>
     )
 }
