@@ -16,7 +16,7 @@ console.log(user)
 console.log(data)
 
   return (
-    <>
+    <div className='flex justify-center md:flex-row mt-24 sm:flex-col '>
       <div className="container mt-24">
 
         {user ? (
@@ -29,12 +29,12 @@ console.log(data)
                 <h3 className='mb-10'>
                   {new Date(parseInt(order.purchaseDate)).toLocaleDateString()}
                 </h3>
-                <div className="flex-row w-full">
+                <div className="flex flex-row ">
                   {order?.products.map(({ _id, image, name, price }, index) => (
                     <div>
-                    <div key={index} className="card w-1/4 flex-col">
+                    <div key={index} className="p-2 card w-1/2 flex-col bg-white rounded-lg shadow-lg overflow-hidden">
                       <Link to={`/products/${_id}`}>
-                        <img alt={name} src={`/images/${image}`} />
+                        <img alt={name} className="rounded" src={`/images/${image}`} />
                         <p>{name}</p>
                       </Link>
                       <div>
@@ -50,7 +50,7 @@ console.log(data)
           </>
         ) : null}
       </div>
-    </>
+    </div>
   );
 }
 

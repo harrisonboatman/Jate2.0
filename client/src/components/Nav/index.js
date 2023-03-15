@@ -4,7 +4,6 @@ import { QUERY_ALL_USERS, QUERY_USER } from '../../utils/queries';
 import { gsap } from "gsap";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
-// import { Link, animateScroll as scroll } from 'react-scroll'
 import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
