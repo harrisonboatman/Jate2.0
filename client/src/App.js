@@ -7,7 +7,6 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-
 import Home from './pages/Home';
 import Detail from './pages/Detail';
 import NoMatch from './pages/NoMatch';
@@ -20,6 +19,7 @@ import OrderHistory from './pages/OrderHistory';
 import Menu from './pages/Menu';
 import OrderManagement from './pages/OrderManagement'
 import Contact from './pages/Contact';
+
 
 const httpLink = createHttpLink({
   uri: '/graphql',

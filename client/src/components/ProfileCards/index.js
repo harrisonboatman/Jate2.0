@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createRef, useEffect, useRef } from "react";
 import Michael from "../../assets/michael.png"
 import Harrison from "../../assets/harrison.png"
 import Darren from "../../assets/darren.png"
@@ -8,14 +8,48 @@ import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { Link } from 'react-router-dom';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
 
 
-function ProfileCards() {
+const ProfileCards = () => {
+    
+
+    const slideRef = useRef(null);
+    useEffect(() => {
+      const el = slideRef.current;
+      gsap.fromTo(el,
+        { x: 0 },
+        {
+          x: -1500,
+          duration: 1,
+          scrollTrigger: {
+            start: "bottom 70%",
+            end: 'top',
+            markers: true,
+
+            
+          },
+        }
+      );
+    }, []);
+
+
     return (
         <div className="mx-auto w-full">
+            <div ref={slideRef} className=" overflow-hidden bg-black absolute h-[410px] w-full z-10">
+                <div className="blanket text-white text-center text-4xl flex justify-center h-full items-center">
+                    <h1 className="">Enjoying the Content?<br></br>
+                    Lets Meet the Webdevs<br></br>
+                   
+                    </h1>
+                </div>
+            </div>
             <div className="wrapper bg-white p-10 mb-6">
                 <div className=" grid grid-flow-row grid-cols-5 gap-7 mx-6">
-                    <div className="team-cards relative overflow-hidden">
+                    <div className="team-cards z-0 relative overflow-hidden">
                         <div className="max-w-sx bg-gradient-to-br from-black to-zinc-600 h-[300px]">
                             <div className="top-color bg-green-700 h-20 border-none rounded-t-2xl"></div>
                             <div className="flex flex-col items-center pb-20">
@@ -151,6 +185,8 @@ function ProfileCards() {
                     </div>
                 </div>
             </div>
+            
+            
         </div>
     )
 }

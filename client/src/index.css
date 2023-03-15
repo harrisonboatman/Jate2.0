@@ -89,6 +89,64 @@ span[role="img"] {
   
   }
 
+  .tooltip {
+    position: relative;
+    display: inline-block;
+   
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 6px;
+   
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    width: 120px;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+  }
+
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  /* .dev-btn {
+    
+    top: 80%;
+  }
+
+  .container-sheet {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .blanket {
+    position: relative;
+    left: 0;
+    transition: left 0.5s ease-out;
+  }
+  
+  .blanket.slide-out {
+    left: -100%;
+    animation-name: slide-out;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes slide-out {
+    to {
+      transform: translateX(-100%);
+    }
+  } */
+  
+
 
 
 /* Use code above if you want to implement a sticky/true pin using gsap, set grid ml-[280px] if decide to */
