@@ -81,14 +81,15 @@
     position: fixed;
     top: 0;
     right: 0;
-    /* margin-top: 65px; */
     max-width: 100%;
     max-height: auto;
     background-color: lightgray;
+    z-index:21;
   }
 
   .cart-closed {
-    position: relative;
+    position: fixed;
     margin: 0 auto;
+    z-index:21;
   }
 }
