@@ -71,6 +71,7 @@ function OrderManagement(props) {
     if (data) {
         user = data.user;
         role = data.user.userType;
+        console.log(user)
 
     }
     if (thing) {
@@ -161,14 +162,15 @@ function OrderManagement(props) {
 
             </div>) : null}
             {admin ? (
+                <>
                 <div className='mt-[3rem] mx-4 flex justify-center '>
                     <div class="bg-gray-900 rounded-xl p-10">
                         <h2 class="text-green-500 my-5 text-center font-extrabold">wow you are an admin!</h2>
                         <form onSubmit={handleJobChange}>
                             <label class="text-green-500" for="_id">Choose a user: </label>
                             <select name="_id" id="_id">
-                                {thing.data.users.map((person, index) => (
-                                    <option key = {index} value={person._id}>Name: {person.firstName} ID: {person._id}</option>
+                                {people?.users.map((person) => (
+                                    <option value={person._id}>Name: {person.firstName} ID: {person._id}</option>
                                 ))}
                                 
                             </select>
@@ -188,6 +190,7 @@ function OrderManagement(props) {
                         </form>
                     </div>
                 </div>
+                </>
             ) : null}
                                 
         </>

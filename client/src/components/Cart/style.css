@@ -64,31 +64,21 @@
   margin: 0 .5rem 1rem 0;
 }
 
-.cart-no{
-  position: relative;
-  top: -40px;
-  z-index:13;
-  font-size: 10px;
-  color: red;
-  background-color: white;
-  padding: 5px;
-  border-radius: 50%;
-  border: 1px solid red;
-}
 
 @media screen and (max-width: 768px) {
   .cart {
     position: fixed;
     top: 0;
     right: 0;
-    /* margin-top: 65px; */
     max-width: 100%;
     max-height: auto;
     background-color: lightgray;
+    z-index:21;
   }
 
   .cart-closed {
-    position: relative;
+    position: fixed;
     margin: 0 auto;
+    z-index:21;
   }
 }

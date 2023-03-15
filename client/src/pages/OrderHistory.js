@@ -24,13 +24,13 @@ console.log(data)
             <h2 className='text-xl font-bold'>
               Order History for {user.firstName} {user.lastName}
             </h2>
-            {user.orders.map((order) => (
+            {user?.orders.map((order) => (
               <div key={order._id} className="my-2">
                 <h3 className='mb-10'>
                   {new Date(parseInt(order.purchaseDate)).toLocaleDateString()}
                 </h3>
                 <div className="flex-row w-full">
-                  {order.products.map(({ _id, image, name, price }, index) => (
+                  {order?.products.map(({ _id, image, name, price }, index) => (
                     <div>
                     <div key={index} className="card w-1/4 flex-col">
                       <Link to={`/products/${_id}`}>
