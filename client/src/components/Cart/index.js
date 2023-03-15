@@ -14,6 +14,8 @@ import './style.css';
 // stripePromise returns a promise with the stripe object as soon as the Stripe package loads
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 let cartQuant;
+const cartie =  idbPromise('cart', 'get');
+
 const Cart = () => {
   const [state, dispatch] = useStoreContext();
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
@@ -50,7 +52,7 @@ const Cart = () => {
     state.cart.forEach((item) => {
       sum += item.price * item.purchaseQuantity;
       console.log(item.purchaseQuantity)
-      const cartQuant = item.purchaseQuantity
+      cartQuant = item.purchaseQuantity
     });
     return sum.toFixed(2);
   }
@@ -59,6 +61,8 @@ const Cart = () => {
   // Add each item id to the productIds array and then invoke the getCheckout query passing an object containing the id for all our products
   function submitCheckout() {
     const productIds = [];
+    console.log('hello')
+
 
     state.cart.forEach((item) => {
       for (let i = 0; i < item.purchaseQuantity; i++) {
@@ -83,6 +87,8 @@ const Cart = () => {
   }
 
   console.log(state.cart.length);
+  console.log('oogie');
+  console.log(cartie)
 
   return (
     
