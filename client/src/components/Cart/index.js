@@ -87,17 +87,15 @@ const Cart = () => {
   }
 
   console.log(state.cart.length);
-  console.log('oogie');
-  console.log(cartie)
 
   return (
     
-    <div className="cart">
+    <div className="cart rounded">
       <div className="close text-right" onClick={toggleCart}>
         [close]
       </div>
       <div className='bg-white rounded-2xl w-full'>
-      <h2 className='text-center text-white font-bold my-7 bg-green-700 rounded-lg'>Shopping Cart</h2>
+      <h2 className='text-center text-white font-bold my-7 bg-green-600 rounded-lg'>Shopping Cart</h2>
       </div>
       {state.cart.length ? (
         <div className='text-center'>
@@ -119,9 +117,6 @@ const Cart = () => {
         </div>
       ) : (
         <h3>
-          <span role="img" aria-label="shocked">
-            😱
-          </span>
           You haven't added anything<br></br> to your cart yet!
         </h3>
       )}
