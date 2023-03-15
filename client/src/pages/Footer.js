@@ -1,14 +1,13 @@
-
 import React from "react";
 import Michael from "../assets/michael.png"
 import Harrison from "../assets/harrison.png"
 import Darren from "../assets/darren.png"
 import Connor from "../assets/connor.png"
 import Rick from "../assets/Rick.png"
-
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
+import { Link } from 'react-router-dom';
 
 
 function Footer() {
@@ -25,9 +24,18 @@ function Footer() {
                             <span className="text-lg text-gray-500 mb-2">Full Stack</span>
                             <div className="flex mt-4 space-x-3 md:mt-6">
                                 <div className="social inline-flex items-center text-sm font-medium text-center">
+
+                                    <Link to="https://github.com/medranomiler">
                                 <FaGithub className="text-white mx-5 hover:text-green-500 cursor-pointer duration-200" size={30}/>
+                                </Link>
+
+                                <Link to="https://www.linkedin.com/in/darrenmedrano/">
                                 <FaLinkedin className="text-white mx-5 hover:text-green-500 cursor-pointer duration-200" size={30}/>
+                                </Link>
+
+                                <a href="mailto:medranomiler@gmail.com">
                                 <AiOutlineMail className="text-white mx-5 hover:text-green-500 cursor-pointer duration-200" size={30}/>
+                                </a>
                                 </div>
                             </div>
                             </div>
@@ -42,9 +50,18 @@ function Footer() {
                             <span className="text-lg text-gray-500 mb-2">Full Stack</span>
                             <div className="flex mt-4 space-x-3 md:mt-6">
                                 <div className="social inline-flex items-center text-sm font-medium text-center">
+
+                                <Link to="https://github.com/harrisonboatman">
                                 <FaGithub className="text-white mx-5 hover:text-green-500 cursor-pointer duration-200" size={30}/>
+                                </Link>
+
+                                <Link to="https://www.linkedin.com/in/harrison-boatman-640795206/">
                                 <FaLinkedin className="text-white mx-5 hover:text-green-500 cursor-pointer duration-200" size={30}/>
+                                </Link>
+
+                                <a href="mailto:hrry.boatman2@gmail.com">
                                 <AiOutlineMail className="text-white mx-5 hover:text-green-500 cursor-pointer duration-200" size={30}/>
+                                </a>
                                 </div>
                             </div>
                             </div>
@@ -60,9 +77,18 @@ function Footer() {
                             <span className="text-lg text-gray-500 mb-2">Full Stack</span>
                             <div className="flex mt-4 space-x-3 md:mt-6">
                                 <div className="social inline-flex items-center text-sm font-medium text-center">
+
+                                    <Link to="https://github.com/connorbodin">
                                 <FaGithub className="text-white mx-5 hover:text-green-500 cursor-pointer duration-200" size={30}/>
+                                </Link>
+
+                                <Link to="https://www.linkedin.com/in/connor-bodin-00/">
                                 <FaLinkedin className="text-white mx-5 hover:text-green-500 cursor-pointer duration-200" size={30}/>
+                                </Link>
+
+                                <a href="mailto:connor.e.bodin@gmail.com ">
                                 <AiOutlineMail className="text-white mx-5 hover:text-green-500 cursor-pointer duration-200" size={30}/>
+                                </a>
                                 </div>
                             </div>
                             </div>
@@ -78,9 +104,18 @@ function Footer() {
                             <span className="text-lg text-gray-500 mb-2">Full Stack</span>
                             <div className="flex mt-4 space-x-3 md:mt-6">
                                 <div className="social inline-flex items-center text-sm font-medium text-center">
+
+                                    <Link to="https://github.com/AustinBQ02">
                                 <FaGithub className="text-white mx-5 hover:text-green-500 cursor-pointer duration-200" size={30}/>
+                                </Link>
+
+                                <Link to="https://www.linkedin.com/in/mdsmith02/">
                                 <FaLinkedin className="text-white mx-5 hover:text-green-500 cursor-pointer duration-200" size={30}/>
+                                </Link>
+
+                                <a href="mailto:mdsmith02@gmail.com">
                                 <AiOutlineMail className="text-white mx-5 hover:text-green-500 cursor-pointer duration-200" size={30}/>
+                                </a>
                                 </div>
                             </div>
                             </div>
@@ -96,9 +131,17 @@ function Footer() {
                             <span className="text-lg text-gray-500 mb-2">Full Stack</span>
                             <div className=" mt-4 space-x-3 md:mt-6">
                                 <div className="social inline-flex items-center text-sm font-medium text-center">
+                                    <Link to="https://github.com/Rick3Mrtz">
                                 <FaGithub className="text-white mx-5 hover:text-green-500 cursor-pointer duration-200" size={30}/>
+                                </Link>
+
+                                <Link to="http://www.linkedin.com/in/rickmrtz3">
                                 <FaLinkedin className="text-white mx-5 hover:text-green-500 cursor-pointer duration-200" size={30}/>
+                                </Link>
+
+                                <a href="mailto:Rick.mrtz3@gmail.com">
                                 <AiOutlineMail className="text-white mx-5 hover:text-green-500 cursor-pointer duration-200" size={30}/>
+                                </a>
                                 </div>
                             </div>
                         </div>
