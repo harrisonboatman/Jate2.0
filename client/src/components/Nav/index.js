@@ -10,7 +10,6 @@ import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
 
-
 function Nav() {
   const {data} = useQuery(QUERY_USER);
   let user;

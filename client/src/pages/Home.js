@@ -133,7 +133,7 @@ const Home = () => {
     <img src={aboutUs} className="about-us-img lg:h-[550px] md:h-[400px] sm:h-[300px] mt-[-180px] w-[80%] rounded-3xl" /></div>
 </div>
 <div 
-// ref={containerRef} 
+ref={containerRef} 
 className='overflow-hidden'>
 <div id="About-Us" className="lg:text-6xl md:text-4xl sm:xl text-left lg:ml-[11rem] md:ml-[4rem] sm:ml-4 mt-10 font-serif">
   WHO WE ARE

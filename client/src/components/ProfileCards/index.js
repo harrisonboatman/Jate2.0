@@ -1,4 +1,4 @@
-import React, { createRef, useEffect, useRef } from "react";
+import React, { createRef, useEffect, useRef, useState } from "react";
 import Michael from "../../assets/michael.png"
 import Harrison from "../../assets/harrison.png"
 import Darren from "../../assets/darren.png"
@@ -14,35 +14,25 @@ import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
 
-const ProfileCards = () => {
+
+
+
+function ProfileCards () {
     
+const [isCovered, setIsCovered] = useState(true)
 
-    const slideRef = useRef(null);
-    useEffect(() => {
-      const el = slideRef.current;
-      gsap.fromTo(el,
-        { x: 0 },
-        {
-          x: -1500,
-          duration: 1,
-          scrollTrigger: {
-            start: "bottom 70%",
-            end: 'top',
-            markers: true,
-
-            
-          },
-        }
-      );
-    }, []);
+function toggleCover() {
+    setIsCovered(!isCovered);
+}
 
 
     return (
         <div className="mx-auto w-full">
-            <div ref={slideRef} className=" overflow-hidden bg-black absolute h-[410px] w-full z-10">
+            <div className={`sliding-div ${isCovered ? '' : 'remove'}`}>
                 <div className="blanket text-white text-center text-4xl flex justify-center h-full items-center">
                     <h1 className="">Enjoying the Content?<br></br>
                     Lets Meet the Webdevs<br></br>
+                    <button onClick={toggleCover} className="dev-btn p-2 text-base text-green-500 ring-1 ring-green-500 rounded-2xl hover:bg-green-500 hover:text-white" >Click Here</button>
                    
                     </h1>
                 </div>
