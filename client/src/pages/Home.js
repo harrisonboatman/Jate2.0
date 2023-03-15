@@ -1,6 +1,8 @@
 import React, { createRef, useEffect, useRef } from "react";
 import Typed from "react-typed";
 import Contact from "./Contact";
+import ProfileCards from "../components/ProfileCards"
+import Footer from "../components/Footer"
 import { gsap } from "gsap";
 import backgroundImg from "../assets/gallery-bg.png";
 import { ScrollTrigger } from "gsap/all";
