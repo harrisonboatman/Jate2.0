@@ -10,8 +10,8 @@ const resolvers = {
         path: "orders",
         populate: {
           path: "products",
-          model: 'Product'
-        } ,
+          model: "Product",
+        },
       });
       //   {
       //   path: "orders",
@@ -19,24 +19,20 @@ const resolvers = {
       // }
     },
     orders: async () => {
-      return await Order.find().
-      populate({
-        path: "products",
-        populate: "category",
-      }).
-      populate("user")
-    },
-    ordersByUser: async (parent, { user: userId}) => {
-      console.log(userId);
-        const user = await User.findById(userId)
+      return await Order.find()
         .populate({
-          path: "orders",
-          populate: {
-            path: "products"
-          } ,
-        });
-        return user.orders;
-    
+          path: "products",
+          populate: "category",
+        })
+        .populate("user");
+    },
+    ordersByStatus: async (parent, { status }) => {
+      return await Order.find({status: status})
+        .populate({
+          path: "products",
+          populate: "category",
+        })
+        .populate("user");
     },
 
     categories: async () => {
@@ -63,23 +59,21 @@ const resolvers = {
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id)
-        .populate({path: "orders",populate: "products"})
-        .populate({path: "orders.products", populate: "category"})
+          .populate({ path: "orders", populate: "products" })
+          .populate({ path: "orders.products", populate: "category" });
 
         // user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
 
         return user;
       }
 
-      
       throw new AuthenticationError("Not logged in");
     },
     order: async (parent, { _id }, context) => {
-      if (context.user ) {
-        const user = await Order.findById().populate({
-          path: "products",
-          populate: "category",
-        });
+      if (context.user) {
+        const user = await Order.findById(_id)
+        .populate({ path: "products", populate: "category" })
+        .populate("user")
 
         return user;
       }
@@ -142,9 +136,13 @@ const resolvers = {
         console.log(order, user);
         await order.save();
 
-        await User.findByIdAndUpdate(context.user._id, {
-          $push: { orders: order._id },
-        },{new: true});
+        await User.findByIdAndUpdate(
+          context.user._id,
+          {
+            $push: { orders: order._id },
+          },
+          { new: true }
+        );
 
         return order;
       }
