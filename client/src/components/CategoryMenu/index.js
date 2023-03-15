@@ -47,7 +47,7 @@ function CategoryMenu() {
     <div className="categories-menu sm:object-none sm:object-right mt-[7vh] flex justify-around items-end w-full">
     <div className="flex justify-around items-end w-full flex-wrap">
       
-      {categories.map((item) => (
+      {categories?.map((item) => (
         <div>
           
         <div className='my-2'>

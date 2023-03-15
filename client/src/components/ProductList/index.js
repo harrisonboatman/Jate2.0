@@ -47,7 +47,7 @@ function ProductList() {
     <div className="my-2 mt-5">
       {state.products.length ? (
         <div className="flex-row flex justify-evenly flex-wrap">
-          {filterProducts().map((product) => (
+          {filterProducts()?.map((product) => (
             <ProductItem
               key={product._id}
               _id={product._id}
