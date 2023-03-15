@@ -91,3 +91,14 @@ mutation updateProduct(
 `;
 
 
+export const UPDATE_USER = gql`
+mutation updateUserToWhatever($id: ID!, $userType: String!) {
+  updateUserToWhatever(_id: $id, userType: $userType) {
+    firstName
+    lastName
+    userType
+  }
+}
+`
+
+

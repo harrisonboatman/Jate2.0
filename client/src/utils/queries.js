@@ -81,11 +81,13 @@ export const USER_TYPE = gql`
 `;
 
 export const QUERY_ALL_USERS = gql`
- {
+query  {
   users {
+    _id
+    email
     firstName
     lastName
     userType
   }
 }
-`
+`;

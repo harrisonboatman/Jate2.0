@@ -1,34 +1,33 @@
 import React, { useState } from "react";
-import Orders from "../components/Orders"
 import { useQuery } from '@apollo/client';
 import { QUERY_ALL_USERS, QUERY_USER } from '../utils/queries';
 import { useMutation } from "@apollo/client";
-import { ADD_PRODUCT } from "../utils/mutations";
+import { ADD_PRODUCT, UPDATE_USER } from "../utils/mutations";
 
 
 function OrderManagement(props) {
     const { data } = useQuery(QUERY_USER);
-    const { thing } = useQuery(QUERY_ALL_USERS)
+    const thing = useQuery(QUERY_ALL_USERS)
     let people;
     let user;
     let role;
     let manager = false;
     let admin = false;
-    const [formState, setFormState] = useState({ name: '', description: '', price: 0, category: '', image: '' });
+    const [formState, setFormState] = useState({ name: '', description: '', price: 0, category: '', image: '', _id: '', userType: '' });
     const [product, { error }] = useMutation(ADD_PRODUCT);
+    const [job] = useMutation(UPDATE_USER)
 
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-        console.log(thing)
         let productPrice = document.querySelector('#price').value
         productPrice = JSON.parse(productPrice);
-        console.log(productPrice)
-
+        let imageURL = document.querySelector('#image').value
+        console.log(imageURL)
 
         try {
             const mutationResponse = await product({
-                variables: { name: formState.name, description: formState.description, price: productPrice, category: formState.category, image: formState.image },
+                variables: { name: formState.name, description: formState.description, price: productPrice, category: formState.category, image: imageURL },
             });
             console.log(mutationResponse);
             console.log('hello')
@@ -36,6 +35,27 @@ function OrderManagement(props) {
         } catch (e) {
             console.log(e);
         }
+        document.location.reload();
+    };
+    const handleJobChange = async (event) => {
+        event.preventDefault();
+        let _id = document.querySelector('#_id').value
+        console.log(_id)
+        let userJob = document.querySelector('#userType').value
+        console.log(userJob)
+
+        try {
+            const mutationResponse = await job({
+                variables: { id: _id, userType: userJob },
+            });
+            console.log(mutationResponse);
+            console.log('hello')
+
+        } catch (e) {
+            console.log(e);
+        }
+        document.location.reload();
+
     };
 
     const handleChange = (event) => {
@@ -51,7 +71,7 @@ function OrderManagement(props) {
 
     }
     if (thing) {
-        people = thing.users;
+        people = thing.data;
     }
     if (role === 'manager') {
         manager = true
@@ -66,7 +86,10 @@ function OrderManagement(props) {
         <>
             <p>welcome to the page</p>
 
-            {user ? (<p>welcome {user.firstName} who is a {role}</p>) : null}
+            {user ? (
+            <div class = "mt-20 text-center"><p>welcome {user.firstName} who is a {role}</p>
+            </div>
+            ) : null}
             {manager ? (<div class="mt-5">
                 <p class="text-center">yous a manager</p>
                 <div class="flex justify-center mt-5">
@@ -94,7 +117,7 @@ function OrderManagement(props) {
                             </input>
                         </div>
                         <div class="mb-6">
-                            <label for="product-description" class="block mb-2 text-sm font-medium text-green-500">Product Description</label>
+                            <label for="product-description" class="block mb-2 text-sm font-medium text-green-500">Product Price</label>
                             <input id='price'
                                 name='price'
                                 type='text'
@@ -113,15 +136,13 @@ function OrderManagement(props) {
                                 onChange={handleChange}>
                             </input>
                         </div>
-                        <input id='image'
-                            name='image'
-                            type='file'
-                            accept="image/*"
-                            placeholder='Category of Product Here'
-                            class="text-white"
-                            onChange={handleChange}>
-
-                        </input>
+                        <select id='image' name='image'>
+                            <option value = 'bacon-egg.png'>Breakfast Taco</option>
+                            <option value = 'shrimp.png'>Dinner Taco</option>
+                            <option value = 'mexican-coke.jpg'>Non-Alcoholic Drink</option>
+                            <option value = 'mojito.jpg'>Alcoholic Drink</option>
+                            <option value = 'rice.jpg'>Side</option>
+                        </select>
                         <div className="flex items-center justify-center mt-4">
                             <button
                                 className="w-[200px] rounded-3xl bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
@@ -139,16 +160,28 @@ function OrderManagement(props) {
 
                 <div className='mt-[3rem] mx-4 flex justify-center '>
                     <div class="bg-gray-900 rounded-xl p-10">
-                    <h2 class="text-green-500 my-5 text-center font-extrabold">wow you are an admin!</h2>
-
-                    <label class="text-green-500" for="user-names">Choose a user: </label>
-                    <select name="user-names" id="user-names">
-
-                        <option value="rigatoni">Rigatoni</option>
-                        <option value="dave">Dave</option>
-                        <option value="pumpernickel">Pumpernickel</option>
-                        <option value="reeses">Reeses</option>
-                    </select>
+                        <h2 class="text-green-500 my-5 text-center font-extrabold">wow you are an admin!</h2>
+                        <form onSubmit={handleJobChange}>
+                            <label class="text-green-500" for="_id">Choose a user: </label>
+                            <select name="_id" id="_id">
+                                {people.users.map((person) => (
+                                    <option value={person._id}>Name: {person.firstName} ID: {person._id}</option>
+                                ))}
+                            </select>
+                            <label class='text-green-500'>Choose which job you would like them to be now:</label>
+                            <select name='userType' id='userType'>
+                                <option value='employee'>Employee</option>
+                                <option value='manager'>Manager</option>
+                                <option value='admin'>Admin</option>
+                                <option value='customer'>Customer</option>
+                            </select>
+                            <button
+                                className="w-[200px] rounded-3xl bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
+                                type="submit"
+                            >
+                                Change employee job!
+                            </button>
+                        </form>
                     </div>
                 </div>
             ) : null}
