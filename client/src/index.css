@@ -51,6 +51,8 @@ video::-webkit-media-controls {
 .categories-menu {
   background-image: url('../src/assets/categories-bg2.png');
   background-size: cover;
+  object-fit: none;
+  object-position: right;
   height: 50vh;
 }
 
@@ -184,12 +186,12 @@ span[role="img"] {
 } */
 
 /* reponsive JATE Gallery */
-/* @media screen and (max-width: 600px) {
-  .gallery-column {
-    flex: 100%;
-    max-width: 100%;
+@media screen and (max-width: 700px) {
+  .categories-menu {
+    background-image: url('../src/assets/bg2-small.png');
+    height: 30vh;
   }
-} */
+}
 
 
 
