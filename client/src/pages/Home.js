@@ -30,8 +30,7 @@ import video2 from "../assets/video2.mp4";
 import video3 from "../assets/video3.mp4";
 import aboutUs from "../assets/about-us.png";
 import imageTruck from "../assets/foodtruck.jpg"
-import Footer from "../components/Footer";
-import ProfileCards from "../components/ProfileCards";
+
 gsap.registerPlugin(ScrollTrigger);
 
 
