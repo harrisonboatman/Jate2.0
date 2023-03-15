@@ -1,12 +1,14 @@
 import React, { createRef, useEffect, useRef } from "react";
 import { useQuery } from '@apollo/client';
 import { QUERY_ALL_USERS, QUERY_USER } from '../../utils/queries';
-
 import { gsap } from "gsap";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
+// import { Link, animateScroll as scroll } from 'react-scroll'
+import { HashLink } from "react-router-hash-link";
 import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
+
 
 function Nav() {
   const {data} = useQuery(QUERY_USER);
@@ -27,7 +29,7 @@ function Nav() {
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
-        <nav className="bg-black px-2 sm:px-4 py-1.1 fixed w-full z-20 top-0 left-0 ">
+        <nav className="bg-black px-2 sm:px-4 py-1 fixed w-full z-20 top-0 left-0 ">
           <div className="container flex flex-wrap items-center justify-between mx-auto">
             <a href="https://flowbite.com/" className="flex items-center">
               <Link
@@ -76,8 +78,9 @@ function Nav() {
                   <button
                     type="button"
                     className="text-white hover:bg-green-500 lg:text-xl ring-white hover:ring-4 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
-                  >
-                    About Us
+                   >
+              About Us      
+            
                   </button>
                 </li>
                 <li>
@@ -93,7 +96,9 @@ function Nav() {
                     type="button"
                     className="text-white hover:bg-green-500 lg:text-xl ring-white hover:ring-4 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
                   >
+                    <Link to ="/contact">
                     Contact
+                    </Link>
                   </button>
                 </li>
                 {!customer ? (<li>
@@ -163,7 +168,16 @@ function Nav() {
                       type="button"
                       className="text-white lg:text-xl ring-white hover:ring-4 hover:bg-green-500 ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
                     >
-                      About Us
+               <Link
+              activeClass="active"
+              to="About-Us"
+              spy={true}
+              smooth={true}
+              offset={-500}
+              duration={500}
+            >
+              About Us
+            </Link>
                     </button>
                   </li>
                   <li>
@@ -179,7 +193,9 @@ function Nav() {
                       type="button"
                       className="text-white hover:bg-green-500 lg:text-xl ring-white hover:ring-4 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
                     >
-                      Contact
+                      <Link to ="/contact">
+                    Contact
+                    </Link>
                     </button>
                   </li>
                 </ul>
