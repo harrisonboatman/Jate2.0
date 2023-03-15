@@ -11,7 +11,7 @@ function Success() {
   useEffect(() => {
     async function saveOrder() {
       const cart = await idbPromise('cart', 'get');
-      const products = cart.map((item) => item._id);
+      const products = cart?.map((item) => item._id);
 
       if (products.length) {
         const { data } = await addOrder({ variables: { products } });

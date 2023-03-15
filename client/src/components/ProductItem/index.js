@@ -83,7 +83,7 @@ export default ProductItem;
 
 {/* <div class="container mx-auto">
     <div class="grid grid-cols-3 gap-4">
-      {products.map(product => (
+      {products?.map(product => (
         <div key={product._id} class="bg-white shadow-md rounded-xl overflow-hidden">
           <Link to={`/products/${product._id}`}>
             <img

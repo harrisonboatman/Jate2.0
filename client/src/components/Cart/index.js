@@ -95,7 +95,7 @@ const Cart = () => {
       </div>
       {state.cart.length ? (
         <div className='text-center'>
-          {state.cart.map((item) => (
+          {state?.cart.map((item) => (
             <CartItem key={item._id} item={item} />
           ))}
 
