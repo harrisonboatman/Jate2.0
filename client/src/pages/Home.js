@@ -27,6 +27,7 @@ import video1 from "../assets/jate.mp4";
 import video2 from "../assets/video2.mp4";
 import video3 from "../assets/video3.mp4";
 import aboutUs from "../assets/about-us.png";
+import imageTruck from "../assets/foodtruck.jpg"
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -240,6 +241,7 @@ className='overflow-hidden'>
           <div class="pt-12">
           <hr class="w-full h-px my-12 bg-gray-400 border-1 dark:bg-gray-900">
           </hr>
+          </div>
           <Contact />
         </div>
       </section>
