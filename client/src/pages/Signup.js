@@ -52,7 +52,7 @@ function Signup(props) {
                   type="submit"
                 >
                   <Link to="/login">
-                  Sign in </Link>
+                  Login </Link>
                 </button>
               </div>
             </div>
@@ -127,7 +127,9 @@ function Signup(props) {
                   className="w-[200px] rounded-3xl text-white hover:bg-green-700 hover:text-white bg-green-500 font-bold py-2 px-4 focus:outline-none focus:shadow-outline duration-150"
                   type="submit"
                 >
+                  <Link to="/signup">
                   Sign Up
+                  </Link>
                 </button>
               </div>
             </div>
