@@ -27,6 +27,7 @@ import video1 from "../assets/jate.mp4";
 import video2 from "../assets/video2.mp4";
 import video3 from "../assets/video3.mp4";
 import aboutUs from "../assets/about-us.png";
+import imageTruck from "../assets/foodtruck.jpg"
 gsap.registerPlugin(ScrollTrigger);
 const Home = () => {
   const imageRefs = useRef([]);
@@ -123,8 +124,8 @@ const Home = () => {
         </Parallax>
       </div>
       <div className="flex justify-center items-center">
-  <div className="relative flex justify-center items-center lg:w-3/4 bg-gray-300 lg:h-[500px] lg:mx-20 md:mx-10 sm:mx-2 rounded-tr-xl rounded-br-xl sm:w-full sm:h-[250px]">
-    <img src={aboutUs} className="about-us-img lg:h-[550px] md:h-[400px] sm:h-[300px] mt-[-180px] w-[80%] rounded-3xl" /></div>
+  <div className="relative flex justify-center items-center lg:w-1/2 bg-gray-100 lg:h-[500px] lg:mx-20 md:mx-10 sm:mx-2 rounded-tr-xl rounded-br-xl sm:w-full sm:h-[250px]">
+    <img src={imageTruck} className="about-us-img lg:h-[550px] md:h-[400px] sm:h-[300px] mt-[-180px] w-[80%] rounded-3xl" /></div>
 </div>
 <div ref={containerRef}>
 <h1 className="lg:text-6xl md:text-4xl sm:xl text-left lg:ml-[11rem] md:ml-[4rem] sm:ml-4 mt-10 font-serif">
@@ -135,7 +136,7 @@ const Home = () => {
   We are an independently owned company<br></br> who enjoy the finer things in life... <span className="font-bold">tacos.</span> <br></br>People come for the food, but end up staying for the good vibes! <br></br><span class="text-green-500">Just a</span> bunch of guys who found turned our passion into a career.<br></br><span class="text-green-500">Just a</span>bout the best tacos you'll ever taste.<br></br><span class="text-green-500">Just a</span>pproved for another location coming soon.<br></br><span class="text-green-500">Just Another Taco Emporium</span><br></br><p className="indent-8 text-2xl font-bold text-green-600"> - JATE</p>
 </h1>
 </div>
-1:30
+
 <section class="overflow-hidden text-neutral-700">
         <div class="max-w-screen-2xl mx-auto px-4 py-16 lg:py-24 relative bg-gray-50">
           <div class="flex flex-col md:flex-row gap-5">
@@ -223,7 +224,7 @@ const Home = () => {
                   <img
                     class=" rounded-lg object-cover ease-in duration-300 hover:scale-105  h-full"
                     src={image10}
-                    alt=""
+                    alt="Taco"
                   />
                   <br />
                   <br />
@@ -231,54 +232,12 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <hr class="w-full h-px my-12 bg-gray-200 border-1 dark:bg-gray-800 ">
+          <div class="pt-12">
+          <hr class="w-full h-px my-12 bg-gray-400 border-1 dark:bg-gray-900">
           </hr>
+          </div>
           <Contact />
         </div>
-        {/* <div class="container scale-110 mx-auto px-5 py-2 lg:px-32 lg:pt-24 lg:pb-24">
-    <div class="-m-1 flex flex-wrap md:-m-2">
-      <div class="flex w-1/2 flex-wrap">
-        <div class="w-1/2 p-1 md:p-2">
-          <img
-            alt="gallery"
-            class="block h-full w-full rounded-lg object-cover ease-in duration-300 hover:scale-105 object-center"
-            src={image1} />
-        </div>
-        <div class="w-1/2 p-1 md:p-2">
-          <img
-            alt="gallery"
-            class="block h-full w-full rounded-lg object-cover object-center ease-in duration-300 hover:scale-105 "
-            src={image2} />
-        </div>
-        <div class="w-full p-1 md:p-2">
-          <img
-            alt="gallery"
-            class="block h-full w-full rounded-lg object-cover ease-in duration-300 hover:scale-105 object-center"
-            src={image3} />
-        </div>
-      </div>
-      <div class="flex w-1/2 flex-wrap">
-        <div class="w-full p-1 md:p-2">
-          <img
-            alt="gallery"
-            class="block h-full w-full rounded-lg object-cover ease-in duration-300 hover:scale-105 object-center"
-            src={image4} />
-        </div>
-        <div class="w-1/2 p-1 md:p-2">
-          <img
-            alt="gallery"
-            class="block h-full w-full rounded-lg object-cover ease-in duration-300 hover:scale-105 object-center"
-            src={image5}/>
-        </div>
-        <div class="w-1/2 p-1 md:p-2">
-          <img
-            alt="gallery"
-            class="block h-full w-full rounded-lg object-cover ease-in duration-300 hover:scale-105 object-center"
-            src={image12} />
-        </div>
-      </div>
-    </div>
-  </div> */}
       </section>
     </div>
   );
