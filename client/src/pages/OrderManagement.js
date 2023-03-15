@@ -76,7 +76,7 @@ function OrderManagement(props) {
     }
     if (thing) {
         people = thing.data;
-        console.log(thing.loading)
+        console.log(thing)
     
     }
     if (role === 'manager') {

@@ -2,14 +2,19 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const categorySchema = new Schema({
+const contactSchema = new Schema({
   name: {
     type: String,
     required: true,
-    trim: true
+  },
+  email: {
+    type: String
+  },
+  phone: {
+    type: String
   }
 });
 
-const Category = mongoose.model('Category', categorySchema);
+const Contact = mongoose.model('Contact', contactSchema);
 
-module.exports = Category;
+module.exports = Contact;

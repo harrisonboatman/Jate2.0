@@ -91,3 +91,12 @@ query  {
   }
 }
 `;
+export const QUERY_CONTACTS = gql`
+query {
+  contacts {
+    email
+    name
+    phone
+  }
+}
+`;

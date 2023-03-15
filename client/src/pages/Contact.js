@@ -1,8 +1,48 @@
-import React from "react";
+import React, { useState } from 'react';
+import { useMutation, useQuery } from '@apollo/client';
+import { QUERY_CONTACTS } from '../utils/queries';
+import { ADD_CONTACT } from '../utils/mutations';
 
 
 
-const Contact = () => {
+const Contact = ()  =>{
+  const {data} = useQuery(QUERY_CONTACTS)
+  const [contact] = useMutation(ADD_CONTACT);
+  const [formState, setFormState] = useState({ name: '', email: '', phone: '' });
+
+let peeps;
+
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    
+
+    try {
+        const mutationResponse = await contact({
+            variables: { name: formState.name, email: formState.email, phone: formState.phone},
+        });
+        console.log(mutationResponse);
+        console.log('hello')
+
+    } catch (e) {
+        console.log(e);
+    }
+    document.location.reload();
+  };
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+        ...formState,
+        [name]: value,
+    });
+};
+if(data){
+  peeps = data
+  console.log(data)
+}
+
+  
+
   return (
     <div>
       <div class="pb-96 relative flex items-top justify-center min-h-screen bg-white dark:bg-gray-900 sm:items-center sm:pt-0">
@@ -16,6 +56,7 @@ const Contact = () => {
                 <p class="text-normal text-lg sm:text-2xl font-medium text-gray-600 dark:text-gray-400 mt-2">
                   Fill in the form to start a conversation
                 </p>
+               
 
                 <div class="flex items-center mt-8 text-gray-600 dark:text-gray-400">
                   <svg
@@ -90,7 +131,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <form class="p-6 flex flex-col justify-center">
+              <form onSubmit={handleFormSubmit} class="p-6 flex flex-col justify-center">
                 <div class="flex flex-col">
                   <label for="name" class="hidden">
                     Full Name
@@ -100,6 +141,7 @@ const Contact = () => {
                     name="name"
                     id="name"
                     placeholder="Full Name"
+                    onChange={handleChange}
                     class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
                   />
                 </div>
@@ -112,19 +154,21 @@ const Contact = () => {
                     type="email"
                     name="email"
                     id="email"
+                    onChange={handleChange}
                     placeholder="Email"
                     class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
                   />
                 </div>
 
                 <div class="flex flex-col mt-2">
-                  <label for="tel" class="hidden">
+                  <label for="phone" class="hidden">
                     Number
                   </label>
                   <input
-                    type="tel"
-                    name="tel"
-                    id="tel"
+                    type="phone"
+                    name="phone"
+                    id="phone"
+                    onChange={handleChange}
                     placeholder="Telephone Number"
                     class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
                   />
@@ -138,11 +182,21 @@ const Contact = () => {
                 </button>
               </form>
             </div>
+            <div>
+        <div class = 'p-6 mr-2 bg-gray-100 dark:bg-gray-800 sm:rounded-lg'>
+          <p>People want to talk to us!</p>
+        {peeps?.contacts.map((cust)=> (
+          <p key = {cust._id}>Email: {cust.email} Name: {cust.name} Phone Number: {cust.phone}</p>
+        ))}
+        </div>
           </div>
         </div>
+      </div>
+      
       </div>
     </div>
   );
 };
+
 
 export default Contact;
