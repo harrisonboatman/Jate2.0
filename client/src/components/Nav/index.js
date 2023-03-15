@@ -4,8 +4,6 @@ import { QUERY_ALL_USERS, QUERY_USER } from '../../utils/queries';
 import { gsap } from "gsap";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
-// import { Link, animateScroll as scroll } from 'react-scroll'
-import { HashLink } from "react-router-hash-link";
 import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -106,7 +104,7 @@ function Nav() {
                     type="button"
                     className="text-white hover:bg-green-500 lg:text-xl ring-white hover:ring-4 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
                   >
-                    <Link to ="/ordermanagement">Order Management</Link>
+                    <Link to ="/management">Order Management</Link>
                   </button>
                 </li>): null}
                 

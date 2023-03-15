@@ -5,7 +5,7 @@ import { useMutation } from "@apollo/client";
 import { ADD_PRODUCT, UPDATE_USER } from "../utils/mutations";
 
 
-function OrderManagement(props) {
+function Management(props) {
     const { data } = useQuery(QUERY_USER);
     const thing = useQuery(QUERY_ALL_USERS)
     let people;
@@ -192,4 +192,4 @@ function OrderManagement(props) {
     )
 }
 
-export default OrderManagement;
+export default Management;
