@@ -19,6 +19,7 @@ import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
 import Menu from './pages/Menu';
 import OrderManagement from './pages/OrderManagement'
+import Footer from './pages/Footer';
 
 
 const httpLink = createHttpLink({
@@ -88,6 +89,10 @@ function App() {
               <Route 
                 path="*" 
                 element={<NoMatch />} 
+              />
+              <Route 
+                path="/footer" 
+                element={<Footer />} 
               />
             </Routes>
           </StoreProvider>

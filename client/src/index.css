@@ -344,3 +344,44 @@ span[role="img"] {
     width: 100%;
   }
 }    */
+
+
+/* body {
+  margin: 0;
+  padding: 0;
+
+} */
+/* 
+section { 
+  position: relative;
+  width: 100%;
+  z-index: 10;
+  padding: 100px;
+  font-size: x-large;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+section img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  height: 400px;
+  background-color: black;
+}
+
+.margin400px {
+margin-bottom: 400px;
+} */

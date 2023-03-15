@@ -27,6 +27,7 @@ import video1 from "../assets/jate.mp4";
 import video2 from "../assets/video2.mp4";
 import video3 from "../assets/video3.mp4";
 import aboutUs from "../assets/about-us.png";
+import Footer from "./Footer";
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
@@ -326,6 +327,7 @@ const Home = () => {
     </div>
   </div> */}
       </section>
+      <Footer />
     </div>
   );
 };

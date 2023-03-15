@@ -19,7 +19,9 @@
     "webpack-cli": "^5.0.1"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.3.0",
     "@react-google-maps/api": "^2.18.1",
+    "font-awesome": "^4.7.0",
     "google-maps-react": "^2.0.6",
     "graphql": "^16.6.0",
     "react-google-maps": "^9.4.5",
