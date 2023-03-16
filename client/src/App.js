@@ -22,7 +22,7 @@ import Contact from './pages/Contact';
 
 
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: 'https://jate-emporium.herokuapp.com/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -38,6 +38,7 @@ const authLink = setContext((_, { headers }) => {
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
+  instrospection: true
 });
 
 function App() {
@@ -85,13 +86,14 @@ function App() {
                 path="/management" 
                 element={<Management />} 
               />
-              <Route 
-                path="*" 
-                element={<NoMatch />} 
-              />
+              
               <Route 
                 path="/contact" 
                 element={<Contact />} 
+              />
+              <Route 
+                path="*" 
+                element={<NoMatch />} 
               />
             </Routes>
           </StoreProvider>

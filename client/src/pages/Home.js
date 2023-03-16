@@ -1,6 +1,5 @@
 import React, { createRef, useEffect, useRef } from "react";
 import Typed from "react-typed";
-import Contact from "./Contact";
 import ProfileCards from "../components/ProfileCards"
 import Footer from "../components/Footer"
 import { gsap } from "gsap";
@@ -14,19 +13,10 @@ import image5 from "../assets/gallery5.png";
 import image6 from "../assets/gallery6.png";
 import image7 from "../assets/gallery7.png";
 import image8 from "../assets/gallery8.png";
-import image9 from "../assets/gallery9.png";
 import image10 from "../assets/gallery10.png";
 import image11 from "../assets/gallery11.png";
 import image12 from "../assets/gallery12.png";
-import image13 from "../assets/gallery13.png";
-import image14 from "../assets/gallery14.png";
-import image15 from "../assets/gallery15.png";
-import image16 from "../assets/gallery16.png";
-import image17 from "../assets/gallery17.png";
-import image19 from "../assets/gallery19.png";
 import { Parallax } from "react-parallax";
-import video1 from "../assets/jate.mp4";
-import video2 from "../assets/video2.mp4";
 import video3 from "../assets/video3.mp4";
 import imageTruck from "../assets/foodtruck.jpg"
 gsap.registerPlugin(ScrollTrigger);

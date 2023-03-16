@@ -41,6 +41,11 @@ const typeDefs = gql`
     token: ID
     user: User
   }
+  type Contact {
+    name: String
+    email: String
+    phone: String
+  }
 
   type Query {
     categories: [Category]
@@ -52,6 +57,7 @@ const typeDefs = gql`
     users: [User]
     orders: [Order]
     ordersByStatus(status: String): [Order]
+    contacts: [Contact]
   }
 
   type Mutation {
@@ -64,6 +70,7 @@ const typeDefs = gql`
     updateUserToWhatever(_id: ID!, userType: String!): User
     addProduct(name: String!, description: String!, price: Float!,image: String, category: [ID]): Product
     updateOrderToWhatever(_id: ID!, status: String!): Order
+    addContact(name: String!, email: String!, phone: String!): Contact
   }
 `;
 
