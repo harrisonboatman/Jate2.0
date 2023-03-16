@@ -48,7 +48,7 @@ function ProductItem(item) {
     //   <button onClick={addToCart}>Add to cart</button>
 
     <div class="mt-10 px-5 scale-75 flex hover:scale-80 hover:ease-in-out min-w-fit">
-        <div class="container bg-white max-w-sm rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-300 p-10">
+        <div class="container bg-gray-300 max-w-sm rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-300 p-10">
           <div class="">
         <Link to={`/products/${_id}`}>
           <img

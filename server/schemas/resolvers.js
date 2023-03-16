@@ -13,10 +13,6 @@ const resolvers = {
           model: "Product",
         },
       });
-      //   {
-      //   path: "orders",
-      //   populate: "products"
-      // }
     },
     orders: async () => {
       return await Order.find()
@@ -194,6 +190,15 @@ const resolvers = {
         { $inc: { quantity: decrement } },
         { new: true }
       );
+    },
+    deleteorder: async (parent, { _id }, context) => {
+      // if (context.user.userType) {
+        const order = await Order.findByIdAndDelete(_id)
+
+        return order;
+      // }
+
+      // throw new AuthenticationError("You are not a manager");
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });

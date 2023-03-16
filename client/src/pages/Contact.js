@@ -44,20 +44,20 @@ let admin = false;
 
   return (
     <div>
-      <div class="relative flex justify-center min-h-screen bg-white dark:bg-gray-900 items-center pt-10">
+      <div class="relative flex justify-center min-h-screen bg-gray-900 items-center pt-10">
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
           <div class="mt-8 overflow-hidden">
             <div class="grid grid-cols-1 md:grid-cols-2">
-              <div class="p-6 mr-2 bg-gray-100 dark:bg-gray-800 rounded-lg">
+              <div class="p-6 mr-2 bg-gray-800 rounded-lg">
                 <h1 class="text-4xl sm:text-5xl text-gray-800 dark:text-white font-extrabold tracking-tight">
                   Stay in touch
                 </h1>
-                <p class="text-normal text-lg sm:text-2xl font-medium text-gray-600 dark:text-gray-400 mt-2">
+                <p class="text-normal text-lg sm:text-2xl font-medium text-gray-400 mt-2">
                   Fill in the form to start a conversation
                 </p>
                
 
-                <div class="flex items-center mt-8 text-gray-600 dark:text-gray-400">
+                <div class="flex items-center mt-8 text-gray-400">
                   <svg
                     fill="none"
                     stroke="currentColor"
