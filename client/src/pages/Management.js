@@ -112,7 +112,7 @@ function Management(props) {
   } else if (role === "employee") {
     employee = true;
   } else {
-    return <p className="text-8xl text-center mt-20">you are not welcome here</p>;
+    return <p className="text-8xl text-center mt-20">Loading</p>;
   } 
 
   return (
