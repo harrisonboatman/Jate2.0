@@ -116,8 +116,8 @@ function Detail() {
           <Cart />
           </div>
           
-      <div class=" flex justify-center items-center">
-      <img className=' lg:h-[50vh] md:h-[40vh] sm:h-[30vh] w-auto object-cover lg:pl-32'
+      <div class=" flex md:justify-center md:flex-row sm:flex-col items-center ">
+      <img className=' lg:h-[50vh] md:h-[40vh] sm:h-[15vh] w-auto object-cover lg:pl-32'
             src={`/images/${currentProduct.image}`}
             alt={currentProduct.name}
           /> 
