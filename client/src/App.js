@@ -19,6 +19,7 @@ import OrderHistory from './pages/OrderHistory';
 import Menu from './pages/Menu';
 import Management from './pages/Management'
 import Contact from './pages/Contact';
+import Orders from './components/Orders'
 
 
 const httpLink = createHttpLink({
@@ -90,6 +91,10 @@ function App() {
               <Route 
                 path="/contact" 
                 element={<Contact />} 
+              />
+              <Route 
+                path="/orders" 
+                element={<Orders />} 
               />
               <Route 
                 path="*" 
