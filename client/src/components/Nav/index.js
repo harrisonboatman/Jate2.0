@@ -27,7 +27,7 @@ function Nav() {
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
-        <nav className="bg-black px-2 sm:px-4 py-1 fixed w-full z-20 top-0 left-0 ">
+        <nav className="bg-black px-2 sm:px-4 fixed w-full z-20 top-0 left-0 ">
           <div className="container flex flex-wrap items-center justify-between mx-auto">
             <a href="https://flowbite.com/" className="flex items-center">
               <Link
@@ -63,7 +63,7 @@ function Nav() {
               className="items-center justify-between  md:flex md:w-auto md:order-1"
               id="navbar-sticky"
             >
-              <ul className="flex flex-row lg:p-4 lg:mt-4  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0  sm:m-0 sm:p-0 justify-center">
+              <ul className="flex flex-row lg:p-3 lg:mt-3 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0  sm:m-0 sm:p-0 justify-center">
                 <li>
                   <button
                     type="button"
@@ -96,7 +96,7 @@ function Nav() {
                     type="button"
                     className="text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
                   >
-                    <Link to ="/management">Order Management</Link>
+                    <Link to ="/management">Management</Link>
                   </button>
                 </li>): null}
                 

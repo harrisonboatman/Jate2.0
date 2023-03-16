@@ -118,14 +118,14 @@ function Management(props) {
   return (
     <>
       <div className="bg-black w-full h-full">
-        <div className="w-full h-[60vh]">
+        <div className="w-full h-[65vh]">
           <img src={staffBackground} className="my-24 h-full w-full"></img>
         </div>
 
         {user ? (
           <div
             ref={myRef}
-            class="flex justify-center items-center lg:text-7xl md:text-6xl sm:text-5xl text-center mt-16 font-serif text-white tracking-wide"
+            class="flex justify-center items-center lg:text-7xl md:text-6xl sm:text-5xl text-center mt-10 font-serif text-white tracking-wide"
           >
             <p>
               Welcome back {user.firstName}! <br></br>{" "}
@@ -138,12 +138,19 @@ function Management(props) {
             </p>
           </div>
         ) : null}
+
+                              {/* Employee begins */}
+
         {employee ? (
             <div className="w-full h-[60rem] bg-white">
                 <Orders />
             </div>
 
         ) : null}
+
+                              {/* Manager begins */}
+
+
         {manager ? (
           <div class="flex flex-row justify-around items-center my-32">
             <div class="flex justify-center p-3">
@@ -275,7 +282,10 @@ function Management(props) {
             </div>
           </div>
         ) : null}
-      </div>
+      
+
+                              {/* admin begins */}
+
 
       {admin ? (
         <div className="">
@@ -317,6 +327,7 @@ function Management(props) {
           </div>
         </div>
       ) : null}
+      </div>
     </>
   );
 }
