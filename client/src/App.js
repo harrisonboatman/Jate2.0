@@ -85,13 +85,14 @@ function App() {
                 path="/ordermanagement" 
                 element={<OrderManagement />} 
               />
-              <Route 
-                path="*" 
-                element={<NoMatch />} 
-              />
+              
               <Route 
                 path="/contact" 
                 element={<Contact />} 
+              />
+              <Route 
+                path="*" 
+                element={<NoMatch />} 
               />
             </Routes>
           </StoreProvider>

@@ -1,5 +1,5 @@
 const db = require('./connection');
-const { User, Product, Category } = require('../models');
+const { User, Product, Category, Contact } = require('../models');
 
 db.once('open', async () => {
   await Category.deleteMany();
@@ -244,6 +244,11 @@ db.once('open', async () => {
     password: 'password12345',
     userType: 'admin'
   });
+  await Contact.create({
+    name: 'Joe',
+    email: 'joe@joe.com',
+    phone: '911'
+  })
 
   console.log('users seeded');
 
