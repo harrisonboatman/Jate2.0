@@ -1,6 +1,5 @@
 import React, { createRef, useEffect, useRef } from "react";
 import Typed from "react-typed";
-import Contact from "./Contact";
 import ProfileCards from "../components/ProfileCards"
 import Footer from "../components/Footer"
 import { gsap } from "gsap";
@@ -235,7 +234,6 @@ className='overflow-hidden'>
           <hr class="w-full h-px my-12 bg-gray-400 border-1 dark:bg-gray-900">
           </hr>
           </div>
-          <Contact />
         </div>
       </section>
       <ProfileCards />
