@@ -6,6 +6,7 @@ import { ADD_PRODUCT, UPDATE_USER } from "../utils/mutations";
 import staffBackground from "../assets/staff-bg.png";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import Orders from "../components/Orders";
 
 function Management(props) {
   const { data } = useQuery(QUERY_USER);
@@ -17,6 +18,7 @@ function Management(props) {
   let peeps;
   let manager = false;
   let admin = false;
+  let employee = false;
   const [formState, setFormState] = useState({
     name: "",
     description: "",
@@ -107,21 +109,23 @@ function Management(props) {
     manager = true;
   } else if (role === "admin") {
     admin = true;
+  } else if (role === "employee") {
+    employee = true;
   } else {
-    return <p>you are not welcome here</p>;
-  }
+    return <p className="text-8xl text-center mt-20">you are not welcome here</p>;
+  } 
 
   return (
     <>
       <div className="bg-black w-full h-full">
-        <div className="w-full h-[60vh]">
+        <div className="w-full h-[65vh]">
           <img src={staffBackground} className="my-24 h-full w-full"></img>
         </div>
 
         {user ? (
           <div
             ref={myRef}
-            class="flex justify-center items-center lg:text-7xl md:text-6xl sm:text-5xl text-center mt-16 font-serif text-white tracking-wide"
+            class="flex justify-center items-center lg:text-7xl md:text-6xl sm:text-5xl text-center mt-10 font-serif text-white tracking-wide"
           >
             <p>
               Welcome back {user.firstName}! <br></br>{" "}
@@ -134,13 +138,27 @@ function Management(props) {
             </p>
           </div>
         ) : null}
+
+                              {/* Employee begins */}
+
+        {employee ? (
+            <div className="w-full h-[60rem] bg-white">
+                <Orders />
+            </div>
+
+        ) : null}
+
+                              {/* Manager begins */}
+
+
         {manager ? (
-          <div class="flex flex-row justify-around items-center my-32">
-            <div class="flex justify-center p-3">
-              <div className="p-5 w-1/2">
+          <div class="flex justify-evenly my-32">
+            
+              
+              
                 <form
                   onSubmit={handleFormSubmit}
-                  class="manager-form p-10 mb-24 bg-white rounded-xl"
+                  class="manager-form p-6 mb-24 bg-white rounded-xl"
                 >
                   <p class="text-center text-green-500 font-extrabold mb-3">
                     You can add a product to the website below!
@@ -203,6 +221,7 @@ function Management(props) {
 
                     <select
                       id="category"
+                      className="border-2 border-gray-200 cursor-pointer h-8"
                       name="category"
                       onChange={handleChange}
                     >
@@ -231,7 +250,7 @@ function Management(props) {
                     <select
                       id="image"
                       name="image"
-                      className="border-2 border-gray-200"
+                      className="border-2 border-gray-200 cursor-pointer h-8"
                     >
                       <option value="bacon-egg.png">Breakfast Taco</option>
                       <option value="shrimp.png">Dinner Taco</option>
@@ -251,21 +270,26 @@ function Management(props) {
                     </button>
                   </div>
                 </form>
-              </div>
-              <div class="flex flex-col flex-wrap overflow-hidden w-1/2 pl-3 bg-gray-100 sm:rounded-lg">
-                <p className="p-3 flex-1">People want to talk to us!</p>
+                <div class="list-contact flex flex-col overflow-y-scroll h-[565px] w-[420px] px-10 bg-gray-100 rounded-xl">
+                <p className="text-center text-4xl mt-8 font-bold underline underline-offset-8">People to Contact</p>
                 {peeps?.data?.contacts?.map((cust) => (
-                  <p key={cust._id}>
-                    <br></br>Email: {cust.email} <br></br> Name: {cust.name}{" "}
-                    <br></br> Phone Number: {cust.phone}
+                  <p className="text-2xl tracking-wide" key={cust._id}>
+                    <br></br> <span className="font-semibold">Name: &nbsp;</span> {cust.name}{" "}
+                    <br></br><span className="font-semibold">Email: &nbsp;</span> {cust.email}
+                    <br></br> <span className="font-semibold">Phone # : </span> {cust.phone}
                     <br></br>
                   </p>
                 ))}
               </div>
-            </div>
+              
+            
+           
           </div>
         ) : null}
-      </div>
+      
+
+                              {/* admin begins */}
+
 
       {admin ? (
         <div className="">
@@ -307,6 +331,7 @@ function Management(props) {
           </div>
         </div>
       ) : null}
+      </div>
     </>
   );
 }
