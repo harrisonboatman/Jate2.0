@@ -63,11 +63,11 @@ function Nav() {
               className="items-center justify-between  md:flex md:w-auto md:order-1"
               id="navbar-sticky"
             >
-              <ul className="flex flex-row lg:p-3 lg:mt-3 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0  sm:m-0 sm:p-0 justify-center">
+              <ul className="flex flex-row lg:p-4 md:flex-row md:space-x-8 md:mt-0 md:text-normal md:font-lg md:border-0  sm:m-0 sm:p-0 justify-center">
                 <li>
                   <button
                     type="button"
-                    className="text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
+                    className="text-white lg:px-6 hover:text-green-500 lg:text-xl  ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
                   >
                     <Link to="/">Home</Link>
                   </button>
@@ -76,7 +76,7 @@ function Nav() {
                 <li>
                   <button
                     type="button"
-                    className="text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
+                    className="text-white lg:px-6 hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
                   >
                     <Link to="/menu">Menu</Link>
                   </button>
@@ -84,7 +84,7 @@ function Nav() {
                 <li>
                   <button
                     type="button"
-                    className="text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
+                    className="text-white lg:px-6 hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
                   >
                     <Link to ="/contact">
                     Contact
@@ -94,7 +94,7 @@ function Nav() {
                 {!customer ? (<li>
                   <button
                     type="button"
-                    className="text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
+                    className="text-white lg:px-6 hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
                   >
                     <Link to ="/management">Management</Link>
                   </button>
@@ -141,14 +141,14 @@ function Nav() {
                 </button>
               </div>
               <div
-              className="items-center justify-between  md:flex md:w-auto md:order-1"
+              className="items-center justify-between md:flex md:w-auto md:order-1"
               id="navbar-sticky"
             >
-              <ul className="flex flex-row lg:p-4 lg:mt-4  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0  sm:m-0 sm:p-0 justify-center ">
+              <ul className="flex flex-row lg:p-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0  sm:m-0 sm:p-0 justify-center ">
                   <li>
                     <button
                       type="button"
-                      className="text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
+                      className="text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base lg:px-9 md:px-5 sm:px-2 py-1 text-center mr-3 md:mr-0 "
                     >
                       <Link to="/">Home</Link>
                     </button>
@@ -156,7 +156,7 @@ function Nav() {
                   <li>
                     <button
                       type="button"
-                      className="text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
+                      className="text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base lg:px-9 md:px-5 sm:px-2 py-1 text-center mr-3 md:mr-0 "
                     >
                       <Link to="/menu">Menu</Link>
                     </button>
@@ -164,7 +164,7 @@ function Nav() {
                   <li>
                     <button
                       type="button"
-                      className="text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
+                      className="text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base lg:px-9 md:px-5 sm:px-2 py-1 text-center mr-3 md:mr-0 "
                     >
                       <Link to ="/contact">
                     Contact

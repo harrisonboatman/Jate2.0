@@ -177,7 +177,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div class="max-w-screen-2xl mx-auto px-4 py-16 lg:py-24 relative bg-white">
+        <div class="max-w-screen-2xl mx-auto px-4 py-16 lg:pt-24 relative bg-white">
           <div class="flex flex-col md:flex-row gap-4">
             <div class="flex flex-1 flex-col">
               <div class="flex flex-1 flex-col">
@@ -223,8 +223,8 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div class="pt-12">
-          <hr class="w-full h-px my-12 bg-gray-400 border-1 dark:bg-gray-900">
+          <div class="">
+          <hr class="w-full h-px bg-gray-400 border-1 dark:bg-gray-900">
           </hr>
           </div>
         </div>
