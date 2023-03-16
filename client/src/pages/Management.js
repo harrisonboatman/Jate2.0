@@ -275,10 +275,10 @@ function Management(props) {
                 Admin
               </h2>
               <form className="flex flex-col place-content-evenly p-2" onSubmit={handleJobChange}>
-                <label class="text-green-500 p-2" for="_id">
+                <label class="text-green-500 p-3" for="_id">
                   Choose a user:{" "}
                 </label>
-                <select name="_id" id="_id">
+                <select className="rounded p-1" name="_id" id="_id">
                   {people?.users.map((person) => (
                     <option value={person._id}>
                       Name: {person.firstName} ID: {person._id}
@@ -288,7 +288,7 @@ function Management(props) {
                 <label class="text-green-500 p-3">
                   Choose which job you would like them to be now:
                 </label>
-                <select className="" name="userType" id="userType">
+                <select className="rounded p-1" name="userType" id="userType">
                   <option value="employee">Employee</option>
                   <option value="manager">Manager</option>
                   <option value="admin">Admin</option>
