@@ -22,7 +22,7 @@ import Contact from './pages/Contact';
 
 
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: 'https://jate-emporium.herokuapp.com/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
