@@ -27,8 +27,6 @@
         max-width: 50%;
       }
     }
-  
-   
 
 video::-webkit-media-controls {
   display: none;
@@ -52,8 +50,8 @@ video::-webkit-media-controls {
   background-image: url('../src/assets/categories-bg2.png');
   background-size: cover;
   object-fit: none;
-  object-position: right;
-  height: 50vh;
+  object-position: center;
+  height: 60vh;
 }
 
 .navbar {
@@ -82,7 +80,6 @@ span[role="img"] {
   
   background-color: black;
   border-radius: 20px;
-  
 }
 
 @media screen and (max-width: 1020px) { 
@@ -121,31 +118,36 @@ span[role="img"] {
     visibility: visible;
   }
 
-
-  .dev-btn {
-    position: absolute;
-    top: 4px;
-    right: 4px;
-  }
-
-
   .sliding-div {
-    overflow-x: hidden;
+    overflow: hidden;
     background-color: black;
     position: absolute;
-    height: 410px;
+    height: 70px;
     width: 100%;
     z-index: 10;
     transition: transform 0.5s ease-in-out;
   }
   
   .remove {
-    transform: translateX(100%);
+    transform: translateY(-100%);
     transition: transform 1s ease-in-out;
-    visibility: hidden;
-    opacity: 0;
   }
 
+  .dev-group {
+    overflow: hidden;
+    background-color: transparent;
+    height: 410px;
+    width: 100%;
+    z-index: 20;
+    transition: transform 0.5s ease-in-out;
+    margin-bottom: -340px;
+
+  }
+
+.footer {
+  z-index: 30;
+  position: relative;
+}
 
 /* reponsive JATE Gallery */
 @media screen and (max-width: 700px) {
@@ -154,7 +156,6 @@ span[role="img"] {
     height: 30vh;
   }
 }
-
 
 .team-cards {
   transition: transform .8s;
@@ -182,9 +183,51 @@ span[role="img"] {
   color: white;
   display: inline-flex;
   transition: all 0.8s ease-out;
-    
 }
 
 .manager-form {
   box-shadow: 8px 8px 12px green;
+}
+
+.list-contact{
+  box-shadow: 8px 8px 12px green;
+}
+
+.menu {
+  text-transform: uppercase;
+  transform: rotate(-20deg)
+             skew(-7deg);
+  background-color: black;
+  position: absolute;
+  border: solid lightgray;
+  border-width: 3px;
+  z-index: 13;
+}
+.menu-2 {
+  
+  transform: rotate(-28deg)
+             skew(-7deg);
+   background-color: #1c1c1c;
+  position: absolute;
+  border: solid lightgray;
+  border-width: 3px;
+  z-index: 12;
+}
+.menu-3 {
+  
+  transform: rotate(-36deg)
+             skew(-7deg);
+  background-color: #0d0d0d;
+  position: absolute;
+  border: solid lightgray;
+  border-width: 3px;
+  z-index: 11;
+}
+
+.we-are {
+  
+  margin: auto;
+	text-shadow: 0px 3px 0px #03ac13, 0px 14px 10px rgba(0, 0, 0, 0.15),
+		0px 24px 2px rgba(0, 0, 0, 0.1), 0px 24px 30px rgba(0, 0, 0, 0.1);
+    
 }
