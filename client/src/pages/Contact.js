@@ -1,21 +1,61 @@
-import React from "react";
+import React, { useState } from 'react';
+import { useMutation, useQuery } from '@apollo/client';
+import { QUERY_CONTACTS, QUERY_USER } from '../utils/queries';
+import { ADD_CONTACT } from '../utils/mutations';
 
 
 
-const Contact = () => {
+function Contact  () {
+  const thing = useQuery(QUERY_USER);
+  const {data} = useQuery(QUERY_CONTACTS)
+  const [contact] = useMutation(ADD_CONTACT);
+  const [formState, setFormState] = useState({ name: '', email: '', phone: '' });
+
+let peeps;
+let userRole;
+let admin = false;
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    
+
+    try {
+        const mutationResponse = await contact({
+            variables: { name: formState.name, email: formState.email, phone: formState.phone},
+        });
+        console.log(mutationResponse);
+        console.log('hello')
+
+    } catch (e) {
+        console.log(e);
+    }
+    document.location.reload();
+  };
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+        ...formState,
+        [name]: value,
+    });
+};
+
+
+
+
   return (
     <div>
-      <div class="pb-96 relative flex items-top justify-center min-h-screen bg-white dark:bg-gray-900 sm:items-center sm:pt-0">
+      <div class="relative flex justify-center min-h-screen bg-white dark:bg-gray-900 items-center pt-10">
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
           <div class="mt-8 overflow-hidden">
             <div class="grid grid-cols-1 md:grid-cols-2">
-              <div class="p-6 mr-2 bg-gray-100 dark:bg-gray-800 sm:rounded-lg">
+              <div class="p-6 mr-2 bg-gray-100 dark:bg-gray-800 rounded-lg">
                 <h1 class="text-4xl sm:text-5xl text-gray-800 dark:text-white font-extrabold tracking-tight">
                   Stay in touch
                 </h1>
                 <p class="text-normal text-lg sm:text-2xl font-medium text-gray-600 dark:text-gray-400 mt-2">
                   Fill in the form to start a conversation
                 </p>
+               
 
                 <div class="flex items-center mt-8 text-gray-600 dark:text-gray-400">
                   <svg
@@ -90,7 +130,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <form class="p-6 flex flex-col justify-center">
+              <form onSubmit={handleFormSubmit} class="p-6 flex flex-col justify-center">
                 <div class="flex flex-col">
                   <label for="name" class="hidden">
                     Full Name
@@ -100,6 +140,7 @@ const Contact = () => {
                     name="name"
                     id="name"
                     placeholder="Full Name"
+                    onChange={handleChange}
                     class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
                   />
                 </div>
@@ -112,19 +153,21 @@ const Contact = () => {
                     type="email"
                     name="email"
                     id="email"
+                    onChange={handleChange}
                     placeholder="Email"
                     class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
                   />
                 </div>
 
                 <div class="flex flex-col mt-2">
-                  <label for="tel" class="hidden">
+                  <label for="phone" class="hidden">
                     Number
                   </label>
                   <input
-                    type="tel"
-                    name="tel"
-                    id="tel"
+                    type="phone"
+                    name="phone"
+                    id="phone"
+                    onChange={handleChange}
                     placeholder="Telephone Number"
                     class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
                   />
@@ -138,11 +181,16 @@ const Contact = () => {
                 </button>
               </form>
             </div>
-          </div>
+            
+            
+          
         </div>
+      </div>
+      
       </div>
     </div>
   );
 };
+
 
 export default Contact;

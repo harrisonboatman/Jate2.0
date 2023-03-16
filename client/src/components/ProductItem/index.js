@@ -78,28 +78,3 @@ function ProductItem(item) {
 
 export default ProductItem;
 
-
-// Need to find a way to use Map method in order to get cards in columns
-
-{/* <div class="container mx-auto">
-    <div class="grid grid-cols-3 gap-4">
-      {products?.map(product => (
-        <div key={product._id} class="bg-white shadow-md rounded-xl overflow-hidden">
-          <Link to={`/products/${product._id}`}>
-            <img
-              class="w-full h-64 object-cover"
-              src={`/images/${product.image}`} 
-              alt={product.name}
-            />
-          </Link>
-          <div class="p-4">
-            <h1 class="text-lg font-semibold mb-2">{product.name}</h1>
-            <p class="text-gray-600">${product.price}</p>
-            <button onClick={addToCart} class="mt-4 text-white text-md font-semibold bg-green-400 py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition duration-500 transform-gpu hover:scale-110 ">
-              Add to cart
-            </button>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div> */}

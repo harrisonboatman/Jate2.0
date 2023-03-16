@@ -17,12 +17,13 @@ import { StoreProvider } from './utils/GlobalState';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
 import Menu from './pages/Menu';
-import OrderManagement from './pages/OrderManagement'
+import Management from './pages/Management'
 import Contact from './pages/Contact';
+import Orders from './components/Orders'
 
 
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: 'https://jate-emporium.herokuapp.com/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -38,6 +39,7 @@ const authLink = setContext((_, { headers }) => {
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
+  instrospection: true
 });
 
 function App() {
@@ -82,16 +84,21 @@ function App() {
                 element={<Menu />} 
               />
               <Route 
-                path="/ordermanagement" 
-                element={<OrderManagement />} 
+                path="/management" 
+                element={<Management />} 
+              />
+              
+              <Route 
+                path="/contact" 
+                element={<Contact />} 
+              />
+              <Route 
+                path="/orders" 
+                element={<Orders />} 
               />
               <Route 
                 path="*" 
                 element={<NoMatch />} 
-              />
-              <Route 
-                path="/contact" 
-                element={<Contact />} 
               />
             </Routes>
           </StoreProvider>

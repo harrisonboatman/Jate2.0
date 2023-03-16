@@ -4,7 +4,6 @@ import { QUERY_ALL_USERS, QUERY_USER } from '../../utils/queries';
 import { gsap } from "gsap";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
-// import { Link, animateScroll as scroll } from 'react-scroll'
 import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,14 +45,14 @@ function Nav() {
             <div className="flex md:order-2">
               <button
                 type="button"
-                className=" text-white hover:bg-green-500 lg:text-xl ring-white hover:ring-4 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
+                className=" text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
               >
                 <Link to="/orderHistory">Order History</Link>
               </button>
 
               <button
                 type="button"
-                className="text-white hover:bg-green-500 lg:text-xl ring-white hover:ring-4 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0"
+                className="text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0"
                 href="/"
                 onClick={() => Auth.logout()}
               >
@@ -68,24 +67,16 @@ function Nav() {
                 <li>
                   <button
                     type="button"
-                    className="text-white hover:bg-green-500 lg:text-xl ring-white hover:ring-4 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
+                    className="text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
                   >
                     <Link to="/">Home</Link>
                   </button>
                 </li>
+                
                 <li>
                   <button
                     type="button"
-                    className="text-white hover:bg-green-500 lg:text-xl ring-white hover:ring-4 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
-                   >
-              About Us      
-            
-                  </button>
-                </li>
-                <li>
-                  <button
-                    type="button"
-                    className="text-white hover:bg-green-500 lg:text-xl ring-white hover:ring-4 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
+                    className="text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
                   >
                     <Link to="/menu">Menu</Link>
                   </button>
@@ -93,7 +84,7 @@ function Nav() {
                 <li>
                   <button
                     type="button"
-                    className="text-white hover:bg-green-500 lg:text-xl ring-white hover:ring-4 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
+                    className="text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
                   >
                     <Link to ="/contact">
                     Contact
@@ -103,9 +94,9 @@ function Nav() {
                 {!customer ? (<li>
                   <button
                     type="button"
-                    className="text-white hover:bg-green-500 lg:text-xl ring-white hover:ring-4 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
+                    className="text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
                   >
-                    <Link to ="/ordermanagement">Order Management</Link>
+                    <Link to ="/management">Order Management</Link>
                   </button>
                 </li>): null}
                 
@@ -125,7 +116,7 @@ function Nav() {
               <a href="https://flowbite.com/" className="flex items-center">
                 <Link
                   to="/"
-                  className=" text-3xl font-bold text-green-500"
+                  className=" text-3xl font-bold hover:text-white text-green-500"
                 >
                   JATE
                   <span role="img" aria-label="taco">
@@ -138,13 +129,13 @@ function Nav() {
               <div className="flex md:order-2">
                 <button
                   type="button"
-                  className="text-white lg:text-xl ring-white hover:ring-4 hover:bg-green-500 ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
+                  className="text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
                 >
                   <Link to="/login">Login</Link>
                 </button>
                 <button
                   type="button"
-                  className="text-white lg:text-xl border-2 ring-offset-2 ring-gradient-to-br from-green-400 to-green-700 hover:ring-2 hover:bg-green-500 ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
+                  className="text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
                 >
                   <Link to="/signup">Sign Up</Link>
                 </button>
@@ -157,7 +148,7 @@ function Nav() {
                   <li>
                     <button
                       type="button"
-                      className="text-white lg:text-xl ring-white hover:ring-4 hover:bg-green-500 ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
+                      className="text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
                     >
                       <Link to="/">Home</Link>
                     </button>
@@ -165,24 +156,7 @@ function Nav() {
                   <li>
                     <button
                       type="button"
-                      className="text-white lg:text-xl ring-white hover:ring-4 hover:bg-green-500 ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
-                    >
-               <Link
-              activeClass="active"
-              to="About-Us"
-              spy={true}
-              smooth={true}
-              offset={-500}
-              duration={500}
-            >
-              About Us
-            </Link>
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      type="button"
-                      className="text-white lg:text-xl ring-white hover:ring-4 hover:bg-green-500 ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
+                      className="text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
                     >
                       <Link to="/menu">Menu</Link>
                     </button>
@@ -190,13 +164,13 @@ function Nav() {
                   <li>
                     <button
                       type="button"
-                      className="text-white hover:bg-green-500 lg:text-xl ring-white hover:ring-4 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
+                      className="text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
                     >
                       <Link to ="/contact">
                     Contact
                     </Link>
                     </button>
-                  </li>
+                  </li> 
                 </ul>
               </div>
             </div>

@@ -99,6 +99,15 @@ mutation updateUserToWhatever($id: ID!, $userType: String!) {
     userType
   }
 }
+`;
+export const ADD_CONTACT = gql`
+mutation addContact($name: String!, $email: String!, $phone: String!) {
+  addContact(name: $name, email: $email, phone: $phone) {
+    email
+    name
+    phone
+  }
+}
 `
 
 
