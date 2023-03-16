@@ -152,12 +152,13 @@ function Management(props) {
 
 
         {manager ? (
-          <div class="flex flex-row justify-around items-center my-32">
-            <div class="flex justify-center p-3">
-              <div className="p-5 w-1/2">
+          <div class="flex justify-evenly my-32">
+            
+              
+              
                 <form
                   onSubmit={handleFormSubmit}
-                  class="manager-form p-10 mb-24 bg-white rounded-xl"
+                  class="manager-form p-6 mb-24 bg-white rounded-xl"
                 >
                   <p class="text-center text-green-500 font-extrabold mb-3">
                     You can add a product to the website below!
@@ -220,6 +221,7 @@ function Management(props) {
 
                     <select
                       id="category"
+                      className="border-2 border-gray-200 cursor-pointer h-8"
                       name="category"
                       onChange={handleChange}
                     >
@@ -248,7 +250,7 @@ function Management(props) {
                     <select
                       id="image"
                       name="image"
-                      className="border-2 border-gray-200"
+                      className="border-2 border-gray-200 cursor-pointer h-8"
                     >
                       <option value="bacon-egg.png">Breakfast Taco</option>
                       <option value="shrimp.png">Dinner Taco</option>
@@ -268,18 +270,20 @@ function Management(props) {
                     </button>
                   </div>
                 </form>
-              </div>
-              <div class="flex flex-col flex-wrap overflow-hidden w-1/2 pl-3 bg-gray-100 sm:rounded-lg">
-                <p className="p-3 flex-1">People want to talk to us!</p>
+                <div class="list-contact flex flex-col overflow-y-scroll h-[565px] w-[420px] px-10 bg-gray-100 rounded-xl">
+                <p className="text-center text-4xl mt-8 font-bold underline underline-offset-8">People to Contact</p>
                 {peeps?.data?.contacts?.map((cust) => (
-                  <p key={cust._id}>
-                    <br></br>Email: {cust.email} <br></br> Name: {cust.name}{" "}
-                    <br></br> Phone Number: {cust.phone}
+                  <p className="text-2xl tracking-wide" key={cust._id}>
+                    <br></br> <span className="font-semibold">Name: &nbsp;</span> {cust.name}{" "}
+                    <br></br><span className="font-semibold">Email: &nbsp;</span> {cust.email}
+                    <br></br> <span className="font-semibold">Phone # : </span> {cust.phone}
                     <br></br>
                   </p>
                 ))}
               </div>
-            </div>
+              
+            
+           
           </div>
         ) : null}
       
