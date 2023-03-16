@@ -11,10 +11,11 @@
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license)
+* [Screenshots](#screenshots)
 
 ## Installation
 
@@ -43,6 +44,11 @@ Full-Stack Blog - [Professional README Guide](https://coding-boot-camp.github.io
 - Connor - https://github.com/connorbodin
 - Darren - https://github.com/medranomiler 
 - Rick - https://github.com/Rick3Mrtz
+
+## Screenshots
+
+![jate gif](https://user-images.githubusercontent.com/63430373/225406176-8b983351-ec83-4e41-a86d-dc9008d4f790.gif)
+
 
 ## License
 
