@@ -71,6 +71,7 @@ const typeDefs = gql`
     addProduct(name: String!, description: String!, price: Float!,image: String, category: [ID]): Product
     updateOrderToWhatever(_id: ID!, status: String!): Order
     addContact(name: String!, email: String!, phone: String!): Contact
+    deleteorder(_id: ID!): Order
   }
 `;
 
