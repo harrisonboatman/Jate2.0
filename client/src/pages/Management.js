@@ -292,25 +292,25 @@ function Management(props) {
 
 
       {admin ? (
-        <div className="">
-          <div className="mt-[3rem] mx-4 flex flex-wrap justify-center ">
-            <div class="bg-gray-900 flex flex-col rounded-xl p-10">
-              <h2 class="text-green-500 my-5 text-center font-extrabold">
+        <div className="bg-black h-[70vh]">
+          <div className="mt-[6rem] mb-[3rem] flex flex-wrap justify-center ">
+            <div class="bg-gray-600 flex flex-col rounded-xl p-10">
+              <h2 class="text-green-500 my-5 text-center lg:text-6xl font-extrabold">
                 Admin
               </h2>
               <form className="flex flex-col place-content-evenly p-2" onSubmit={handleJobChange}>
-                <label class="text-green-500 p-3" for="_id">
+                <label class="text-green-500 p-3 text-2xl" for="_id">
                   Choose a user:{" "}
                 </label>
-                <select className="rounded p-1" name="_id" id="_id">
+                <select className="rounded p-1 mb-10" name="_id" id="_id">
                   {people?.users.map((person) => (
                     <option value={person._id}>
                       Name: {person.firstName} ID: {person._id}
                     </option>
                   ))}
                 </select>
-                <label class="text-green-500 p-3">
-                  Choose which job you would like them to be now:
+                <label class="text-green-500 p-3 text-2xl">
+                  Which job would you<br></br> like them to be?
                 </label>
                 <select className="rounded p-1" name="userType" id="userType">
                   <option value="employee">Employee</option>
@@ -320,7 +320,7 @@ function Management(props) {
                 </select>
                 <div className="p-20">
                 <button
-                  className="w-[200px]  rounded-3xl bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
+                  className=" rounded-3xl mx-auto bg-green-500 hover:bg-green-400 text-white font-bold py-4 px-4 focus:outline-none focus:shadow-outline"
                   type="submit"
                 >
                   Change employee job!
