@@ -1,13 +1,7 @@
 # JATE - Just Another Taco Emporium
 
 ## Description
-
-> Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:  
->   
-> - What was your motivation?  
-> - Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")  
-> - What problem does it solve?  
-> - What did you learn?  
+Welcome to JATE, where we specialize in crafting delicious and authentic tacos! Our menu features a variety of tacos, each made with the freshest and highest quality ingredients. From traditional carne asada and al pastor to creative and unique vegetarian options, we have something for everyone to enjoy. Our restaurant has a casual and inviting atmosphere, perfect for grabbing a quick lunch or enjoying a night out with friends. Browse our menu, place your order online, and come join us for a tasty and satisfying meal!
 
 ## Table of Contents
 
@@ -23,31 +17,23 @@
 
 ## Usage
 
-> Provide instructions and examples for use. Include screenshots as needed.
->   
-> To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:  
->   
->   `![alt text](assets/images/screenshot.png)`
-
+- https://jate-emporium.herokuapp.com/
 
 ## Credits
-
-> List your collaborators, if any, with links to their GitHub profiles.
-> 
-> If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-> 
-> If you followed tutorials, include links to those here as well.
-
-Full-Stack Blog - [Professional README Guide](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)
 
 - Harrison - https://github.com/harrisonboatman
 - Connor - https://github.com/connorbodin
 - Darren - https://github.com/medranomiler 
 - Rick - https://github.com/Rick3Mrtz
+- Michael - https://github.com/AustinBQ02
 
 ## Screenshots
 
 ![jate gif](https://user-images.githubusercontent.com/63430373/225406176-8b983351-ec83-4e41-a86d-dc9008d4f790.gif)
+![image](https://user-images.githubusercontent.com/63430373/225468936-e29cd81f-1946-461d-b396-0498ced30b9d.png)
+![image](https://user-images.githubusercontent.com/63430373/225479344-2a54598a-12ff-499f-9707-a77007182a25.png)
+![image](https://user-images.githubusercontent.com/63430373/225479367-22438aa8-502c-44d5-b331-e8db89016f1e.png)
+
 
 
 ## License
