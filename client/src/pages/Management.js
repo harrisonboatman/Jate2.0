@@ -186,7 +186,7 @@ function Management(props) {
                             <option value='rice.jpg'>Side</option>
                         </select>
                         </div>
-                        <div className=" w-full h-full flex items-center justify-center mt-4">
+                        <div className=" flex items-center justify-center mt-4">
                             <button
                                 className="w-[200px] rounded-3xl bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
                                 type="submit"
