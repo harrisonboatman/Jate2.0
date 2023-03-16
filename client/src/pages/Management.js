@@ -3,9 +3,9 @@ import { useQuery } from '@apollo/client';
 import { QUERY_ALL_USERS, QUERY_CONTACTS, QUERY_USER } from '../utils/queries';
 import { useMutation } from "@apollo/client";
 import { ADD_PRODUCT, UPDATE_USER } from "../utils/mutations";
+import staffBackground from '../assets/staff-bg.png'
 
-
-function OrderManagement(props) {
+function Management(props) {
     const { data } = useQuery(QUERY_USER);
     const thing = useQuery(QUERY_ALL_USERS)
     const stuff = useQuery(QUERY_CONTACTS)
@@ -99,17 +99,27 @@ function OrderManagement(props) {
 
     return (
         <>
-            <p>welcome to the page</p>
+        <div className="bg-black w-full h-full">
+
+        <div className="w-full h-[60vh]">
+            <img src={staffBackground} className="my-24 h-full w-full" >
+            </img>
+
+        </div>
+
+        
+        
 
             {user ? (
-                <div class="mt-20 text-center"><p>Welcome back {user.firstName}!  ({role})</p>
-                </div>
+            <div class = "flex justify-center items-center lg:text-7xl md:text-6xl sm:text-5xl text-center mt-20 font-serif text-white tracking-wide"><p>Welcome back {user.firstName}! <br></br>  <div className="mt-5">Role:  <span className="text-green-500 font-semibold capitalize">{role}</span></div></p>
+            </div>
             ) : null}
-            {manager ? (<div class="mt-5">
-                <div class="flex justify-center mt-5">
+            {manager ? (<div class="flex flex-row justify-around items-center my-32">
+                <p class="text-center text-white">yous a manager</p>
+                <div class="flex justify-center">
                     <form onSubmit={handleFormSubmit}
-                        class="p-10 bg-gray-900 rounded-xl">
-                        <p class="text-center text-green-500 font-extrabold mb-3">You can add a product to the website below!</p>
+                        class="manager-form p-10 mb-24 bg-white rounded-xl">
+                            <p class="text-center text-green-500 font-extrabold mb-3">You can add a product to the website below!</p>
                         <div class="mb-6">
                             <label for="product-name" class="block mb-2 text-sm font-medium text-green-500">Product Name</label>
                             <input id='name'
@@ -163,7 +173,7 @@ function OrderManagement(props) {
                         </div>
                         <div>
                         <label for="product-category" class="block mb-2 text-sm font-medium text-green-500">Product image</label>
-                        <select id='image' name='image' onChange={handleChange}>
+                        <select id='image' name='image' className="border-2 border-gray-200">
 
                             <option value='bacon-egg.png'>Breakfast Taco</option>
                             <option value='shrimp.png'>Dinner Taco</option>
@@ -190,6 +200,15 @@ function OrderManagement(props) {
                 </div>
 
             </div>) : null}
+            </div>
+
+
+
+
+
+
+
+
             {admin ? (
                 <div>
                     <div className='mt-[3rem] mx-4 flex  justify-center '>
@@ -229,4 +248,5 @@ function OrderManagement(props) {
     )
 }
 
-export default OrderManagement;
+export default Management;
+
