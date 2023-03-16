@@ -115,7 +115,6 @@ function Management(props) {
             </div>
             ) : null}
             {manager ? (<div class="flex flex-row justify-around items-center my-32">
-                <p class="text-center text-white">yous a manager</p>
                 <div class="flex justify-center">
                     <form onSubmit={handleFormSubmit}
                         class="manager-form p-10 mb-24 bg-white rounded-xl">
@@ -191,7 +190,7 @@ function Management(props) {
                             </button>
                         </div>
                     </form>
-                    <div class='p-6 mr-2 bg-gray-100 dark:bg-gray-800 sm:rounded-lg'>
+                    <div class='p-6 mr-2 flex flex-col bg-gray-100 dark:bg-gray-800 sm:rounded-lg'>
                             <p>People want to talk to us!</p>
                             {peeps?.data?.contacts?.map((cust) => (
                                 <p key={cust._id}>Email: {cust.email} Name: {cust.name} Phone Number: {cust.phone}</p>
