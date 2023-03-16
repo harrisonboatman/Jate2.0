@@ -52,7 +52,7 @@ const Home = () => {
   useEffect(() => {
     const el = containerRef.current;
     gsap.fromTo(el,
-      { x: 1400 },
+      { x: 1650 },
       {
         x: 0,
         duration: 2,
@@ -115,11 +115,11 @@ const Home = () => {
         </Parallax>
       </div>
       <div className="flex justify-center items-center">
-  <div className="relative flex justify-center items-center lg:w-1/2 bg-gray-100 lg:h-[500px] lg:mx-20 md:mx-10 sm:mx-2 rounded-tr-xl rounded-br-xl sm:w-full sm:h-[250px]">
-    <img src={imageTruck} className="about-us-img lg:h-[550px] md:h-[400px] sm:h-[300px] mt-[-180px] w-[80%] rounded-3xl" /></div>
+  <div className="relative flex justify-center items-center lg:w-3/4 bg-gray-300 lg:h-[500px] lg:mx-20 md:mx-10 sm:mx-2 rounded-tr-xl rounded-br-xl sm:w-full sm:h-[250px]">
+    <img src={imageTruck} className="about-us-img lg:h-[600px] md:h-[400px] sm:h-[300px] mt-[-180px] w-[80%] rounded-3xl" /></div>
 </div>
 <div ref={containerRef}>
-<h1 className="lg:text-6xl md:text-4xl sm:xl text-left lg:ml-[11rem] md:ml-[4rem] sm:ml-4 mt-10 font-serif">
+<h1 className="we-are lg:text-7xl md:text-4xl sm:xl text-left lg:ml-[11rem] md:ml-[4rem] sm:ml-4 h-10 font-serif">
   WHO WE ARE
 </h1>
 

@@ -29,7 +29,7 @@ function toggleCover() {
     return (
         <div className="mx-auto w-full">
             <div className="sliding-div flex justify-center border-t-2 border-white">
-                <div className="blanket text-white text-center text-4xl flex justify-center items-center">
+                <div className="blanket text-white text-center lg:text-4xl md:text-3xl sm:text-xl: flex justify-center items-center">
                     <h1 className="flex justify-content align-middle tracking-wider">Enjoying the Content? Click&nbsp; <button onClick={toggleCover} className=" text-green-500 rounded-2xl hover:underline hover:text-green-600 " >Here</button>  &nbsp;to Meet the Webdevs<br></br>
                     
                    
@@ -39,13 +39,13 @@ function toggleCover() {
             
                 <div className={`dev-group ${isCovered ? '' : 'remove'}`}>
             <div className="dev-group wrapper p-10 mt-4">
-                <div className=" grid grid-flow-row grid-cols-5 gap-[4rem] mx-16">
+                <div className=" grid lg:grid-flow-row grid-cols-5 lg:gap-[4rem] lg:mx-16 md:mx-2">
                     <div className="team-cards z-0 relative overflow-hidden">
                         <div className="max-w-sx bg-gradient-to-br from-black to-zinc-600 h-[300px]">
                             <div className="top-color bg-green-700 h-20 border-none rounded-t-2xl"></div>
                             <div className="flex flex-col items-center pb-20">
                                 <img src={Darren} className="w-24 mb-5 rounded-full mt-[-48px] ring-[5px] ring-green-700" />
-                                <h1 className="mb-2 text-2xl font-medium text-gray-50">Darren Medrano</h1>
+                                <h1 className="mb-2 lg:text-2xl md:text-lg font-medium text-gray-50">Darren Medrano</h1>
                                 <span className="text-lg text-gray-500 mb-2">Full Stack</span>
                                 <div className="flex mt-4 space-x-3 md:mt-6">
                                     <div className="social inline-flex items-center text-sm font-medium text-center">

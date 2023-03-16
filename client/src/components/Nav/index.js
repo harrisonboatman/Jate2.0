@@ -148,7 +148,7 @@ function Nav() {
                   <li>
                     <button
                       type="button"
-                      className="text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base lg:px-9 md:px-5 sm:px-2 py-1 text-center mr-3 md:mr-0 "
+                      className="text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base lg:px-7 md:px-5 sm:px-2 py-1 text-center mr-3 md:mr-0 "
                     >
                       <Link to="/">Home</Link>
                     </button>
@@ -156,7 +156,7 @@ function Nav() {
                   <li>
                     <button
                       type="button"
-                      className="text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base lg:px-9 md:px-5 sm:px-2 py-1 text-center mr-3 md:mr-0 "
+                      className="text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base lg:px-7 md:px-5 sm:px-2 py-1 text-center mr-3 md:mr-0 "
                     >
                       <Link to="/menu">Menu</Link>
                     </button>
@@ -164,7 +164,7 @@ function Nav() {
                   <li>
                     <button
                       type="button"
-                      className="text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base lg:px-9 md:px-5 sm:px-2 py-1 text-center mr-3 md:mr-0 "
+                      className="text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base lg:px-7 md:px-5 sm:px-2 py-1 text-center mr-3 md:mr-0 "
                     >
                       <Link to ="/contact">
                     Contact
