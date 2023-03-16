@@ -17,7 +17,7 @@ import { StoreProvider } from './utils/GlobalState';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
 import Menu from './pages/Menu';
-import OrderManagement from './pages/OrderManagement'
+import Management from './pages/Management'
 import Contact from './pages/Contact';
 
 
@@ -83,8 +83,8 @@ function App() {
                 element={<Menu />} 
               />
               <Route 
-                path="/ordermanagement" 
-                element={<OrderManagement />} 
+                path="/management" 
+                element={<Management />} 
               />
               
               <Route 

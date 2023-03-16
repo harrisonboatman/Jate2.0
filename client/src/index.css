@@ -130,7 +130,7 @@ span[role="img"] {
 
 
   .sliding-div {
-    overflow: hidden;
+    overflow-x: hidden;
     background-color: black;
     position: absolute;
     height: 410px;
@@ -142,7 +142,8 @@ span[role="img"] {
   .remove {
     transform: translateX(100%);
     transition: transform 1s ease-in-out;
-
+    visibility: hidden;
+    opacity: 0;
   }
 
 
@@ -181,6 +182,9 @@ span[role="img"] {
   color: white;
   display: inline-flex;
   transition: all 0.8s ease-out;
-  
-  
+    
+}
+
+.manager-form {
+  box-shadow: 8px 8px 12px green;
 }

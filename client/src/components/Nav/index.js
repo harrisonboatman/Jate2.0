@@ -96,7 +96,7 @@ function Nav() {
                     type="button"
                     className="text-white hover:text-green-500 lg:text-xl ring-white hover:ring-2 hover:white ease-in-out duration-200 font-medium rounded-lg text-base px-2 py-1.5 text-center mr-3 md:mr-0 "
                   >
-                    <Link to ="/ordermanagement">Order Management</Link>
+                    <Link to ="/management">Order Management</Link>
                   </button>
                 </li>): null}
                 
