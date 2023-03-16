@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useQuery } from '@apollo/client';
 import { QUERY_ALL_USERS, QUERY_CONTACTS, QUERY_USER } from '../utils/queries';
 import { useMutation } from "@apollo/client";
 import { ADD_PRODUCT, UPDATE_USER } from "../utils/mutations";
 import staffBackground from '../assets/staff-bg.png'
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 function Management(props) {
     const { data } = useQuery(QUERY_USER);
@@ -19,12 +21,20 @@ function Management(props) {
     const [product] = useMutation(ADD_PRODUCT);
     const [job] = useMutation(UPDATE_USER);
 
-// const Querycontact = async(event) => {
-//     event.preventDefault();
-//     const stuff = useQuery(QUERY_CONTACTS)
-//     peeps = stuff
+    const myRef = useRef(null);
+    useEffect(() => {
+        let fromVar = gsap.from(myRef.current, {
+            opacity: 0,
+            duration: 2,
+            y: 90,
+            immediateRender: false,
+        });
+        return () => {
+            fromVar.kill();
+        };
+    }, []);
 
-// }
+
 
 
     const handleFormSubmit = async (event) => {
@@ -111,7 +121,7 @@ function Management(props) {
         
 
             {user ? (
-            <div class = "flex justify-center items-center lg:text-7xl md:text-6xl sm:text-5xl text-center mt-20 font-serif text-white tracking-wide"><p>Welcome back {user.firstName}! <br></br>  <div className="mt-5">Role:  <span className="text-green-500 font-semibold capitalize">{role}</span></div></p>
+            <div ref={myRef} class = "flex justify-center items-center lg:text-7xl md:text-6xl sm:text-5xl text-center mt-16 font-serif text-white tracking-wide"><p>Welcome back {user.firstName}! <br></br>  <div className="mt-5">Role:  <span className="text-green-500 font-semibold capitalize">{role}</span></div></p>
             </div>
             ) : null}
             {manager ? (<div class="flex flex-row justify-around items-center my-32">
@@ -151,13 +161,7 @@ function Management(props) {
                         </div>
                         <div class="mb-6">
                             <label for="product-category" class="block mb-2 text-sm font-medium text-green-500">Product Category</label>
-                            {/* <input id='category'
-                                name='category'
-                                type='text'
-                                class="shadow-sm bg-gray-40 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                placeholder='Category of Product Here'
-                                onChange={handleChange}>
-                            </input> */}
+                        
                             <select id = 'category'
                             name = 'category'
                             onChange={handleChange}>
@@ -181,7 +185,7 @@ function Management(props) {
                             <option value='rice.jpg'>Side</option>
                         </select>
                         </div>
-                        <div className="flex items-center justify-center mt-4">
+                        <div className=" w-full h-full flex items-center justify-center mt-4">
                             <button
                                 className="w-[200px] rounded-3xl bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
                                 type="submit"
