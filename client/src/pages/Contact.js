@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import { useMutation, useQuery } from '@apollo/client';
-import { QUERY_CONTACTS } from '../utils/queries';
+import { QUERY_CONTACTS, QUERY_USER } from '../utils/queries';
 import { ADD_CONTACT } from '../utils/mutations';
 
 
 
-const Contact = ()  =>{
+function Contact  () {
+  const thing = useQuery(QUERY_USER);
   const {data} = useQuery(QUERY_CONTACTS)
   const [contact] = useMutation(ADD_CONTACT);
   const [formState, setFormState] = useState({ name: '', email: '', phone: '' });
 
 let peeps;
-
+let userRole;
+let admin = false;
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -36,12 +38,9 @@ let peeps;
         [name]: value,
     });
 };
-if(data){
-  peeps = data
-  console.log(data)
-}
 
-  
+
+
 
   return (
     <div>
@@ -182,14 +181,9 @@ if(data){
                 </button>
               </form>
             </div>
-            <div>
-        <div class = 'p-6 mr-2 bg-gray-100 dark:bg-gray-800 sm:rounded-lg'>
-          <p>People want to talk to us!</p>
-        {peeps?.contacts.map((cust)=> (
-          <p key = {cust._id}>Email: {cust.email} Name: {cust.name} Phone Number: {cust.phone}</p>
-        ))}
-        </div>
-          </div>
+            
+            
+          
         </div>
       </div>
       
