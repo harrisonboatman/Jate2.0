@@ -106,7 +106,6 @@ function OrderManagement(props) {
                 </div>
             ) : null}
             {manager ? (<div class="mt-5">
-                <p class="text-center">yous a manager</p>
                 <div class="flex justify-center mt-5">
                     <form onSubmit={handleFormSubmit}
                         class="p-10 bg-gray-900 rounded-xl">
