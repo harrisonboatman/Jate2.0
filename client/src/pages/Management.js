@@ -126,6 +126,7 @@ function Management(props) {
             ) : null}
             {manager ? (<div class="flex flex-row justify-around items-center my-32">
                 <div class="flex justify-center">
+                    <div>
                     <form onSubmit={handleFormSubmit}
                         class="manager-form p-10 mb-24 bg-white rounded-xl">
                             <p class="text-center text-green-500 font-extrabold mb-3">You can add a product to the website below!</p>
@@ -185,7 +186,7 @@ function Management(props) {
                             <option value='rice.jpg'>Side</option>
                         </select>
                         </div>
-                        <div className=" w-full h-full flex items-center justify-center mt-4">
+                        <div className="flex items-center justify-center mt-4">
                             <button
                                 className="w-[200px] rounded-3xl bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
                                 type="submit"
@@ -194,12 +195,13 @@ function Management(props) {
                             </button>
                         </div>
                     </form>
+                    </div>
                     <div class='p-6 mr-2 flex flex-col bg-gray-100 dark:bg-gray-800 sm:rounded-lg'>
-                            <p>People want to talk to us!</p>
+                            <p className="p-2">People want to talk to us!</p>
                             {peeps?.data?.contacts?.map((cust) => (
-                                <p key={cust._id}>Email: {cust.email} Name: {cust.name} Phone Number: {cust.phone}</p>
+                                <p key={cust._id}><br></br>Email: {cust.email} <br></br> Name: {cust.name} <br></br> Phone Number: {cust.phone}<br></br></p>
                             ))}
-                        </div>
+                    </div>
                 </div>
 
             </div>) : null}
