@@ -27,12 +27,12 @@ function toggleCover() {
 
 
     return (
-        <div className="mx-auto w-full">
+        <div className="w-full overflow-hidden">
             <div className={`sliding-div ${isCovered ? '' : 'remove'}`}>
-                <div className="blanket text-white text-center text-4xl flex justify-center h-full items-center">
+                <div className="blanket text-white text-center text-4xl flex justify-center h-full items-center overflow-hidden">
                     <h1 className="">Enjoying the Content?<br></br>
                     Lets Meet the Webdevs<br></br>
-                    <button onClick={toggleCover} className="dev-btn p-2 text-base text-green-500 ring-1 ring-green-500 rounded-2xl hover:bg-green-500 hover:text-white" >Click Here</button>
+                    <button onClick={toggleCover} className="dev-btn p-2 text-base text-green-500 ring-1 ring-green-500 rounded-2xl hover:bg-green-500 hover:text-white overflow-hidden" >Click Here</button>
                    
                     </h1>
                 </div>

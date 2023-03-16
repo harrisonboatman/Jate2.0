@@ -28,7 +28,6 @@ import { Parallax } from "react-parallax";
 import video1 from "../assets/jate.mp4";
 import video2 from "../assets/video2.mp4";
 import video3 from "../assets/video3.mp4";
-import aboutUs from "../assets/about-us.png";
 import imageTruck from "../assets/foodtruck.jpg"
 gsap.registerPlugin(ScrollTrigger);
 const Home = () => {
@@ -75,7 +74,7 @@ const Home = () => {
     );
   }, []);
   return (
-    <div>
+    <div className="overflow-hidden">
       <div className="relative lg:w-full h-[100vh]">
         <Parallax className="h-[100vh] relative" strength={400}>
           <div className="absolute w-full h-[100vh] inset-0 bg-black opacity-10"></div>
@@ -238,9 +237,10 @@ const Home = () => {
           <hr class="w-full h-px my-12 bg-gray-400 border-1 dark:bg-gray-900">
           </hr>
           </div>
-          <Contact />
         </div>
       </section>
+      <ProfileCards />
+          <Footer />
     </div>
   );
 };
