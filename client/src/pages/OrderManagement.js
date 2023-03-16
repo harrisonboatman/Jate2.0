@@ -161,6 +161,14 @@ function OrderManagement(props) {
                             </button>
                         </div>
                     </form>
+                    <div>
+                        <div class='p-6 mr-2 bg-gray-100 dark:bg-gray-800 sm:rounded-lg'>
+                            <p>People want to talk to us!</p>
+                            {peeps?.data.contacts.map((cust) => (
+                                <p key={cust._id}>Email: {cust.email} Name: {cust.name} Phone Number: {cust.phone}</p>
+                            ))}
+                        </div>
+                    </div>
                 </div>
 
             </div>) : null}
@@ -191,14 +199,7 @@ function OrderManagement(props) {
                                     Change employee job!
                                 </button>
                             </form>
-                            <div>
-                                <div class='p-6 mr-2 bg-gray-100 dark:bg-gray-800 sm:rounded-lg'>
-                                    <p>People want to talk to us!</p>
-                                    {peeps?.data.contacts.map((cust) => (
-                                        <p key={cust._id}>Email: {cust.email} Name: {cust.name} Phone Number: {cust.phone}</p>
-                                    ))}
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
