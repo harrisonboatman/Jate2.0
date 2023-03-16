@@ -19,7 +19,12 @@ function OrderManagement(props) {
     const [product] = useMutation(ADD_PRODUCT);
     const [job] = useMutation(UPDATE_USER);
 
+// const Querycontact = async(event) => {
+//     event.preventDefault();
+//     const stuff = useQuery(QUERY_CONTACTS)
+//     peeps = stuff
 
+// }
 
 
     const handleFormSubmit = async (event) => {
@@ -27,12 +32,13 @@ function OrderManagement(props) {
         let productPrice = document.querySelector('#price').value
         productPrice = JSON.parse(productPrice);
         let imageURL = document.querySelector('#image').value
+        let categ = document.querySelector('#category').value
         console.log(imageURL);
 
 
         try {
             const mutationResponse = await product({
-                variables: { name: formState.name, description: formState.description, price: productPrice, category: formState.category, image: imageURL },
+                variables: { name: formState.name, description: formState.description, price: productPrice, category: categ, image: imageURL },
             });
             console.log(mutationResponse);
             console.log('hello')
@@ -74,7 +80,7 @@ function OrderManagement(props) {
         user = data.user;
         role = data.user.userType;
         console.log(user)
-        peeps = stuff
+        peeps = stuff;
 
     }
     if (thing) {
@@ -137,21 +143,36 @@ function OrderManagement(props) {
                         </div>
                         <div class="mb-6">
                             <label for="product-category" class="block mb-2 text-sm font-medium text-green-500">Product Category</label>
-                            <input id='category'
+                            {/* <input id='category'
                                 name='category'
                                 type='text'
                                 class="shadow-sm bg-gray-40 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                 placeholder='Category of Product Here'
                                 onChange={handleChange}>
-                            </input>
+                            </input> */}
+                            <select id = 'category'
+                            name = 'category'
+                            onChange={handleChange}>
+                            
+                            <option value='64121538e756e8577b0cc580'>Breakfast Taco</option>
+                            <option value='64121538e756e8577b0cc581'>Dinner Taco</option>
+                            <option value='64121538e756e8577b0cc582'>Non-Alcoholic Drink</option>
+                            <option value='64121538e756e8577b0cc583'>Alcoholic Drink</option>
+                            <option value='64121538e756e8577b0cc584'>Side</option>
+
+                            </select>
                         </div>
-                        <select id='image' name='image'>
+                        <div>
+                        <label for="product-category" class="block mb-2 text-sm font-medium text-green-500">Product image</label>
+                        <select id='image' name='image' onChange={handleChange}>
+
                             <option value='bacon-egg.png'>Breakfast Taco</option>
                             <option value='shrimp.png'>Dinner Taco</option>
                             <option value='mexican-coke.jpg'>Non-Alcoholic Drink</option>
                             <option value='mojito.jpg'>Alcoholic Drink</option>
                             <option value='rice.jpg'>Side</option>
                         </select>
+                        </div>
                         <div className="flex items-center justify-center mt-4">
                             <button
                                 className="w-[200px] rounded-3xl bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
@@ -161,14 +182,12 @@ function OrderManagement(props) {
                             </button>
                         </div>
                     </form>
-                    <div>
-                        <div class='p-6 mr-2 bg-gray-100 dark:bg-gray-800 sm:rounded-lg'>
+                    <div class='p-6 mr-2 bg-gray-100 dark:bg-gray-800 sm:rounded-lg'>
                             <p>People want to talk to us!</p>
-                            {peeps?.data.contacts.map((cust) => (
+                            {peeps?.data?.contacts?.map((cust) => (
                                 <p key={cust._id}>Email: {cust.email} Name: {cust.name} Phone Number: {cust.phone}</p>
                             ))}
                         </div>
-                    </div>
                 </div>
 
             </div>) : null}
@@ -199,7 +218,9 @@ function OrderManagement(props) {
                                     Change employee job!
                                 </button>
                             </form>
-
+                            <div >
+                        
+                    </div>
                         </div>
                     </div>
                 </div>
