@@ -6,6 +6,7 @@ import { ADD_PRODUCT, UPDATE_USER } from "../utils/mutations";
 import staffBackground from "../assets/staff-bg.png";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import Orders from "../components/Orders";
 
 function Management(props) {
   const { data } = useQuery(QUERY_USER);
@@ -17,6 +18,7 @@ function Management(props) {
   let peeps;
   let manager = false;
   let admin = false;
+  let employee = false;
   const [formState, setFormState] = useState({
     name: "",
     description: "",
@@ -107,9 +109,11 @@ function Management(props) {
     manager = true;
   } else if (role === "admin") {
     admin = true;
+  } else if (role === "employee") {
+    employee = true;
   } else {
-    return <p>you are not welcome here</p>;
-  }
+    return <p className="text-8xl text-center mt-20">you are not welcome here</p>;
+  } 
 
   return (
     <>
@@ -133,6 +137,12 @@ function Management(props) {
               </div>
             </p>
           </div>
+        ) : null}
+        {employee ? (
+            <div className="w-full h-[60rem] bg-white">
+                <Orders />
+            </div>
+
         ) : null}
         {manager ? (
           <div class="flex flex-row justify-around items-center my-32">
